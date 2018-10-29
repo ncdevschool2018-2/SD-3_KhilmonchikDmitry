@@ -1,0 +1,46 @@
+<div *ngIf="subsctiption">
+<div class="row">
+
+  <div class="col"></div>
+
+  <div  class="col-10">
+    <ul class="list-group">
+      <li class="list-group-item">
+        <h1>{{subsctiption.name}}</h1>
+        <p class="lead">{{subsctiption.description}}</p>
+        <table class="table">
+          <thead>
+          <tr>
+            <th scope="col">Period</th>
+            <th scope="col">Sum</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>Month</td>
+            <td>{{subsctiption.oneMonth + "$"}}</td>
+          </tr>
+          <tr>
+            <td>3 months</td>
+            <td>{{subsctiption.threeMonths + "$"}}</td>
+          </tr>
+          <tr>
+            <td>1 year</td>
+            <td>{{subsctiption.oneYear + "$"}}</td>
+          </tr>
+          </tbody>
+        </table>
+        <select class="form-control">
+          <option>1 month</option>
+          <option>3 months</option>
+          <option>1 year</option>
+        </select>
+        <p></p>
+        <button type="submit" class="btn btn-success" class="btn btn-light">Subscribe</button>
+      </li>
+    </ul>
+  </div>
+
+  <div class="col"></div>
+</div>
+</div>

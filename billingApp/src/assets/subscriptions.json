@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "name": "Yandex Music",
+    "description": "Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with padding-top: 60px; on the body > .container. Back to the default sticky footer minus the navbar.",
+    "category": "Office",
+    "oneMonth": "1",
+    "threeMonths": "2.95",
+    "oneYear": "11"
+  },
+  {
+    "id": "2",
+    "name": "Spotify",
+    "description": "Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with padding-top: 60px; on the body > .container. Back to the default sticky footer minus the navbar.",
+    "category": "Development",
+    "oneMonth": "1",
+    "threeMonths": "2.95",
+    "oneYear": "1"
+  },
+  {
+    "id": "3",
+    "name": "Apple Music",
+    "description": "Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with padding-top: 60px; on the body > .container. Back to the default sticky footer minus the navbar.",
+    "category": "Music",
+    "oneMonth": "1",
+    "threeMonths": "2.95",
+    "oneYear": "1"
+  },
+  {
+    "id": "4",
+    "name": "Zala",
+    "description": "Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with padding-top: 60px; on the body > .container. Back to the default sticky footer minus the navbar.",
+    "category": "Films",
+    "oneMonth": "1",
+    "threeMonths": "2.95",
+    "oneYear": "1"
+  },
+  {
+    "id": "5",
+    "name": "Twitch",
+    "description": "Pin a fixed-height footer to the bottom of the viewport in desktop browsers with this custom HTML and CSS. A fixed navbar has been added with padding-top: 60px; on the body > .container. Back to the default sticky footer minus the navbar.",
+    "category": "Streaming",
+    "oneMonth": "1",
+    "threeMonths": "2.95",
+    "oneYear": "1"
+  }
+]
