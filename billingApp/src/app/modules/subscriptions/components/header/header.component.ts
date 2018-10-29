@@ -1,5 +1,6 @@
 import {Component, Input, OnInit, Output} from '@angular/core';
 import {SubscriptionsShareService} from '../../../../services/subscriptionsShare.service';
+import {User} from '../../../../shared/user';
 
 @Component({
   selector: 'header',
@@ -11,7 +12,7 @@ export class HeaderComponent implements OnInit {
   @Input() subscriptionsObs = this.ShareService.data$;
   subscriptions;
 
-  constructor(private ShareService: SubscriptionsShareService) {
+  constructor(private ShareService: SubscriptionsShareService, private user: User) {
   }
 
   ngOnInit() {

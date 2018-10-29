@@ -6,6 +6,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import {HeaderComponent} from './components/header/header.component';
 import {RouterModule} from '@angular/router';
 import {SubscriptionDetailsComponent} from './components/subscriptionDetails/subscriptionDetails.component';
+import {LoginComponent} from './components/login/login.component.';
+import {RegistrationComponent} from './components/registration/registration.component';
 
 @NgModule({
   imports: [
@@ -17,12 +19,16 @@ import {SubscriptionDetailsComponent} from './components/subscriptionDetails/sub
   exports: [
     SubscriptionsListComponent,
     HeaderComponent,
-    SubscriptionDetailsComponent
+    SubscriptionDetailsComponent,
+    LoginComponent,
+    RegistrationComponent
   ],
   declarations: [
     SubscriptionsListComponent,
     HeaderComponent,
-    SubscriptionDetailsComponent
+    SubscriptionDetailsComponent,
+    LoginComponent,
+    RegistrationComponent
   ],
   providers: []
 })

@@ -1,7 +1,6 @@
 import {Component, OnInit, Output} from '@angular/core';
 import {HttpService} from '../../../../services/http.service';
-import { ActivatedRoute } from '@angular/router';
-import {logger} from 'codelyzer/util/logger';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'subscriptionsDetails',
@@ -12,7 +11,8 @@ import {logger} from 'codelyzer/util/logger';
 export class SubscriptionDetailsComponent implements OnInit {
   @Output() subsctiption;
 
-  constructor(private http: HttpService, private route: ActivatedRoute) {}
+  constructor(private http: HttpService, private route: ActivatedRoute) {
+  }
 
   ngOnInit() {
     this.getSubscription();
