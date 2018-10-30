@@ -1,6 +1,7 @@
 import {Component, Input, OnInit, Output} from '@angular/core';
 import {SubscriptionsShareService} from '../../../../services/subscriptionsShare.service';
 import {User} from '../../../../shared/user';
+// import {User} from '../../../../shared/user';
 
 @Component({
   selector: 'header',
@@ -11,8 +12,9 @@ import {User} from '../../../../shared/user';
 export class HeaderComponent implements OnInit {
   @Input() subscriptionsObs = this.ShareService.data$;
   subscriptions;
+  public user: User
 
-  constructor(private ShareService: SubscriptionsShareService, private user: User) {
+  constructor(private ShareService: SubscriptionsShareService) {
   }
 
   ngOnInit() {
@@ -25,6 +27,7 @@ export class HeaderComponent implements OnInit {
   }
 
   searchSubscriptions(name: string) {
+    console.log(this.user);
     this.ShareService.searchSubscriptions(name);
   }
 }

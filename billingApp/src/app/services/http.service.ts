@@ -37,4 +37,8 @@ export class HttpService {
     };
     return this.http.post<BillingAccount>(this.billingAccountsUrl, billingAccount, httpOptions);
   }
+
+  getUsers(): Observable<User[]> {
+    return this.http.get<User[]>(this.usersUrl);
+  }
 }

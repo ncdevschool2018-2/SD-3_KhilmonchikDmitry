@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col"></div>
+
+  <div  class="col-6">
+    <form>
+      <div class="form-group">
+        <label for="NewBillingAccount">Billing account name</label>
+        <input #name type="text" class="form-control" id="NewBillingAccount">
+      </div>
+      <div class="form-group">
+        <label for="NewCreditCardNumber">Credit card number</label>
+        <input #creditCardNumber type="text" class="form-control" id="NewCreditCardNumber">
+        <small id="emailHelp" class="form-text text-muted">We'll never steal your money (probably).</small>
+      </div>
+      <div class="form-group">
+        <label for="NewBillingAccountPassword">Billing account password</label>
+        <input #password type="password" class="form-control" id="NewBillingAccountPassword" placeholder="Enter billing account password">
+      </div>
+      <div class="form-group">
+        <label for="NewBillingAccountPasswordRepeat">Repeat billing account password</label>
+        <input #passwordRepeat type="password" class="form-control" id="NewBillingAccountPasswordRepeat" placeholder="Repeat billing account password">
+      </div>
+      <button type="button" (click)="createBillingAccount(name.value, creditCardNumber.value,
+       password.value, passwordRepeat.value)" class="btn btn-primary">Create</button>
+    </form>
+  </div>
+
+  <div class="col"></div>
+</div>

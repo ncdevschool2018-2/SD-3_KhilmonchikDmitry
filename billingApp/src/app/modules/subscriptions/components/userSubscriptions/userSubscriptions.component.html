@@ -1,0 +1,25 @@
+<div class="col-6">
+  <h2>Desmond1999d</h2>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Subscription</th>
+      <th scope="col">Days left</th>
+      <th scope="col">Will be renewed</th>
+      <th scope="col">Status</th>
+      <th scope="col"></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let subscription of subscriptions">
+      <td>{{subscription.subscription}}</td>
+      <td>{{subscription.daysLeft}}</td>
+      <td>{{subscription.willBeRenewed}}</td>
+      <td>{{subscription.status}}</td>
+      <td>
+        <button type="submit" class="btn btn-success" class="btn btn-light">Unsubscribe</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

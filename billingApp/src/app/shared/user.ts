@@ -1,3 +1,3 @@
 export class User {
-  constructor (private login: string, private password: string, private email: string, private isAdmin: boolean = false) {}
+  constructor (public login: string, public password: string, public email: string, public isAdmin: boolean = false) {}
 }

@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col"></div>
+
+  <div class="col-6">
+    <form>
+      <div class="form-group">
+        <label for="accounts">Select billing account</label>
+        <select class="form-control" id="accounts">
+          <option>first billing account</option>
+          <option>new one</option>
+          <option>wtf is this</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="BillingAccountPassword">Billing account password</label>
+        <input type="password" class="form-control" id="BillingAccountPassword">
+      </div>
+      <button type="button" class="btn btn-danger">Delete billing account</button>
+      <div class="form-group">
+        <label for="CreditCardPassword">Credit card password</label>
+        <input type="password" class="form-control" id="CreditCardPassword">
+        <small id="CreditCardPasswordHelp" class="form-text text-muted">We'll never steal your money (probably).</small>
+      </div>
+      <div class="form-group">
+        <label for="BillingAccountSum">Enter the sum of money</label>
+        <input type="number" class="form-control" id="BillingAccountSum">
+        <small id="PaymentHelp" class="form-text text-muted">This amount of money will be written off your credit
+          card.
+        </small>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+
+  <div class="col"></div>
+</div>

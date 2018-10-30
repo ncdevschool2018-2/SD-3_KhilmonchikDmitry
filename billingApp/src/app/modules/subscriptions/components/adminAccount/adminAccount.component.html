@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col"></div>
+
+  <div  class="col-6">
+    <table class="table">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Login</th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let user of users | paginate: { itemsPerPage: 2, currentPage: page }">
+        <th scope="row">1</th>
+        <td><a href="#">{{user.login}}</a></td>
+        <td><button type="button" class="btn btn-danger">Ban</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="col"></div>
+</div>

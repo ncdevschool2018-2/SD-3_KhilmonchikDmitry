@@ -1,3 +1,20 @@
 [
-
+  {
+    "login": "1",
+    "password": "1",
+    "email": "1@mail.ru",
+    "isAdmin": "false"
+  },
+  {
+    "login": "2",
+    "password": "2",
+    "email": "2@mail.ru",
+    "isAdmin": "false"
+  },
+  {
+    "login": "3",
+    "password": "3",
+    "email": "3@mail.ru",
+    "isAdmin": "true"
+  }
 ]
