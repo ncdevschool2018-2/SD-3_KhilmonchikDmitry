@@ -8,6 +8,7 @@ import {SubscriptionsModule} from './modules/subscriptions/subscriptions.module'
 import {HttpClientModule} from '@angular/common/http';
 import {HttpService} from './services/http.service';
 import {SubscriptionsShareService} from './services/subscriptionsShare.service';
+import {UserIDService} from './services/userID.service';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {SubscriptionsShareService} from './services/subscriptionsShare.service';
   ],
   providers: [
     HttpService,
-    SubscriptionsShareService
+    SubscriptionsShareService,
+    UserIDService
   ],
   bootstrap: [AppComponent]
 })
