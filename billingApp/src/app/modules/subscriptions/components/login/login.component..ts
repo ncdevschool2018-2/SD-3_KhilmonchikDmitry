@@ -17,7 +17,7 @@ export class LoginComponent {
   }
 
   eee(login: string, password: string) {
-    this.userIDService.setID(127);
+    this.userIDService.setID(2);
   }
 
 }
