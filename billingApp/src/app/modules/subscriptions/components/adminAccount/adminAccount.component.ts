@@ -1,5 +1,6 @@
-import {Component} from '@angular/core';
-import {User} from '../../../../shared/user';
+import {Component, OnInit} from '@angular/core';
+import {User} from '../../../../shared/User';
+import {UserService} from "../../../../services/user/user.service";
 
 @Component({
   selector: 'adminAccount',
@@ -7,10 +8,13 @@ import {User} from '../../../../shared/user';
   styleUrls: ['./adminAccount.component.css']
 })
 
-export class AdminAccountComponent {
-  users: User[] = [
-    new User('1', '1', '1@mail.ru'),
-    new User('2', '2', '2@mail.ru'),
-    new User('3', '3', '3@mail.ru')
-  ];
+export class AdminAccountComponent implements OnInit {
+  users: User[];
+
+  constructor(private http: UserService) {
+  }
+
+  ngOnInit() {
+    this.http.getAllUsers().subscribe(users=> this.users = users);
+  }
 }

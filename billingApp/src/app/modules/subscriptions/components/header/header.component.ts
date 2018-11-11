@@ -1,6 +1,7 @@
 import {Component, Input, OnInit, Output} from '@angular/core';
-import {SubscriptionsShareService} from '../../../../services/subscriptionsShare.service';
 import {UserIDService} from '../../../../services/userID.service';
+import {SubscriptionService} from "../../../../services/subscription/subscription.service";
+import {Subscription} from "../../../../shared/Subscription";
 
 @Component({
   selector: 'header',
@@ -9,26 +10,37 @@ import {UserIDService} from '../../../../services/userID.service';
 })
 
 export class HeaderComponent implements OnInit {
-  @Input() subscriptionsObs = this.ShareService.data$;
-  subscriptions;
+
   @Input() loggedUserIDObs = this.userIDService.data$;
   loggedUserID;
+  @Output() subscriptions: Subscription[];
+  @Output() subscription: Subscription;
 
-  constructor(private ShareService: SubscriptionsShareService, private userIDService: UserIDService) {
+  constructor(private http: SubscriptionService, private userIDService: UserIDService) {
+    this.userIDService.setID(-1);
   }
 
   ngOnInit() {
-    this.ShareService.loadSubscriptions();
-    this.subscriptionsObs.subscribe( subscriptions => this.subscriptions = subscriptions);
-    this.loggedUserIDObs.subscribe(loggedUserID => this.loggedUserID = loggedUserID);
+    this.loggedUserIDObs.subscribe(loggedUserID => {
+      this.loggedUserID = loggedUserID;
+      console.log(this.loggedUserID);
+    });
   }
 
-  newSubscriptions(category: string) {
-    this.ShareService.sortSubscriptions(category);
+  search(name: string): Subscription {
+    this.http.getSubscriptionByName(name).subscribe(subscription => {
+      this.subscription = subscription;
+      console.log(subscription);
+    });
+    return this.subscription;
   }
 
-  searchSubscriptions(name: string) {
-    this.ShareService.searchSubscriptions(name);
+  filter(category: string): Subscription[] {
+    this.http.getSubscriptionByCategory(category).subscribe(subscriptions => {
+      this.subscriptions = subscriptions;
+      console.log(subscriptions);
+    });
+    return this.subscriptions;
   }
 
   logOut() {

@@ -1,7 +1,9 @@
 import {Component} from '@angular/core';
-import {User} from '../../../../shared/user';
+import {User} from '../../../../shared/User';
 import {HttpService} from '../../../../services/http.service';
-import {BillingAccount} from '../../../../shared/billingAccount';
+import {BillingAccount} from '../../../../shared/BillingAccount';
+import {UserService} from "../../../../services/user/user.service";
+import {BillingAccountService} from "../../../../services/billingAccount/billingAccount.service";
 
 @Component({
   selector: 'registration',
@@ -13,45 +15,34 @@ export class RegistrationComponent {
   user: User;
   billingAccount: BillingAccount;
 
-  constructor (private http: HttpService) { }
+  constructor(private userHttp: UserService, private billingHttp: BillingAccountService) {
+  }
 
-  createUser(login: string, password: string, passwordRepeated: string, email: string, creditCardNumber: string, billingAccountName: string,
-             billingAccountPassword: string, billingAccountPasswordRepeated: string) {
-    console.log(login, email, password, passwordRepeated, billingAccountName, creditCardNumber,
-      billingAccountPassword, billingAccountPasswordRepeated);
-    if (password === passwordRepeated && billingAccountPassword === billingAccountPasswordRepeated
-      && password !== '' && login !== '' && email !== '' && billingAccountPassword !== '' && billingAccountName !== ''
-      && creditCardNumber !== '') {
-      this.user = new User(login, password, email);
-      this.billingAccount = new BillingAccount(login, name, billingAccountPassword, creditCardNumber, 0);
-      this.http.postToUsers(this.user);
-      this.http.postToBillingAccounts(this.billingAccount);
+  createUser(login: string, password: string, passwordRepeated: string, email: string) {
+    if (password === passwordRepeated && password !== '' && login !== '' && email !== '') {
+      this.user = new User(1, login, password, email);
     }
     if (password !== passwordRepeated) {
       console.log('passwords do not match!');
     }
-    if (billingAccountPassword !== billingAccountPasswordRepeated) {
-      console.log('billing account passwords do not match!');
+  }
+
+  createBillingAccount(creditCardNumber: string, billingAccountName: string,
+                       billingAccountPassword: string, billingAccountPasswordRepeated: string) {
+    if (billingAccountPassword === billingAccountPasswordRepeated && billingAccountPassword !== '' && billingAccountName !== ''
+      && creditCardNumber !== '') {
+      this.billingAccount = new BillingAccount(1, this.user.id, creditCardNumber, billingAccountName, billingAccountPassword, 0);
     }
-    switch ('') {
-      case login:
-        console.log('login empty');
-        break;
-      case password:
-        console.log('password empty');
-        break;
-      case email:
-        console.log('email empty');
-        break;
-      case billingAccountPassword:
-        console.log('billingAccountPassword empty');
-        break;
-      case billingAccountName:
-        console.log('billingAccountName empty');
-        break;
-      case creditCardNumber:
-        console.log('creditCardNumber empty');
-        break;
-    }
+  }
+
+  createAccount(login: string, password: string, passwordRepeated: string, email: string,
+                creditCardNumber: string, billingAccountName: string,
+                billingAccountPassword: string, billingAccountPasswordRepeated: string) {
+    this.createUser(login, password, passwordRepeated, email);
+    this.createBillingAccount(creditCardNumber, billingAccountName, billingAccountPassword, billingAccountPasswordRepeated);
+    console.log(this.user);
+    console.log(this.billingAccount);
+    this.userHttp.createUser(this.user);
+    this.billingHttp.createBillingAccount(this.billingAccount);
   }
 }

@@ -1,12 +1,12 @@
 package by.training.nc.sd3.controller;
 
 import by.training.nc.sd3.models.BillingAccountViewModel;
-import by.training.nc.sd3.models.UserAccountViewModel;
 import by.training.nc.sd3.service.BillingAccountDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.Console;
 import java.util.List;
 
 @RestController
@@ -16,25 +16,32 @@ public class BillingAccountDataController {
     @Autowired
     private BillingAccountDataService billingAccountDataService;
 
-    @RequestMapping
+    @RequestMapping(value = "/all", method = RequestMethod.GET)
     public ResponseEntity<List<BillingAccountViewModel>> getAllBillingAccounts() {
         return ResponseEntity.ok(billingAccountDataService.getAll());
     }
 
-    @RequestMapping
-    public ResponseEntity<BillingAccountViewModel> getBillingAccountById(int id) {
+    @RequestMapping(value = "/getbyid", method = RequestMethod.GET)
+    public ResponseEntity<List<BillingAccountViewModel>> getBillingAccountById(@RequestParam int id) {
         return ResponseEntity.ok(billingAccountDataService.getBillingAccountById(id));
     }
 
-    @RequestMapping
-    public ResponseEntity<BillingAccountViewModel> getBillingAccountByOwnerId(int id) {
+    @RequestMapping(value = "/getbyownerid", method = RequestMethod.GET)
+    public ResponseEntity<List<BillingAccountViewModel>> getBillingAccountByOwnerId(@RequestParam int id) {
         return ResponseEntity.ok(billingAccountDataService.getBillingAccountByOwnerId(id));
     }
 
-    @RequestMapping(method = RequestMethod.POST)
+    @RequestMapping(value = "/checkpasswordbyid", method = RequestMethod.POST)
+    public ResponseEntity<Boolean> checkPasswordById(@RequestBody String password, @RequestBody int id) {
+        return ResponseEntity.ok(billingAccountDataService.checkPasswordById(password, id));
+    }
+
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ResponseEntity<BillingAccountViewModel> saveBillingAccount(@RequestBody BillingAccountViewModel billingAccount) {
-        if (billingAccount != null)
+        if (billingAccount != null) {
+            System.out.println(billingAccount);
             return ResponseEntity.ok(billingAccountDataService.saveBillingAccount(billingAccount));
+        }
         return null;
     }
 

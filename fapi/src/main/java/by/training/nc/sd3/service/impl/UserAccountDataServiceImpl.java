@@ -16,9 +16,9 @@ public class UserAccountDataServiceImpl implements UserAccountDataService {
 
     public List<UserAccountViewModel> getAll() {
         List<UserAccountViewModel> allUsers = new LinkedList<UserAccountViewModel>();
-        UserAccountViewModel user1 = new UserAccountViewModel(1, "Evstrat", "Petuh", "EvstratPetuh@mail.ru");
-        UserAccountViewModel user2 = new UserAccountViewModel(2, "2", "2", "2@mail.ru");
-        UserAccountViewModel user3 = new UserAccountViewModel(3, "3", "3", "3@mail.ru");
+        UserAccountViewModel user1 = new UserAccountViewModel(1, "Evstrat", "Petuh", "EvstratPetuh@mail.ru",false);
+        UserAccountViewModel user2 = new UserAccountViewModel(2, "2", "2", "2@mail.ru", true);
+        UserAccountViewModel user3 = new UserAccountViewModel(3, "3", "3", "3@mail.ru", false);
 
         allUsers.add(user1);
         allUsers.add(user2);
@@ -29,16 +29,33 @@ public class UserAccountDataServiceImpl implements UserAccountDataService {
 
     public UserAccountViewModel getUserAccountById(int id) {
         List<UserAccountViewModel> allUsers = new LinkedList<UserAccountViewModel>();
-        UserAccountViewModel user1 = new UserAccountViewModel(1, "Evstrat", "Petuh", "EvstratPetuh@mail.ru");
-        UserAccountViewModel user2 = new UserAccountViewModel(2, "2", "2", "2@mail.ru");
-        UserAccountViewModel user3 = new UserAccountViewModel(3, "3", "3", "3@mail.ru");
+        UserAccountViewModel user1 = new UserAccountViewModel(1, "Evstrat", "Petuh", "EvstratPetuh@mail.ru", false);
+        UserAccountViewModel user2 = new UserAccountViewModel(2, "2", "2", "2@mail.ru", true);
+        UserAccountViewModel user3 = new UserAccountViewModel(3, "3", "3", "3@mail.ru", false);
 
         allUsers.add(user1);
         allUsers.add(user2);
         allUsers.add(user3);
 
         for (int i = 0; i < allUsers.size(); i++) {
-            if (allUsers.get(i).id == id)
+            if (allUsers.get(i).getId() == id)
+                return allUsers.get(i);
+        }
+        return null;
+    }
+
+    public UserAccountViewModel getUserAccountByData(String login, String password) {
+        List<UserAccountViewModel> allUsers = new LinkedList<UserAccountViewModel>();
+        UserAccountViewModel user1 = new UserAccountViewModel(1, "Evstrat", "Petuh", "EvstratPetuh@mail.ru", false);
+        UserAccountViewModel user2 = new UserAccountViewModel(2, "2", "2", "2@mail.ru", true);
+        UserAccountViewModel user3 = new UserAccountViewModel(3, "3", "3", "3@mail.ru", false);
+
+        allUsers.add(user1);
+        allUsers.add(user2);
+        allUsers.add(user3);
+
+        for (int i = 0; i < allUsers.size(); i++) {
+            if (allUsers.get(i).getName().equals(login) && allUsers.get(i).getName().equals(password))
                 return allUsers.get(i);
         }
         return null;

@@ -11,8 +11,8 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let subscription of subscriptions">
-      <td>{{subscription.subscription}}</td>
+    <tr *ngFor="let subscription of subscriptionUnits">
+      <td>{{subscription.subscription.name}}</td>
       <td>{{subscription.daysLeft}}</td>
       <td>{{subscription.willBeRenewed}}</td>
       <td>{{subscription.status}}</td>

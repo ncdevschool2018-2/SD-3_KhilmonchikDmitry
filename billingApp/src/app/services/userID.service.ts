@@ -17,6 +17,7 @@ export class UserIDService {
   }
 
   setID(id: number) {
+    console.log(id);
     this.loggedUserID.next([id]);
   }
 }

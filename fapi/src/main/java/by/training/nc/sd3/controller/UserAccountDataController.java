@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.Console;
 import java.util.List;
 
 @RestController
@@ -15,25 +16,27 @@ public class UserAccountDataController {
     @Autowired
     private UserAccountDataService userAccountDataService;
 
-    @RequestMapping
+    @RequestMapping(value = "/get", method = RequestMethod.GET)
     public ResponseEntity<List<UserAccountViewModel>> getAllUserAccounts() {
         return ResponseEntity.ok(userAccountDataService.getAll());
     }
 
-    @RequestMapping
-    public ResponseEntity<UserAccountViewModel> getUserAccountById(int id) {
+    @RequestMapping(value = "/getbyid", method = RequestMethod.GET)
+    public ResponseEntity<UserAccountViewModel> getUserAccountById(@RequestBody int id) {
         return ResponseEntity.ok(userAccountDataService.getUserAccountById(id));
     }
 
-    @RequestMapping(method = RequestMethod.POST)
-    public ResponseEntity<UserAccountViewModel> saveUserAccount(@RequestBody UserAccountViewModel userAccount) {
-        if (userAccount != null)
-            return ResponseEntity.ok(userAccountDataService.saveUserAccount(userAccount));
-        return null;
+    @RequestMapping(value = "/getbydata", method = RequestMethod.GET)
+    public ResponseEntity<UserAccountViewModel> getUserAccountByData(@RequestParam String login, @RequestParam String password) {
+        return ResponseEntity.ok(userAccountDataService.getUserAccountByData(login, password));
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void deleteBillingAccount(@PathVariable String id) {
-        userAccountDataService.deleteUserAccountById(Integer.valueOf(id));
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    public ResponseEntity<UserAccountViewModel> saveUserAccount(@RequestBody UserAccountViewModel userAccount) {
+        if (userAccount != null) {
+            System.out.println(userAccount);
+            return ResponseEntity.ok(userAccountDataService.saveUserAccount(userAccount));
+        }
+        return null;
     }
 }

@@ -11,7 +11,7 @@
         <label for="PasswordInput">Password</label>
         <input type="password" #password class="form-control" id="PasswordInput" placeholder="Enter password">
       </div>
-      <button type="button" class="btn btn-primary" (click)="eee(login.value, password.value)">Sign In</button>
+      <button type="button" class="btn btn-primary" (click)="signIn(login.value, password.value)" routerLink="">Sign In</button>
       <p>
         <small> or</small>
       </p>

@@ -7,6 +7,7 @@ import java.util.List;
 public interface UserAccountDataService {
     List<UserAccountViewModel> getAll();
     UserAccountViewModel getUserAccountById(int id);
+    UserAccountViewModel getUserAccountByData(String login, String password);
     UserAccountViewModel saveUserAccount(UserAccountViewModel account);
     void deleteUserAccountById(int id);
 }

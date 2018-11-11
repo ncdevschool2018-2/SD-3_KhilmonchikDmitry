@@ -2,8 +2,9 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import { HttpHeaders } from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {User} from '../shared/user';
-import {BillingAccount} from '../shared/billingAccount';
+import {User} from '../shared/User';
+import {BillingAccount} from '../shared/BillingAccount';
+import {map} from 'rxjs/operators';
 
 @Injectable()
 export class HttpService {
@@ -16,6 +17,15 @@ export class HttpService {
 
   getSubscriptions(): Observable<any> {
     return this.http.get(this.subscriptionsUrl);
+  }
+
+  getSubscriptionsByFilter(name: string): Observable<any> {
+    return this.http.get(this.subscriptionsUrl)
+      .pipe(
+        map(subscriptions => {
+          return (<any>subscriptions).filter(subscription => subscription.name === name);
+        })
+      );
   }
 
   postToUsers(user: User): Observable<any> {

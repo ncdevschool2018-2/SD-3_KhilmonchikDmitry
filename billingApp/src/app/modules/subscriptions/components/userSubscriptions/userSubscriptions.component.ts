@@ -1,5 +1,7 @@
-import {Component} from '@angular/core';
-import {BillingAccount} from '../../../../shared/billingAccount';
+import {Component, OnInit} from '@angular/core';
+import {SubscriptionUnitService} from "../../../../services/subscriptionUnit/subscriptionUnit.service";
+import {UserIDService} from "../../../../services/userID.service";
+import {SubscriptionUnit} from "../../../../shared/SubscriptionUnit";
 
 @Component({
   selector: 'userSubscriptions',
@@ -7,10 +9,22 @@ import {BillingAccount} from '../../../../shared/billingAccount';
   styleUrls: ['./userSubscriptions.component.css']
 })
 
-export class UserSubscriptionsComponent {
-  subscriptions: any[] = [
-    { subscription: 'Yandex Music', daysLeft: 38, willBeRenewed: true, status: true },
-    { subscription: 'Spotify', daysLeft: 2, willBeRenewed: true, status: true },
-    { subscription: 'Apple Music', daysLeft: 181, willBeRenewed: true, status: true },
-  ];
+export class UserSubscriptionsComponent implements OnInit {
+  subscriptionUnits: SubscriptionUnit[];
+  id;
+
+  constructor(private http: SubscriptionUnitService, private userIdService: UserIDService) {
+  }
+
+  ngOnInit() {
+    this.id = this.userIdService.getID();
+    this.getSubscriptionUnitsById();
+  }
+
+  getSubscriptionUnitsById(): void {
+    this.http.getSubscriptionUnitsById(this.id).subscribe( subscriptionUnits => {
+      this.subscriptionUnits = subscriptionUnits;
+      console.log(subscriptionUnits);
+    });
+  }
 }

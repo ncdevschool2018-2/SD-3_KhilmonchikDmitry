@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {SubscriptionsShareService} from '../../../../services/subscriptionsShare.service';
+import {Component, OnInit} from '@angular/core';
+import {SubscriptionService} from '../../../../services/subscription/subscription.service';
+import {Subscription} from '../../../../shared/Subscription';
 
 @Component({
   selector: 'subscriptionsList',
@@ -9,14 +10,12 @@ import {SubscriptionsShareService} from '../../../../services/subscriptionsShare
 
 export class SubscriptionsListComponent implements OnInit {
 
-  @Input() subscriptionsObs = this.ShareService.data$;
-  subscriptions;
+  subscriptions: Subscription[];
 
-  constructor(private ShareService: SubscriptionsShareService) {
+  constructor(private subscriptionService: SubscriptionService) {
   }
 
   ngOnInit() {
-    this.ShareService.loadSubscriptions();
-    this.subscriptionsObs.subscribe( subscriptions => this.subscriptions = subscriptions);
+    this.subscriptionService.getSubscriptions().subscribe(subscriptions => this.subscriptions = subscriptions);
   }
 }

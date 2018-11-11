@@ -1,14 +1,13 @@
 <div class="col">
   <p></p>
   <h2>Billing account</h2>
-  <select class="form-control">
-    <option>first billing account</option>
-    <option>new one</option>
-    <option>wtf is this</option>
+  <select (change)="selectedBillingAccountIndex = getElementById('billingAccountSelect').selectedIndex" id="billingAccountSelect" class="form-control">
+    <option *ngFor="let billingAccount of billingAccounts">{{billingAccount.name}}</option>
   </select>
   <h2>Money left</h2>
-  <input class="form-control" type="text" placeholder="20$" readonly>
+  <input *ngIf="billingAccounts" class="form-control" type="text" placeholder="{{billingAccounts[selectedBillingAccountIndex].money}}" readonly>
   <p></p>
   <button type="button" class="btn btn-success" routerLink="/manageBillingAccount">Manage billing account</button>
+  <p></p>
   <button type="button" class="btn btn-success" routerLink="/createBillingAccount">Create billing account</button>
 </div>

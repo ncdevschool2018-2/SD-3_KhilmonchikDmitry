@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {HttpService} from './http.service';
+import {map} from 'rxjs/operators';
 
 const INIT_DATA = [];
 
@@ -25,6 +26,13 @@ export class SubscriptionsShareService {
   }
 
   searchSubscriptions(name: string) {
-    this.subscriptionsSource.next(this.ethalon.getValue().filter(subscription => subscription.name === name));
+    // this.subscriptionsSource.next(this.ethalon.getValue().filter(subscription => subscription.name === name));
+    console.log(name);
+    return this.http.getSubscriptions()
+      .pipe(
+        map(subscriptions => {
+          return subscriptions.filter(subscription => subscription.name === name);
+        })
+      );
   }
 }

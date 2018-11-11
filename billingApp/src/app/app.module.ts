@@ -9,6 +9,10 @@ import {HttpClientModule} from '@angular/common/http';
 import {HttpService} from './services/http.service';
 import {SubscriptionsShareService} from './services/subscriptionsShare.service';
 import {UserIDService} from './services/userID.service';
+import {SubscriptionService} from './services/subscription/subscription.service';
+import {UserService} from "./services/user/user.service";
+import {SubscriptionUnitService} from "./services/subscriptionUnit/subscriptionUnit.service";
+import {BillingAccountService} from "./services/billingAccount/billingAccount.service";
 
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ import {UserIDService} from './services/userID.service';
   providers: [
     HttpService,
     SubscriptionsShareService,
-    UserIDService
+    UserIDService,
+    SubscriptionService,
+    UserService,
+    SubscriptionUnitService,
+    BillingAccountService
   ],
   bootstrap: [AppComponent]
 })

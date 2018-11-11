@@ -1,6 +1,8 @@
 import {Component, OnInit, Output} from '@angular/core';
-import {HttpService} from '../../../../services/http.service';
 import {ActivatedRoute} from '@angular/router';
+import {SubscriptionService} from "../../../../services/subscription/subscription.service";
+import {toNumber} from "ngx-bootstrap/timepicker/timepicker.utils";
+import {Subscription} from "../../../../shared/Subscription";
 
 @Component({
   selector: 'subscriptionsDetails',
@@ -9,9 +11,10 @@ import {ActivatedRoute} from '@angular/router';
 })
 
 export class SubscriptionDetailsComponent implements OnInit {
-  @Output() subsctiption;
+  @Output() subscription: Subscription;
 
-  constructor(private http: HttpService, private route: ActivatedRoute) {
+  constructor(private http: SubscriptionService, private route: ActivatedRoute) {
+    this.subscription = new Subscription();
   }
 
   ngOnInit() {
@@ -20,7 +23,9 @@ export class SubscriptionDetailsComponent implements OnInit {
 
   getSubscription() {
     let id: any = this.route.snapshot.paramMap.get('id');
-    id--;
-    this.http.getSubscriptions().subscribe(subscriptions => this.subsctiption = subscriptions[id]);
+    console.log(id);
+    this.http.getSubscriptionById(toNumber(id)).subscribe(subscription => {
+      this.subscription = subscription;
+    });
   }
 }
