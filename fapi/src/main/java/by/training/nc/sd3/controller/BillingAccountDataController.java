@@ -32,8 +32,8 @@ public class BillingAccountDataController {
     }
 
     @RequestMapping(value = "/checkpasswordbyid", method = RequestMethod.POST)
-    public ResponseEntity<Boolean> checkPasswordById(@RequestBody String password, @RequestBody int id) {
-        return ResponseEntity.ok(billingAccountDataService.checkPasswordById(password, id));
+    public ResponseEntity<Boolean> checkPasswordById(@RequestBody BillingAccountViewModel ba) {
+        return ResponseEntity.ok(billingAccountDataService.checkPasswordById(ba.getPassword(), ba.getId()));
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)

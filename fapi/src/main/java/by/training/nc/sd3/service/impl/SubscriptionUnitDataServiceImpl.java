@@ -18,11 +18,11 @@ public class SubscriptionUnitDataServiceImpl implements SubscriptionUnitDataServ
                 " desktop browsers with this custom HTML and CSS. A fixed navbar has been added" +
                 " with padding-top: 60px; on the body > .container. Back to the default sticky footer minus the navbar.";
 
-        SubscriptionViewModel sub1 = new SubscriptionViewModel(1, "Apple Music", description, Categories.music, 1, 1, 1);
-        SubscriptionViewModel sub2 = new SubscriptionViewModel(2, "Spotify", description, Categories.streaming, 1, 1, 1);
-        SubscriptionViewModel sub3 = new SubscriptionViewModel(3, "Yandex Music", description, Categories.development, 1, 1, 1);
-        SubscriptionViewModel sub4 = new SubscriptionViewModel(4, "Zala", description, Categories.films, 4, 1, 1);
-        SubscriptionViewModel sub5 = new SubscriptionViewModel(5, "Twitch", description, Categories.office, 5, 1, 1);
+        SubscriptionViewModel sub1 = new SubscriptionViewModel(1, "Apple Music", description, Categories.music.ordinal(), 1, 1, 1);
+        SubscriptionViewModel sub2 = new SubscriptionViewModel(2, "Spotify", description, Categories.streaming.ordinal(), 1, 1, 1);
+        SubscriptionViewModel sub3 = new SubscriptionViewModel(3, "Yandex Music", description, Categories.development.ordinal(), 1, 1, 1);
+        SubscriptionViewModel sub4 = new SubscriptionViewModel(4, "Zala", description, Categories.films.ordinal(), 4, 1, 1);
+        SubscriptionViewModel sub5 = new SubscriptionViewModel(5, "Twitch", description, Categories.office.ordinal(), 5, 1, 1);
 
         SubscriptionUnitViewModel subscrUnit1 = new SubscriptionUnitViewModel(1, sub1, 190,true, true);
         SubscriptionUnitViewModel subscrUnit2 = new SubscriptionUnitViewModel(2, sub2, 30,false, true);

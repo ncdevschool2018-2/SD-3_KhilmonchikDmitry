@@ -16,13 +16,8 @@ public class UserAccountDataController {
     @Autowired
     private UserAccountDataService userAccountDataService;
 
-    @RequestMapping(value = "/get", method = RequestMethod.GET)
-    public ResponseEntity<List<UserAccountViewModel>> getAllUserAccounts() {
-        return ResponseEntity.ok(userAccountDataService.getAll());
-    }
-
     @RequestMapping(value = "/getbyid", method = RequestMethod.GET)
-    public ResponseEntity<UserAccountViewModel> getUserAccountById(@RequestBody int id) {
+    public ResponseEntity<UserAccountViewModel> getUserAccountById(@RequestParam int id) {
         return ResponseEntity.ok(userAccountDataService.getUserAccountById(id));
     }
 

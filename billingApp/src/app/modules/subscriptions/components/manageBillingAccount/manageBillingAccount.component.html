@@ -5,7 +5,7 @@
     <form>
       <div class="form-group">
         <label for="billingAccountSelect">Select billing account</label>
-        <select id="billingAccountSelect" class="form-control">
+        <select #selectedBillingAccount id="billingAccountSelect" class="form-control">
           <option *ngFor="let billingAccount of billingAccounts">{{billingAccount.name}}</option>
         </select>
       </div>
@@ -13,7 +13,8 @@
         <label for="BillingAccountPassword">Billing account password</label>
         <input type="password" class="form-control" id="BillingAccountPassword">
       </div>
-      <button type="button" class="btn btn-danger">Delete billing account</button>
+      <button type="button" (click)="deleteBillingAccount(billingAccounts[selectedBillingAccount.selectedIndex].id,
+       billingAccounts[selectedBillingAccount.selectedIndex].password);" class="btn btn-danger">Delete billing account</button>
       <div class="form-group">
         <label for="CreditCardPassword">Credit card password</label>
         <input type="password" class="form-control" id="CreditCardPassword">

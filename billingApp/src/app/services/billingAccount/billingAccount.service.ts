@@ -20,4 +20,8 @@ export class BillingAccountService {
     return this.http.post<BillingAccount>('http://localhost:8080/api/ba/save', billingAccount);
   }
 
+  public checkBillingAccountPassword(billingAccount: BillingAccount) {
+    return this.http.post<BillingAccount>('http://localhost:8080/api/ba/checkpasswordbyid', billingAccount);
+  }
+
 }

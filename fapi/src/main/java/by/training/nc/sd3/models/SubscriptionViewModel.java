@@ -4,12 +4,15 @@ public class SubscriptionViewModel {
     private int id;
     private String name;
     private String description;
-    private Categories category;
+    private int category;
     private int perMonth;
     private int perThreeMonth;
     private int perYear;
 
-    public SubscriptionViewModel(int id, String name, String description, Categories category, int perMonth, int perThreeMonth, int perYear) {
+    public SubscriptionViewModel() {
+    }
+
+    public SubscriptionViewModel(int id, String name, String description, int category, int perMonth, int perThreeMonth, int perYear) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -40,11 +43,11 @@ public class SubscriptionViewModel {
     }
 
     public Categories getCategory() {
-        return category;
+        return Categories.values()[category];
     }
 
     public void setCategory(Categories category) {
-        this.category = category;
+        this.category = category.ordinal();
     }
 
     public int getPerMonth() {

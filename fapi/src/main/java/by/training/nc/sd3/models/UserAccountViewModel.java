@@ -11,6 +11,9 @@ public class UserAccountViewModel {
     private String email;
     private boolean isAdmin;
 
+    public UserAccountViewModel() {
+    }
+
     public UserAccountViewModel(int id, String name, String password, String email, boolean isAdmin) {
         this.email = email;
         this.id = id;

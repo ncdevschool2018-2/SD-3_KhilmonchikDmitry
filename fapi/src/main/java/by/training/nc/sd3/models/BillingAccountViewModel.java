@@ -21,6 +21,9 @@ public class BillingAccountViewModel {
         this.creditCardNumber = creditCardNumber;
     }
 
+    public BillingAccountViewModel() {
+    }
+
     public void setId(int id) {
         this.id = id;
     }

@@ -11,7 +11,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="be" target="1.5" />
+      <module name="be" target="1.8" />
       <module name="fapi" target="1.8" />
       <module name="SD-3_HilmonchikDmitry" target="1.5" />
     </bytecodeTargetLevel>
