@@ -22,13 +22,13 @@ public class BillingAccountDataController {
     }
 
     @RequestMapping(value = "/getbyid", method = RequestMethod.GET)
-    public ResponseEntity<List<BillingAccountViewModel>> getBillingAccountById(@RequestParam int id) {
+    public ResponseEntity<BillingAccountViewModel> getBillingAccountById(@RequestParam int id) {
         return ResponseEntity.ok(billingAccountDataService.getBillingAccountById(id));
     }
 
     @RequestMapping(value = "/getbyownerid", method = RequestMethod.GET)
     public ResponseEntity<List<BillingAccountViewModel>> getBillingAccountByOwnerId(@RequestParam int id) {
-        return ResponseEntity.ok(billingAccountDataService.getBillingAccountByOwnerId(id));
+        return ResponseEntity.ok(billingAccountDataService.getBillingAccountsByOwnerId(id));
     }
 
     @RequestMapping(value = "/checkpasswordbyid", method = RequestMethod.POST)

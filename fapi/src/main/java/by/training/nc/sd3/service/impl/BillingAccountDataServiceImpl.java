@@ -4,88 +4,41 @@ import by.training.nc.sd3.models.BillingAccountViewModel;
 import by.training.nc.sd3.service.BillingAccountDataService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 @Service
 public class BillingAccountDataServiceImpl implements BillingAccountDataService {
 
-    @Value("http://localhost:8080/")
+    @Value("http://localhost:8081/")
     private String backendServerUrl;
 
     public List<BillingAccountViewModel> getAll() {
-        List<BillingAccountViewModel> allBillingAccounts = new LinkedList<BillingAccountViewModel>();
-        BillingAccountViewModel billing1 = new BillingAccountViewModel(1, 1, "1", "1", "1", 0);
-        BillingAccountViewModel billing2 = new BillingAccountViewModel(2, 2, "2", "2", "2", 0);
-        BillingAccountViewModel billing3 = new BillingAccountViewModel(3, 3, "3", "3", "3", 0);
-        BillingAccountViewModel billing4 = new BillingAccountViewModel(4, 1, "4", "4", "4", 0);
-
-        allBillingAccounts.add(billing1);
-        allBillingAccounts.add(billing2);
-        allBillingAccounts.add(billing3);
-        allBillingAccounts.add(billing4);
-
-        return allBillingAccounts;
+        RestTemplate restTemplate = new RestTemplate();
+        BillingAccountViewModel[] billingAccounts = restTemplate.getForObject(backendServerUrl + "/api/billing-accounts",
+                BillingAccountViewModel[].class);
+        return billingAccounts == null ? Collections.emptyList() : Arrays.asList(billingAccounts);
     }
 
-    public List<BillingAccountViewModel> getBillingAccountById(int id) {
-        List<BillingAccountViewModel> allBillingAccounts = new LinkedList<BillingAccountViewModel>();
-        BillingAccountViewModel billing1 = new BillingAccountViewModel(1, 1, "1", "1", "1", 0);
-        BillingAccountViewModel billing2 = new BillingAccountViewModel(2, 2, "2", "2", "2", 0);
-        BillingAccountViewModel billing3 = new BillingAccountViewModel(3, 3, "3", "3", "3", 0);
-        BillingAccountViewModel billing4 = new BillingAccountViewModel(4, 1, "4", "4", "4", 0);
-
-        allBillingAccounts.add(billing1);
-        allBillingAccounts.add(billing2);
-        allBillingAccounts.add(billing3);
-        allBillingAccounts.add(billing4);
-
-        List<BillingAccountViewModel> result = new LinkedList<>();
-
-        for (int i = 0; i < allBillingAccounts.size(); i++) {
-            if (allBillingAccounts.get(i).getId() == id)
-                result.add(allBillingAccounts.get(i));
-        }
-        return result;
+    public BillingAccountViewModel getBillingAccountById(int id) {
+        RestTemplate restTemplate = new RestTemplate();
+        BillingAccountViewModel billingAccount = restTemplate.getForObject(backendServerUrl + "/api/billing-accounts/by-id?id={id}",
+                BillingAccountViewModel.class, id);
+        return billingAccount;
     }
 
-    public List<BillingAccountViewModel> getBillingAccountByOwnerId(int id) {
-        List<BillingAccountViewModel> allBillingAccounts = new LinkedList<BillingAccountViewModel>();
-        BillingAccountViewModel billing1 = new BillingAccountViewModel(1, 1, "1", "1", "1", 0);
-        BillingAccountViewModel billing2 = new BillingAccountViewModel(2, 2, "2", "2", "2", 0);
-        BillingAccountViewModel billing3 = new BillingAccountViewModel(3, 3, "3", "3", "3", 0);
-        BillingAccountViewModel billing4 = new BillingAccountViewModel(4, 1, "4", "4", "4", 0);
-
-        allBillingAccounts.add(billing1);
-        allBillingAccounts.add(billing2);
-        allBillingAccounts.add(billing3);
-        allBillingAccounts.add(billing4);
-
-        List<BillingAccountViewModel> result = new LinkedList<>();
-
-        for (int i = 0; i < allBillingAccounts.size(); i++) {
-            if (allBillingAccounts.get(i).getOwnerId() == id)
-                result.add(allBillingAccounts.get(i));
-        }
-        return result;
+    public List<BillingAccountViewModel> getBillingAccountsByOwnerId(int id) {
+        RestTemplate restTemplate = new RestTemplate();
+        BillingAccountViewModel[] billingAccounts = restTemplate.getForObject(backendServerUrl + "/api/billing-accounts/by-owner-id?ownerId={id}",
+                BillingAccountViewModel[].class, id);
+        return billingAccounts == null ? Collections.emptyList() : Arrays.asList(billingAccounts);
     }
 
     public boolean checkPasswordById(String password, int id) {
-        List<BillingAccountViewModel> allBillingAccounts = new LinkedList<BillingAccountViewModel>();
-        BillingAccountViewModel billing1 = new BillingAccountViewModel(1, 1, "1", "1", "1", 0);
-        BillingAccountViewModel billing2 = new BillingAccountViewModel(2, 2, "2", "2", "2", 0);
-        BillingAccountViewModel billing3 = new BillingAccountViewModel(3, 3, "3", "3", "3", 0);
-        BillingAccountViewModel billing4 = new BillingAccountViewModel(4, 1, "4", "4", "4", 0);
-
-        allBillingAccounts.add(billing1);
-        allBillingAccounts.add(billing2);
-        allBillingAccounts.add(billing3);
-        allBillingAccounts.add(billing4);
-
-        if (allBillingAccounts.get(id).getPassword().equals(password))
-            return true;
-
         return false;
     }
 

@@ -7,7 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;
-import java.util.concurrent.atomic.AtomicReference;
 
 @Component
 public class UserAccountServiceImpl implements UserAccountService {
@@ -20,16 +19,8 @@ public class UserAccountServiceImpl implements UserAccountService {
     }
 
     public Optional<UserAccount> getUserAccount(String name, String password) {
-        Iterable<UserAccount> allAccounts = this.userAccountRepository.findAll();
-        AtomicReference<UserAccount> responseUserAccount = new AtomicReference<>();
-        allAccounts.forEach(
-                userAccount -> {
-                    if(userAccount.getName().equals(name) && userAccount.getPassword().equals(password))
-                        responseUserAccount.set(userAccount);
-
-                }
-        );
-        return Optional.ofNullable(responseUserAccount.get());
+        Optional<UserAccount> allAccounts = this.userAccountRepository.findByNameAndPassword(name, password);
+        return allAccounts;
     }
 
     public Optional<UserAccount> getUserAccountById(Long id) {

@@ -1,7 +1,7 @@
 package by.training.nc.sd3.controller;
 
 import by.training.nc.sd3.entity.UserAccount;
-import by.training.nc.sd3.service.impl.UserAccountServiceImpl;
+import by.training.nc.sd3.service.UserAccountService;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -13,9 +13,9 @@ import java.util.Optional;
 @RequestMapping("api/user-accounts")
 public class UserAccountController {
 
-    private UserAccountServiceImpl userAccountService;
+    private UserAccountService userAccountService;
 
-    public UserAccountController(UserAccountServiceImpl userAccountService) {
+    public UserAccountController(UserAccountService userAccountService) {
         this.userAccountService = userAccountService;
     }
 
@@ -28,5 +28,5 @@ public class UserAccountController {
     public Optional<UserAccount> getUserAccountById(@PathVariable(name = "id") Long id) {
         return userAccountService.getUserAccountById(id);
     }
-
+//СКЕЙЛЕР И ДЖОБЫ????
 }
