@@ -10,4 +10,6 @@ public interface SubscriptionUnitRepository extends CrudRepository<SubscriptionU
 
     Iterable<SubscriptionUnit> getSubscriptionUnitsByBillingAccountId(@Param("billingAccountId") Long billingAccountId);
 
+    Iterable<SubscriptionUnit> getSubscriptionUnitsByUserId(@Param("userId") Long userAccountId);
+
 }

@@ -34,4 +34,9 @@ public class BillingAccountController {
         return this.billingAccountService.getById(id);
     }
 
+    @RequestMapping(value = "delete")
+    public void delete(@RequestParam Long id, @RequestParam String password) {
+        this.billingAccountService.delete(id, password);
+    }
+
 }

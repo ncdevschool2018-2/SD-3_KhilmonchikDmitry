@@ -10,6 +10,8 @@ public interface SubscriptionUnitService {
 
     void delete(Long id);
 
-    Iterable<SubscriptionUnit> getByOwnerId(Long ownerId);
+    Iterable<SubscriptionUnit> getByBillingAccountId(Long ownerId);
+
+    Iterable<SubscriptionUnit> getByUserId(Long userAccountId);
 
 }

@@ -4,6 +4,7 @@ import by.training.nc.sd3.entity.SubscriptionUnit;
 import by.training.nc.sd3.service.SubscriptionUnitService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -29,5 +30,11 @@ public class SubscriptionUnitController {
     @RequestMapping(value = "delete", method = RequestMethod.GET)
     public void delete(Long id) {
         subscriptionUnitService.delete(id);
+    }
+
+    @RequestMapping(value = "get-by-user-id", method = RequestMethod.GET)
+    public Iterable<SubscriptionUnit> getByUserAccountId(@RequestParam("userId") Long id) {
+        System.out.println(id);
+        return subscriptionUnitService.getByUserId(id);
     }
 }

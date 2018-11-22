@@ -10,5 +10,5 @@ public interface BillingAccountDataService {
     BillingAccountViewModel getBillingAccountById(int id);
     boolean checkPasswordById(String password, int id);
     BillingAccountViewModel saveBillingAccount(BillingAccountViewModel account);
-    void deleteBillingAccountById(int id);
+    void deleteBillingAccountById(int id, String password);
 }

@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface BillingAccountRepository extends CrudRepository<BillingAccount, Long> {
 
-    public Iterable<BillingAccount> findByOwnerId(@Param("ownerId") Long ownerId);
+    Iterable<BillingAccount> findByOwnerId(@Param("ownerId") Long ownerId);
 
 }

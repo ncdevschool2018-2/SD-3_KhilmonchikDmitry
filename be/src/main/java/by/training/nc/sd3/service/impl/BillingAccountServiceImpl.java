@@ -45,9 +45,9 @@ public class BillingAccountServiceImpl implements BillingAccountService {
     public void delete(Long id, String password) {
         Optional<BillingAccount> billingAccountOptional = this.repository.findById(id);
         if(billingAccountOptional.isPresent()) {
-            if(billingAccountOptional.get().getPassword() == password) {
+            if(billingAccountOptional.get().getPassword().equals(password)) {
                 this.repository.delete(billingAccountOptional.get());
-                Iterable<SubscriptionUnit> subscriptionUnits = this.subscriptionUnitService.getByOwnerId(id);
+                Iterable<SubscriptionUnit> subscriptionUnits = this.subscriptionUnitService.getByBillingAccountId(id);
                 subscriptionUnits.forEach(
                         subscriptionUnit -> {
                             subscriptionUnit.setWillBeRenewed(false);

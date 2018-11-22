@@ -46,7 +46,7 @@ public class BillingAccountDataController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void deleteBillingAccount(@PathVariable String id) {
-        billingAccountDataService.deleteBillingAccountById(Integer.valueOf(id));
+    public void deleteBillingAccount(@PathVariable int id, @RequestParam String password) {
+        billingAccountDataService.deleteBillingAccountById(id, password);
     }
 }

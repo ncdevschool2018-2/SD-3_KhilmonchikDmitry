@@ -28,8 +28,13 @@ public class SubscriptionUnitServiceImpl implements SubscriptionUnitService {
     }
 
     @Override
-    public Iterable<SubscriptionUnit> getByOwnerId(Long ownerId) {
+    public Iterable<SubscriptionUnit> getByBillingAccountId(Long ownerId) {
         return this.subscriptionUnitRepository.getSubscriptionUnitsByBillingAccountId(ownerId);
+    }
+
+    @Override
+    public Iterable<SubscriptionUnit> getByUserId(Long userAccountId) {
+        return this.subscriptionUnitRepository.getSubscriptionUnitsByUserId(userAccountId);
     }
 
 }

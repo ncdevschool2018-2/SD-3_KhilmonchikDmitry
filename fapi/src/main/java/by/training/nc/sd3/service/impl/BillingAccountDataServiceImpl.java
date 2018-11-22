@@ -46,7 +46,9 @@ public class BillingAccountDataServiceImpl implements BillingAccountDataService 
         return null;
     }
 
-    public void deleteBillingAccountById(int id) {
-        return;
+    public void deleteBillingAccountById(int id, String password) {
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.delete(backendServerUrl +
+                        "/api/billing-accounts/by-owner-id?id=" + id + "&password=" + password);
     }
 }

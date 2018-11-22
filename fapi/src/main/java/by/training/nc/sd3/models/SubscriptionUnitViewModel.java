@@ -1,57 +1,60 @@
 package by.training.nc.sd3.models;
 
+import java.util.Date;
+
 public class SubscriptionUnitViewModel {
     private int userId;
-    private SubscriptionViewModel subscription;
+    private int subscriptionId;
+    private int billingAccountId;
     private int daysLeft;
     private boolean willBeRenewed;
     private boolean status;
+    private Date creationDate;
+    private Date writeOffDate;
 
-    public SubscriptionUnitViewModel(int userId, SubscriptionViewModel subscription, int daysLeft, boolean willBeRenewed, boolean status) {
+    public SubscriptionUnitViewModel() {
+    }
+
+    public SubscriptionUnitViewModel(int userId, int subscriptionId, int billingAccountId, int daysLeft, boolean willBeRenewed, boolean status, Date creationDate, Date writeOffDate) {
         this.userId = userId;
-        this.subscription = subscription;
+        this.subscriptionId = subscriptionId;
+        this.billingAccountId = billingAccountId;
         this.daysLeft = daysLeft;
         this.willBeRenewed = willBeRenewed;
         this.status = status;
-    }
-
-    public int getDaysLeft() {
-        return daysLeft;
-    }
-
-    public void setDaysLeft(int daysLeft) {
-        this.daysLeft = daysLeft;
+        this.creationDate = creationDate;
+        this.writeOffDate = writeOffDate;
     }
 
     public int getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
-        this.userId = userId;
+    public int getSubscriptionId() {
+        return subscriptionId;
     }
 
-    public SubscriptionViewModel getSubscription() {
-        return subscription;
+    public int getBillingAccountId() {
+        return billingAccountId;
     }
 
-    public void setSubscription(SubscriptionViewModel subscription) {
-        this.subscription = subscription;
+    public int getDaysLeft() {
+        return daysLeft;
     }
 
     public boolean isWillBeRenewed() {
         return willBeRenewed;
     }
 
-    public void setWillBeRenewed(boolean willBeRenewed) {
-        this.willBeRenewed = willBeRenewed;
-    }
-
     public boolean isStatus() {
         return status;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public Date getCreationDate() {
+        return creationDate;
+    }
+
+    public Date getWriteOffDate() {
+        return writeOffDate;
     }
 }
