@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="43aa5718-a440-49ba-a0ea-c74ccc4a74b7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/BillingAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/BillingAccount.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/Subscription.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/Subscription.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/SubscriptionUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/SubscriptionUnit.java" afterDir="false" />
@@ -11,6 +12,9 @@
       <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/writeOffService/WriteOffService.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/writeOffService/WriteOffService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/SubscriptionUnitViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/SubscriptionUnitViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/UserAccountViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/UserAccountViewModel.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/BillingAccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/BillingAccountServiceImpl.java" afterDir="false" />
+>>>>>>> 05e6b6d14be0e018c4b7c50ada2d2c98d2a53c0c
     </list>
     <ignored path="$PROJECT_DIR$/fapi/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -124,7 +128,11 @@
         <counts>
           <entry key="dummy" value="36" />
           <entry key="html" value="572" />
+<<<<<<< HEAD
           <entry key="java" value="8124" />
+=======
+          <entry key="java" value="7991" />
+>>>>>>> 05e6b6d14be0e018c4b7c50ada2d2c98d2a53c0c
           <entry key="json" value="1" />
           <entry key="properties" value="207" />
           <entry key="ts" value="3292" />
@@ -135,7 +143,11 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="570" />
+<<<<<<< HEAD
           <entry key="JAVA" value="8124" />
+=======
+          <entry key="JAVA" value="7991" />
+>>>>>>> 05e6b6d14be0e018c4b7c50ada2d2c98d2a53c0c
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="2" />
           <entry key="PLAIN_TEXT" value="45" />
@@ -153,7 +165,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/BillingAccountService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/SubscriptionUnit.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
@@ -162,6 +187,35 @@
                 <element signature="imports" expanded="true" />
                 <element signature="e#1766#1767#0" expanded="true" />
                 <element signature="e#1814#1815#0" expanded="true" />
+=======
+        <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/BillingAccountServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="170">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              <folding>
+                <element signature="e#1032#1033#0" expanded="true" />
+                <element signature="e#1080#1081#0" expanded="true" />
+                <element signature="e#1163#1164#0" expanded="true" />
+                <element signature="e#1224#1225#0" expanded="true" />
+                <element signature="e#1294#1295#0" expanded="true" />
+                <element signature="e#1345#1346#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/BillingAccountController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#834#835#0" expanded="true" />
+                <element signature="e#892#893#0" expanded="true" />
+                <element signature="e#1257#1258#0" expanded="true" />
+                <element signature="e#1318#1319#0" expanded="true" />
+>>>>>>> 05e6b6d14be0e018c4b7c50ada2d2c98d2a53c0c
               </folding>
             </state>
           </provider>
@@ -234,7 +288,11 @@
         <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/Subscription.java" />
         <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/UserAccountViewModel.java" />
         <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/SubscriptionUnitViewModel.java" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/SubscriptionUnit.java" />
+=======
+        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/BillingAccountServiceImpl.java" />
+>>>>>>> 05e6b6d14be0e018c4b7c50ada2d2c98d2a53c0c
       </list>
     </option>
   </component>
@@ -384,6 +442,111 @@
               <item name="SD-3_HilmonchikDmitry" type="462c0819:PsiDirectoryNode" />
               <item name="billingApp" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
+            </path>
+            <path>
+              <item name="SD-3_HilmonchikDmitry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SD-3_HilmonchikDmitry" type="462c0819:PsiDirectoryNode" />
+              <item name="billingApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SD-3_HilmonchikDmitry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SD-3_HilmonchikDmitry" type="462c0819:PsiDirectoryNode" />
+              <item name="billingApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SD-3_HilmonchikDmitry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SD-3_HilmonchikDmitry" type="462c0819:PsiDirectoryNode" />
+              <item name="billingApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="subscriptions" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SD-3_HilmonchikDmitry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SD-3_HilmonchikDmitry" type="462c0819:PsiDirectoryNode" />
+              <item name="billingApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="subscriptions" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SD-3_HilmonchikDmitry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SD-3_HilmonchikDmitry" type="462c0819:PsiDirectoryNode" />
+              <item name="billingApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="modules" type="462c0819:PsiDirectoryNode" />
+              <item name="subscriptions" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="subscriptionDetails" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SD-3_HilmonchikDmitry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SD-3_HilmonchikDmitry" type="462c0819:PsiDirectoryNode" />
+              <item name="billingApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SD-3_HilmonchikDmitry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SD-3_HilmonchikDmitry" type="462c0819:PsiDirectoryNode" />
+              <item name="billingApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="billingAccount" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SD-3_HilmonchikDmitry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SD-3_HilmonchikDmitry" type="462c0819:PsiDirectoryNode" />
+              <item name="billingApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="subscription" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SD-3_HilmonchikDmitry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SD-3_HilmonchikDmitry" type="462c0819:PsiDirectoryNode" />
+              <item name="billingApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="subscriptionUnit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SD-3_HilmonchikDmitry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SD-3_HilmonchikDmitry" type="462c0819:PsiDirectoryNode" />
+              <item name="billingApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SD-3_HilmonchikDmitry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SD-3_HilmonchikDmitry" type="462c0819:PsiDirectoryNode" />
+              <item name="billingApp" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="shared" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SD-3_HilmonchikDmitry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SD-3_HilmonchikDmitry" type="462c0819:PsiDirectoryNode" />
+              <item name="fapi" type="462c0819:PsiDirectoryNode" />
+>>>>>>> 05e6b6d14be0e018c4b7c50ada2d2c98d2a53c0c
             </path>
             <path>
               <item name="SD-3_HilmonchikDmitry" type="b2602c69:ProjectViewProjectNode" />
@@ -654,7 +817,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="118743000" />
+=======
+    <option name="totallyTimeSpent" value="118127000" />
+>>>>>>> 05e6b6d14be0e018c4b7c50ada2d2c98d2a53c0c
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -669,7 +836,11 @@
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24630873" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.26442954" />
+>>>>>>> 05e6b6d14be0e018c4b7c50ada2d2c98d2a53c0c
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -909,6 +1080,19 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/BillingAccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 05e6b6d14be0e018c4b7c50ada2d2c98d2a53c0c
     <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/repository/UserAccountRepository.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -919,6 +1103,23 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/BillingAccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="36" column="36" selection-start-line="36" selection-start-column="36" selection-end-line="36" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#834#835#0" expanded="true" />
+            <element signature="e#892#893#0" expanded="true" />
+            <element signature="e#1257#1258#0" expanded="true" />
+            <element signature="e#1318#1319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 05e6b6d14be0e018c4b7c50ada2d2c98d2a53c0c
     <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/BillingAccountDataService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -947,6 +1148,24 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/BillingAccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <element signature="e#1032#1033#0" expanded="true" />
+            <element signature="e#1080#1081#0" expanded="true" />
+            <element signature="e#1163#1164#0" expanded="true" />
+            <element signature="e#1224#1225#0" expanded="true" />
+            <element signature="e#1294#1295#0" expanded="true" />
+            <element signature="e#1345#1346#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> 05e6b6d14be0e018c4b7c50ada2d2c98d2a53c0c
     <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/BillingAccountDataServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
