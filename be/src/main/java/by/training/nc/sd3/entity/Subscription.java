@@ -8,26 +8,14 @@ import java.util.Objects;
 public class Subscription {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
+    private Long activeBillingAccount;
     private String name;
     private String description;
     private int category;
     private int perMonth;
     private int perThreeMonths;
     private int perYear;
-
-    public Subscription() {
-    }
-
-    public Subscription(long id, String name, String description, int category, int perMonth, int perThreeMonths, int perYear) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.category = category;
-        this.perMonth = perMonth;
-        this.perThreeMonths = perThreeMonths;
-        this.perYear = perYear;
-    }
 
     public long getId() {
         return id;

@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class UserAccountViewModel {
 
     private int id;
+    private int activeBillingAccountId;
     private String name;
     private String password;
     private String email;

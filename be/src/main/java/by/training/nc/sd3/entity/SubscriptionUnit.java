@@ -1,7 +1,9 @@
 package by.training.nc.sd3.entity;
 
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+
 import javax.persistence.*;
-import java.sql.Time;
 import java.util.Date;
 
 @Entity
@@ -9,32 +11,23 @@ import java.util.Date;
 public class SubscriptionUnit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private long userId;
-    private long subscriptionId;
-    private long billingAccountId;
+    private Long id;
+    private Long userId;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "subscriptionId", nullable = false)
+    private Subscription subscription;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "billingAccountId", nullable = false)
+    private BillingAccount billingAccount;
     private int daysLeft;
     private boolean willBeRenewed;
     private boolean status;
     @Temporal(TemporalType.TIMESTAMP)
+    @CreatedDate
     private Date creationDate;
     @Temporal(TemporalType.TIMESTAMP)
+    @LastModifiedDate
     private Date writeOffDate;
-
-    public SubscriptionUnit() {
-    }
-
-    public SubscriptionUnit(long userId, long subscriptionId, int daysLeft, boolean willBeRenewed, boolean status,
-                            Time creationDate, long billingAccountId, Time writeOffDate) {
-        this.userId = userId;
-        this.subscriptionId = subscriptionId;
-        this.billingAccountId = billingAccountId;
-        this.daysLeft = daysLeft;
-        this.willBeRenewed = willBeRenewed;
-        this.status = status;
-        this.creationDate = creationDate;
-        this.writeOffDate = writeOffDate;
-    }
 
     public long getId() {
         return id;
@@ -44,8 +37,8 @@ public class SubscriptionUnit {
         return userId;
     }
 
-    public long getSubscriptionId() {
-        return subscriptionId;
+    public Subscription getSubscription() {
+        return subscription;
     }
 
     public int getDaysLeft() {
@@ -64,8 +57,8 @@ public class SubscriptionUnit {
         return creationDate;
     }
 
-    public long getBillingAccountId() {
-        return billingAccountId;
+    public BillingAccount getBillingAccount() {
+        return billingAccount;
     }
 
     public Date getWriteOffDate() {

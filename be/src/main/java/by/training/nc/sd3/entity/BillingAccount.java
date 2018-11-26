@@ -7,30 +7,21 @@ import javax.persistence.*;
 public class BillingAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private long ownerId;
+    private Long id;
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "ownerId", nullable = false)
+    private UserAccount owner;
     private String creditCardNumber;
     private String name;
     private String password;
     private int money;
 
-    public BillingAccount() {
-    }
-
-    public BillingAccount(long ownerId, String creditCardNumber, String name, String password, int money) {
-        this.ownerId = ownerId;
-        this.creditCardNumber = creditCardNumber;
-        this.name = name;
-        this.password = password;
-        this.money = money;
-    }
-
     public long getId() {
         return id;
     }
 
-    public long getOwnerId() {
-        return ownerId;
+    public UserAccount getOwner() {
+        return owner;
     }
 
     public String getCreditCardNumber() {

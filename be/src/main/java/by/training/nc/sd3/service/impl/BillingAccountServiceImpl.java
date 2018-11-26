@@ -3,7 +3,6 @@ package by.training.nc.sd3.service.impl;
 import by.training.nc.sd3.entity.BillingAccount;
 import by.training.nc.sd3.entity.SubscriptionUnit;
 import by.training.nc.sd3.repository.BillingAccountRepository;
-import by.training.nc.sd3.repository.SubscriptionUnitRepository;
 import by.training.nc.sd3.service.BillingAccountService;
 import by.training.nc.sd3.service.SubscriptionUnitService;
 import org.springframework.beans.factory.annotation.Autowired;
