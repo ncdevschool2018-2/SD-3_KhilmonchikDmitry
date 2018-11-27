@@ -14,10 +14,6 @@ public class BillingAccount {
     private String password;
     private int money;
 
-    public long getId() {
-        return id;
-    }
-
     public Long getOwnerId() {
         return ownerId;
     }

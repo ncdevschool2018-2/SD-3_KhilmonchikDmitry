@@ -39,7 +39,9 @@ public class BillingAccountServiceImpl implements BillingAccountService {
     }
 
     @Override
-    public BillingAccount save(BillingAccount billingAccount) { return this.repository.save(billingAccount); }
+    public BillingAccount save(BillingAccount billingAccount) {
+        return this.repository.save(billingAccount);
+    }
 
     @Override
     public void delete(Long id, String password) {

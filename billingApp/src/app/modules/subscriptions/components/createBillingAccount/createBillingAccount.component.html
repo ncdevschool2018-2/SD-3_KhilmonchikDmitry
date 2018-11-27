@@ -21,7 +21,7 @@
         <input #passwordRepeat type="password" class="form-control" id="NewBillingAccountPasswordRepeat" placeholder="Repeat billing account password">
       </div>
       <button type="button" (click)="createBillingAccount(name.value, creditCardNumber.value,
-       password.value, passwordRepeat.value)" class="btn btn-primary">Create</button>
+       password.value, passwordRepeat.value)" class="btn btn-primary" routerLink="/profileDetails">Create</button>
     </form>
   </div>
 
