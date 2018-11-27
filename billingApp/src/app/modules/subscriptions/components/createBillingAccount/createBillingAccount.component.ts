@@ -15,7 +15,7 @@ export class CreateBillingAccountComponent {
   id;
 
   constructor(private userIdService: UserIDService, private http: BillingAccountService) {
-    this.id = this.userIdService.getID();
+    this.id = this.userIdService.getID()[0];
   }
 
   createBillingAccount(name: string, creditCardNumber: string,
@@ -23,7 +23,7 @@ export class CreateBillingAccountComponent {
     if(this.id >= 0) {
       let newBillingAccount: BillingAccount;
       if (password === passwordRepeated) {
-        newBillingAccount = new BillingAccount(1, this.id[0], '1', '1', '1', 0);
+        newBillingAccount = new BillingAccount(null, this.id, creditCardNumber, name, password, 0);
       }
       this.http.createBillingAccount(newBillingAccount);
       console.log(newBillingAccount);

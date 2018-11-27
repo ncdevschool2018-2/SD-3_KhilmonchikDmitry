@@ -43,7 +43,10 @@ public class BillingAccountDataServiceImpl implements BillingAccountDataService 
     }
 
     public BillingAccountViewModel saveBillingAccount(BillingAccountViewModel account) {
-        return null;
+        RestTemplate restTemplate = new RestTemplate();
+        BillingAccountViewModel billingAccount = restTemplate.postForObject(backendServerUrl + "/api/billing-accounts/save",
+                account, BillingAccountViewModel.class);
+        return billingAccount;
     }
 
     public void deleteBillingAccountById(Long id, String password) {
