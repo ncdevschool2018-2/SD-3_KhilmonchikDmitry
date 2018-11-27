@@ -8,9 +8,7 @@ public class BillingAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "ownerId", nullable = false)
-    private UserAccount owner;
+    private Long ownerId;
     private String creditCardNumber;
     private String name;
     private String password;
@@ -20,8 +18,8 @@ public class BillingAccount {
         return id;
     }
 
-    public UserAccount getOwner() {
-        return owner;
+    public Long getOwnerId() {
+        return ownerId;
     }
 
     public String getCreditCardNumber() {

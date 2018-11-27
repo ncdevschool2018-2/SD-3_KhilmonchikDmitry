@@ -24,21 +24,21 @@ public class BillingAccountDataServiceImpl implements BillingAccountDataService 
         return billingAccounts == null ? Collections.emptyList() : Arrays.asList(billingAccounts);
     }
 
-    public BillingAccountViewModel getBillingAccountById(int id) {
+    public BillingAccountViewModel getBillingAccountById(Long id) {
         RestTemplate restTemplate = new RestTemplate();
         BillingAccountViewModel billingAccount = restTemplate.getForObject(backendServerUrl + "/api/billing-accounts/by-id?id={id}",
                 BillingAccountViewModel.class, id);
         return billingAccount;
     }
 
-    public List<BillingAccountViewModel> getBillingAccountsByOwnerId(int id) {
+    public List<BillingAccountViewModel> getBillingAccountsByOwnerId(Long id) {
         RestTemplate restTemplate = new RestTemplate();
         BillingAccountViewModel[] billingAccounts = restTemplate.getForObject(backendServerUrl + "/api/billing-accounts/by-owner-id?ownerId={id}",
                 BillingAccountViewModel[].class, id);
         return billingAccounts == null ? Collections.emptyList() : Arrays.asList(billingAccounts);
     }
 
-    public boolean checkPasswordById(String password, int id) {
+    public boolean checkPasswordById(String password, Long id) {
         return false;
     }
 
@@ -46,9 +46,9 @@ public class BillingAccountDataServiceImpl implements BillingAccountDataService 
         return null;
     }
 
-    public void deleteBillingAccountById(int id, String password) {
+    public void deleteBillingAccountById(Long id, String password) {
         RestTemplate restTemplate = new RestTemplate();
         restTemplate.delete(backendServerUrl +
-                        "/api/billing-accounts/by-owner-id?id=" + id + "&password=" + password);
+                        "/api/billing-accounts/delete/" + id + "?id=" + id + "&password=" + password);
     }
 }

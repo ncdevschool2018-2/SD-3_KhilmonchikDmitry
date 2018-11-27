@@ -1,7 +1,7 @@
 package by.training.nc.sd3.models;
 
 public class SubscriptionViewModel {
-    private int id;
+    private Long id;
     private String name;
     private String description;
     private int category;
@@ -12,7 +12,7 @@ public class SubscriptionViewModel {
     public SubscriptionViewModel() {
     }
 
-    public SubscriptionViewModel(int id, String name, String description, int category, int perMonth, int perThreeMonth, int perYear) {
+    public SubscriptionViewModel(Long id, String name, String description, int category, int perMonth, int perThreeMonth, int perYear) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -22,11 +22,11 @@ public class SubscriptionViewModel {
         this.perYear = perYear;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

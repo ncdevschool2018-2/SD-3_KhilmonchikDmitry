@@ -22,7 +22,7 @@ public class SubscriptionDataController {
 
     @RequestMapping(value = "/getbyid", method = RequestMethod.GET)
     public ResponseEntity<SubscriptionViewModel> getSubscriptionById(@RequestParam String id) {
-        return ResponseEntity.ok(subscriptionDataService.getSubscriptionById(Integer.valueOf(id)));
+        return ResponseEntity.ok(subscriptionDataService.getSubscriptionById(Long.valueOf(id)));
     }
 
     @RequestMapping(value = "/getbyname", method = RequestMethod.GET)

@@ -4,10 +4,8 @@ import by.training.nc.sd3.models.SubscriptionUnitViewModel;
 import by.training.nc.sd3.service.SubscriptionUnitDataService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,9 +16,14 @@ public class SubscriptionUnitDataController {
     @Autowired
     private SubscriptionUnitDataService subscriptionUnitDataService;
 
-    @RequestMapping(value = "/getbyid", method = RequestMethod.GET)
-    public ResponseEntity<List<SubscriptionUnitViewModel>> getSubscriptions(@RequestParam("userId") int id) {
-        return ResponseEntity.ok(subscriptionUnitDataService.getSubscriptionUnitsById(id));
+    @RequestMapping(value = "/getbyuserid", method = RequestMethod.GET)
+    public ResponseEntity<List<SubscriptionUnitViewModel>> getSubscriptionUnitsByUserId(@RequestParam("userId") Long id) {
+        return ResponseEntity.ok(subscriptionUnitDataService.getSubscriptionUnitsByUserId(id));
+    }
+
+    @DeleteMapping(value = "/delete/{id}")
+    public void deleteById(@PathVariable("id") Long id) {
+        subscriptionUnitDataService.delete(id);
     }
 
 }

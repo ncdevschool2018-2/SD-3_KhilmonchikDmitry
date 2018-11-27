@@ -17,7 +17,7 @@ public class UserAccountDataController {
     private UserAccountDataService userAccountDataService;
 
     @RequestMapping(value = "/getbyid", method = RequestMethod.GET)
-    public ResponseEntity<UserAccountViewModel> getUserAccountById(@RequestParam int id) {
+    public ResponseEntity<UserAccountViewModel> getUserAccountById(@RequestParam Long id) {
         return ResponseEntity.ok(userAccountDataService.getUserAccountById(id));
     }
 

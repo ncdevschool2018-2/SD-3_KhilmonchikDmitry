@@ -2,10 +2,7 @@ package by.training.nc.sd3.controller;
 
 import by.training.nc.sd3.entity.BillingAccount;
 import by.training.nc.sd3.service.BillingAccountService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -34,8 +31,8 @@ public class BillingAccountController {
         return this.billingAccountService.getById(id);
     }
 
-    @RequestMapping(value = "delete")
-    public void delete(@RequestParam Long id, @RequestParam String password) {
+    @DeleteMapping(value = "delete/{id}")
+    public void delete(@PathVariable Long id, @RequestParam String password) {
         this.billingAccountService.delete(id, password);
     }
 

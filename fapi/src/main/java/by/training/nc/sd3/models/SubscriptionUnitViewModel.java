@@ -3,7 +3,7 @@ package by.training.nc.sd3.models;
 import java.util.Date;
 
 public class SubscriptionUnitViewModel {
-    private int userId;
+    private Long userId;
     private SubscriptionViewModel subscription;
     private BillingAccountViewModel billingAccount;
     private int daysLeft;
@@ -15,7 +15,7 @@ public class SubscriptionUnitViewModel {
     public SubscriptionUnitViewModel() {
     }
 
-    public int getUserId() {
+    public Long getUserId() {
         return userId;
     }
 

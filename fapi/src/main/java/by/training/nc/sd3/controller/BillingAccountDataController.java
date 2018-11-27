@@ -22,12 +22,12 @@ public class BillingAccountDataController {
     }
 
     @RequestMapping(value = "/getbyid", method = RequestMethod.GET)
-    public ResponseEntity<BillingAccountViewModel> getBillingAccountById(@RequestParam int id) {
+    public ResponseEntity<BillingAccountViewModel> getBillingAccountById(@RequestParam Long id) {
         return ResponseEntity.ok(billingAccountDataService.getBillingAccountById(id));
     }
 
     @RequestMapping(value = "/getbyownerid", method = RequestMethod.GET)
-    public ResponseEntity<List<BillingAccountViewModel>> getBillingAccountByOwnerId(@RequestParam int id) {
+    public ResponseEntity<List<BillingAccountViewModel>> getBillingAccountByOwnerId(@RequestParam Long id) {
         return ResponseEntity.ok(billingAccountDataService.getBillingAccountsByOwnerId(id));
     }
 
@@ -46,7 +46,7 @@ public class BillingAccountDataController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public void deleteBillingAccount(@PathVariable int id, @RequestParam String password) {
+    public void deleteBillingAccount(@PathVariable Long id, @RequestParam String password) {
         billingAccountDataService.deleteBillingAccountById(id, password);
     }
 }

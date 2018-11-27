@@ -16,12 +16,19 @@ public class SubscriptionUnitDataServiceImpl implements SubscriptionUnitDataServ
     @Value("http://localhost:8081/")
     private String backendServerUrl;
 
-    public List<SubscriptionUnitViewModel> getSubscriptionUnitsById(int id) {
+    public List<SubscriptionUnitViewModel> getSubscriptionUnitsByUserId(Long id) {
 
         RestTemplate restTemplate = new RestTemplate();
         SubscriptionUnitViewModel[] subscriptionUnits = restTemplate.getForObject(backendServerUrl + "/api/subscription-units/get-by-user-id?userId={id}",
                 SubscriptionUnitViewModel[].class, id);
         return subscriptionUnits == null ? Collections.emptyList() : Arrays.asList(subscriptionUnits);
+    }
+
+    @Override
+    public void delete(Long id) {
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.getForObject(backendServerUrl + "/api/subscription-units/delete/{id}?id={id}",
+                Void.class, id, id);
     }
 
 }

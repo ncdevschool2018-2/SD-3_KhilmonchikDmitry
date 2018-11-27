@@ -23,7 +23,7 @@ public class SubscriptionDataServiceImpl implements SubscriptionDataService {
         return subscriptions == null ? Collections.emptyList() : Arrays.asList(subscriptions);
     }
 
-    public SubscriptionViewModel getSubscriptionById(int id) {
+    public SubscriptionViewModel getSubscriptionById(Long id) {
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.getForObject(backendServerUrl + "/api/subscriptions/" + id + "/", SubscriptionViewModel.class);
     }

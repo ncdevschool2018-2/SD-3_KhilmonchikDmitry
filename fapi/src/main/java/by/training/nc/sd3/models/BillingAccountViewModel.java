@@ -5,14 +5,14 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BillingAccountViewModel {
 
-    private int id;
-    private int ownerId;
+    private Long id;
+    private Long ownerId;
     private String creditCardNumber;
     private String name;
     private String password;
     private int money;
 
-    public BillingAccountViewModel(int id, int ownerId, String creditCardNumber, String name, String password, int money) {
+    public BillingAccountViewModel(Long id, Long ownerId, String creditCardNumber, String name, String password, int money) {
         this.ownerId = ownerId;
         this.id = id;
         this.name = name;
@@ -24,19 +24,19 @@ public class BillingAccountViewModel {
     public BillingAccountViewModel() {
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setOwnerId(int id) {
+    public void setOwnerId(Long id) {
         this.ownerId = id;
     }
 
-    public int getOwnerId() {
+    public Long getOwnerId() {
         return ownerId;
     }
 

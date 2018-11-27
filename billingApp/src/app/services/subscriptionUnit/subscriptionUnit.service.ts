@@ -11,8 +11,8 @@ export class SubscriptionUnitService {
   }
 
   public getSubscriptionUnitsById(id: number): Observable<SubscriptionUnit[]> {
-    let params = new HttpParams().set('id', id.toString());
-    return this.http.get<SubscriptionUnit[]>('http://localhost:8080/api/subsunits/getbyid', {params: params});
+    let params = new HttpParams().set('userId', id.toString());
+    return this.http.get<SubscriptionUnit[]>('http://localhost:8080/api/subsunits/getbyuserid', {params: params});
   }
 
 }

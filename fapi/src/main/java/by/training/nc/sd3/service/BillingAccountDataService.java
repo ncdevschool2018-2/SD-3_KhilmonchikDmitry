@@ -6,9 +6,9 @@ import java.util.List;
 
 public interface BillingAccountDataService {
     List<BillingAccountViewModel> getAll();
-    List<BillingAccountViewModel> getBillingAccountsByOwnerId(int ownerId);
-    BillingAccountViewModel getBillingAccountById(int id);
-    boolean checkPasswordById(String password, int id);
+    List<BillingAccountViewModel> getBillingAccountsByOwnerId(Long ownerId);
+    BillingAccountViewModel getBillingAccountById(Long id);
+    boolean checkPasswordById(String password, Long id);
     BillingAccountViewModel saveBillingAccount(BillingAccountViewModel account);
-    void deleteBillingAccountById(int id, String password);
+    void deleteBillingAccountById(Long id, String password);
 }

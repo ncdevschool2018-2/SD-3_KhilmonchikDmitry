@@ -17,7 +17,7 @@ public class UserAccountDataServiceImpl implements UserAccountDataService {
     @Value("http://localhost:8081/")
     private String backendServerUrl;
 
-    public UserAccountViewModel getUserAccountById(int id) {
+    public UserAccountViewModel getUserAccountById(Long id) {
         RestTemplate restTemplate = new RestTemplate();
         UserAccountViewModel userAccount = restTemplate.getForObject(backendServerUrl + "/api/user-accounts/{id}?id={id}",
                 UserAccountViewModel.class, id, id);

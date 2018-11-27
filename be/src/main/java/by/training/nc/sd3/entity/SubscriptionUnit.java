@@ -13,10 +13,10 @@ public class SubscriptionUnit {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Long userId;
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne
     @JoinColumn(name = "subscriptionId", nullable = false)
     private Subscription subscription;
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne
     @JoinColumn(name = "billingAccountId", nullable = false)
     private BillingAccount billingAccount;
     private int daysLeft;

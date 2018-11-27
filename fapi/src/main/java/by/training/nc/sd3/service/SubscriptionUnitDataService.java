@@ -6,5 +6,7 @@ import java.util.List;
 
 public interface SubscriptionUnitDataService {
 
-    public List<SubscriptionUnitViewModel> getSubscriptionUnitsById(int id);
+    public List<SubscriptionUnitViewModel> getSubscriptionUnitsByUserId(Long id);
+
+    public void delete(Long id);
 }

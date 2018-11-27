@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface SubscriptionDataService {
     List<SubscriptionViewModel> getAll();
-    SubscriptionViewModel getSubscriptionById(int id);
+    SubscriptionViewModel getSubscriptionById(Long id);
     List<SubscriptionViewModel> getSubscriptionByCategory(String category);
     SubscriptionViewModel getSubscriptionByName(String name);
 }

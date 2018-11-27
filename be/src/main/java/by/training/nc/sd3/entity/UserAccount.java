@@ -8,21 +8,11 @@ public class UserAccount {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private Long activeBillingAccountId;
     private String name;
     private String password;
     private String email;
     private boolean isAdmin;
-
-    public UserAccount() {
-    }
-
-    public UserAccount(long id, String name, String password, String email, boolean isAdmin) {
-        this.id = id;
-        this.name = name;
-        this.password = password;
-        this.email = email;
-        this.isAdmin = isAdmin;
-    }
 
     public long getId() {
         return id;

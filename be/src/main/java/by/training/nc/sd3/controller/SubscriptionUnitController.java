@@ -2,10 +2,8 @@ package by.training.nc.sd3.controller;
 
 import by.training.nc.sd3.entity.SubscriptionUnit;
 import by.training.nc.sd3.service.SubscriptionUnitService;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("api/subscription-units")
@@ -27,8 +25,9 @@ public class SubscriptionUnitController {
         return subscriptionUnitService.save(subscriptionUnit);
     }
 
-    @RequestMapping(value = "delete", method = RequestMethod.GET)
-    public void delete(Long id) {
+    @DeleteMapping(value = "delete/{id}")
+    @Transactional
+    public void delete(@PathVariable("id") Long id) {
         subscriptionUnitService.delete(id);
     }
 
