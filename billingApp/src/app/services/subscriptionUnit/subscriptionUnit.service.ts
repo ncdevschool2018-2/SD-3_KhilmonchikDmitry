@@ -15,4 +15,8 @@ export class SubscriptionUnitService {
     return this.http.get<SubscriptionUnit[]>('http://localhost:8080/api/subsunits/getbyuserid', {params: params});
   }
 
+  public saveSubscriptionUnit(subscriptionUnit: SubscriptionUnit) {
+    this.http.post('http://localhost:8080/api/subsunits/save', subscriptionUnit);
+  }
+
 }

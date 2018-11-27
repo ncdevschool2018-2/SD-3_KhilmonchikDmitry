@@ -29,10 +29,6 @@ public class SubscriptionUnit {
     @LastModifiedDate
     private Date writeOffDate;
 
-    public long getId() {
-        return id;
-    }
-
     public long getUserId() {
         return userId;
     }
@@ -79,5 +75,9 @@ public class SubscriptionUnit {
 
     public void setWriteOffDate(Date writeOffDate) {
         this.writeOffDate = writeOffDate;
+    }
+
+    public void setBillingAccount(BillingAccount billingAccount) {
+        this.billingAccount = billingAccount;
     }
 }

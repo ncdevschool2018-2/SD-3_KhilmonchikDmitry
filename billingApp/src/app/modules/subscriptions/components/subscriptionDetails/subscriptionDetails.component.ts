@@ -3,6 +3,9 @@ import {ActivatedRoute} from '@angular/router';
 import {SubscriptionService} from "../../../../services/subscription/subscription.service";
 import {toNumber} from "ngx-bootstrap/timepicker/timepicker.utils";
 import {Subscription} from "../../../../shared/Subscription";
+import {UserIDService} from "../../../../services/userID.service";
+import {SubscriptionUnitService} from "../../../../services/subscriptionUnit/subscriptionUnit.service";
+import {SubscriptionUnit} from "../../../../shared/SubscriptionUnit";
 
 @Component({
   selector: 'subscriptionsDetails',
@@ -12,13 +15,16 @@ import {Subscription} from "../../../../shared/Subscription";
 
 export class SubscriptionDetailsComponent implements OnInit {
   @Output() subscription: Subscription;
+  id;
 
-  constructor(private http: SubscriptionService, private route: ActivatedRoute) {
+  constructor(private http: SubscriptionService, private route: ActivatedRoute,
+              private userIdService: UserIDService, private subscriptionUnitService: SubscriptionUnitService) {
     this.subscription = new Subscription();
   }
 
   ngOnInit() {
     this.getSubscription();
+    this.id = this.userIdService.getID()[0];
   }
 
   getSubscription() {
@@ -27,5 +33,10 @@ export class SubscriptionDetailsComponent implements OnInit {
     this.http.getSubscriptionById(toNumber(id)).subscribe(subscription => {
       this.subscription = subscription;
     });
+  }
+
+  subscribe() {
+    let subscriptionUnit = new SubscriptionUnit(this.id, this.subscription, 30, true, true);
+    this.subscriptionUnitService.saveSubscriptionUnit(subscriptionUnit);
   }
 }

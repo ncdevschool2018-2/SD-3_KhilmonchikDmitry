@@ -33,4 +33,8 @@ public class UserAccount {
     public boolean isAdmin() {
         return isAdmin;
     }
+
+    public Long getActiveBillingAccountId() {
+        return activeBillingAccountId;
+    }
 }

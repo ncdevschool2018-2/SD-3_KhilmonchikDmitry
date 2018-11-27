@@ -9,4 +9,6 @@ public interface SubscriptionUnitDataService {
     public List<SubscriptionUnitViewModel> getSubscriptionUnitsByUserId(Long id);
 
     public void delete(Long id);
+
+    public SubscriptionUnitViewModel save(SubscriptionUnitViewModel subscriptionUnitViewModel);
 }

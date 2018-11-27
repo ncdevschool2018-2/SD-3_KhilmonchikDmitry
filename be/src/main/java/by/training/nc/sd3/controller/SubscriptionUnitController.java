@@ -1,18 +1,29 @@
 package by.training.nc.sd3.controller;
 
+import by.training.nc.sd3.entity.BillingAccount;
 import by.training.nc.sd3.entity.SubscriptionUnit;
+import by.training.nc.sd3.entity.UserAccount;
+import by.training.nc.sd3.service.BillingAccountService;
 import by.training.nc.sd3.service.SubscriptionUnitService;
-import org.springframework.transaction.annotation.Transactional;
+import by.training.nc.sd3.service.UserAccountService;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @RestController
 @RequestMapping("api/subscription-units")
 public class SubscriptionUnitController {
 
     private SubscriptionUnitService subscriptionUnitService;
+    private UserAccountService userAccountService;
+    private BillingAccountService billingAccountService;
 
-    public SubscriptionUnitController(SubscriptionUnitService subscriptionUnitService) {
+    public SubscriptionUnitController(SubscriptionUnitService subscriptionUnitService,
+                                      UserAccountService userAccountService,
+                                      BillingAccountService billingAccountService) {
         this.subscriptionUnitService = subscriptionUnitService;
+        this.userAccountService = userAccountService;
+        this.billingAccountService = billingAccountService;
     }
 
     @RequestMapping(value = "", method = RequestMethod.GET)
@@ -21,13 +32,19 @@ public class SubscriptionUnitController {
     }
 
     @RequestMapping(value = "post", method = RequestMethod.POST)
-    public SubscriptionUnit save(SubscriptionUnit subscriptionUnit) {
+    public SubscriptionUnit save(@RequestBody SubscriptionUnit subscriptionUnit) {
+        Optional<UserAccount> userAccountOpt = userAccountService.getUserAccountById(subscriptionUnit.getUserId());
+        if (userAccountOpt.isPresent()) {
+            Optional<BillingAccount> billingAccountOpt = billingAccountService.getById(userAccountOpt.get().getActiveBillingAccountId());
+            if (billingAccountOpt.isPresent()) {
+                subscriptionUnit.setBillingAccount(billingAccountOpt.get());
+            }
+        }
         return subscriptionUnitService.save(subscriptionUnit);
     }
 
     @DeleteMapping(value = "delete/{id}")
-    @Transactional
-    public void delete(@PathVariable("id") Long id) {
+    public void delete(@PathVariable Long id) {
         subscriptionUnitService.delete(id);
     }
 

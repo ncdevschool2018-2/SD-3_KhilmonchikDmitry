@@ -45,7 +45,7 @@ public class BillingAccountDataController {
         return null;
     }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "delete/{id}", method = RequestMethod.DELETE)
     public void deleteBillingAccount(@PathVariable Long id, @RequestParam String password) {
         billingAccountDataService.deleteBillingAccountById(id, password);
     }
