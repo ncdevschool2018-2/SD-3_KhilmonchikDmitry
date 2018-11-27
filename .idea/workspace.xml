@@ -2,22 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f598fc7-b33d-4934-a527-6a84586ba27a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/SubscriptionUnit.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/SubscriptionUnit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/UserAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/UserAccountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/UserAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/UserAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/subscriptionDetails/subscriptionDetails.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/subscriptionDetails/subscriptionDetails.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billingApp/src/app/services/subscriptionUnit/subscriptionUnit.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/billingApp/src/app/services/subscriptionUnit/subscriptionUnit.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billingApp/src/app/shared/SubscriptionUnit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/billingApp/src/app/shared/SubscriptionUnit.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/BillingAccountDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/BillingAccountDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/SubscriptionUnitViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/SubscriptionUnitViewModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/SubscriptionUnitDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/SubscriptionUnitDataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/UserAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/UserAccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/UserAccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/UserAccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/target/classes/by/training/nc/sd3/controller/UserAccountController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/target/classes/by/training/nc/sd3/entity/UserAccount.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/UserAccountViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/UserAccountViewModel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/SubscriptionUnitDataServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/SubscriptionUnitDataServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/by/training/nc/sd3/controller/BillingAccountDataController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/by/training/nc/sd3/controller/SubscriptionUnitDataController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/by/training/nc/sd3/models/SubscriptionUnitViewModel.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/by/training/nc/sd3/service/SubscriptionUnitDataService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/UserAccountDataServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/UserAccountDataServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/target/classes/by/training/nc/sd3/models/UserAccountViewModel.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/fapi/target/classes/by/training/nc/sd3/service/impl/SubscriptionUnitDataServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/target/classes/by/training/nc/sd3/service/impl/UserAccountDataServiceImpl.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/be/target/" />
@@ -69,28 +65,28 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="html" value="3" />
-          <entry key="java" value="90" />
+          <entry key="java" value="104" />
           <entry key="ts" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="HTML" value="3" />
-          <entry key="JAVA" value="90" />
+          <entry key="JAVA" value="104" />
           <entry key="TypeScript" value="23" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="html" value="1" />
-          <entry key="java" value="655" />
+          <entry key="java" value="764" />
           <entry key="ts" value="288" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="1" />
-          <entry key="JAVA" value="655" />
+          <entry key="JAVA" value="764" />
           <entry key="TypeScript" value="288" />
         </counts>
       </usages-collector>
@@ -104,33 +100,32 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitDataController.java">
+        <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/UserAccountController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="72">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="123">
+              <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/SubscriptionViewModel.java">
+        <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/UserAccount.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+            <state relative-caret-position="157">
+              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+              <folding>
+                <element signature="e#708#709#0" expanded="true" />
+                <element signature="e#753#754#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitController.java">
+        <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/UserAccountDataController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-13">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2071#2072#0" expanded="true" />
-                <element signature="e#2121#2122#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="-47">
+              <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -149,10 +144,8 @@
         <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/SubscriptionDataService.java" />
         <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/UserAccountDataService.java" />
         <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/SubscriptionDataServiceImpl.java" />
-        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/UserAccountDataServiceImpl.java" />
         <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/SubscriptionDataController.java" />
         <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/UserAccountDataController.java" />
-        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/UserAccountViewModel.java" />
         <option value="$PROJECT_DIR$/billingApp/src/app/shared/User.ts" />
         <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/BillingAccountController.java" />
         <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/BillingAccountDataServiceImpl.java" />
@@ -163,15 +156,20 @@
         <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/createBillingAccount/createBillingAccount.component.html" />
         <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/BillingAccountDataController.java" />
         <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/SubscriptionUnitDataService.java" />
-        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/SubscriptionUnitDataServiceImpl.java" />
         <option value="$PROJECT_DIR$/billingApp/src/app/shared/SubscriptionUnit.ts" />
         <option value="$PROJECT_DIR$/billingApp/src/app/services/subscriptionUnit/subscriptionUnit.service.ts" />
         <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/subscriptionDetails/subscriptionDetails.component.ts" />
         <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/SubscriptionUnit.java" />
-        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/UserAccount.java" />
         <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitController.java" />
         <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/SubscriptionUnitViewModel.java" />
         <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitDataController.java" />
+        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/SubscriptionUnitDataServiceImpl.java" />
+        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/UserAccountService.java" />
+        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/UserAccountServiceImpl.java" />
+        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/UserAccountDataServiceImpl.java" />
+        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/UserAccountController.java" />
+        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/UserAccountViewModel.java" />
+        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/UserAccount.java" />
       </list>
     </option>
   </component>
@@ -1641,7 +1639,7 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543344796513" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543347613096" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="ts.external.directory.path" value="C:\Users\desmond1999d\Documents\IntelliJIDEA\SD-3_HilmonchikDmitry\billingApp\node_modules\typescript\lib" />
@@ -1709,12 +1707,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1543273563823</updated>
-      <workItem from="1543273565610" duration="12090000" />
+      <workItem from="1543273565610" duration="14850000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12090000" />
+    <option name="totallyTimeSpent" value="14850000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1735,7 +1733,7 @@
       <window_info id="Capture Tool" order="3" />
       <window_info id="Web" order="4" side_tool="true" />
       <window_info id="Designer" order="5" />
-      <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.21409395" />
+      <window_info content_ui="combo" id="Project" order="6" visible="true" weight="0.21409395" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="TypeScript" order="0" show_stripe_button="false" weight="0.32960895" />
       <window_info anchor="bottom" id="Terminal" order="1" weight="0.32960895" />
@@ -1747,7 +1745,7 @@
       <window_info anchor="bottom" id="Spring" order="7" weight="0.32960895" />
       <window_info anchor="bottom" id="Message" order="8" />
       <window_info anchor="bottom" id="Find" order="9" />
-      <window_info anchor="bottom" id="Run" order="10" visible="true" weight="0.32960895" />
+      <window_info active="true" anchor="bottom" id="Run" order="10" visible="true" weight="0.32960895" />
       <window_info anchor="bottom" id="Debug" order="11" weight="0.39944133" />
       <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
@@ -1775,18 +1773,6 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/BillingAccountDataController.java</url>
-          <line>40</line>
-          <properties />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/FapiApplication.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1806,20 +1792,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/UserAccountDataServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="19" column="55" selection-start-line="19" selection-start-column="55" selection-end-line="19" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/UserAccountDataController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="19" column="85" selection-start-line="19" selection-start-column="85" selection-end-line="19" selection-end-column="85" />
         </state>
       </provider>
     </entry>
@@ -1930,13 +1902,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/BillingAccountDataController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="47" column="73" lean-forward="true" selection-start-line="47" selection-start-column="73" selection-end-line="47" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/SubscriptionUnitDataService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -1948,13 +1913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
           <caret line="40" selection-start-line="40" selection-end-line="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/UserAccountViewModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -1988,39 +1946,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/SubscriptionUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="83" lean-forward="true" selection-start-line="83" selection-end-line="83" />
-          <folding>
-            <element signature="e#1903#1904#0" expanded="true" />
-            <element signature="e#1955#1956#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/UserAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
-          <folding>
-            <element signature="e#753#754#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-13">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2071#2072#0" expanded="true" />
-            <element signature="e#2121#2122#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/BillingAccountViewModel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
@@ -2032,13 +1957,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="1" column="81" selection-start-line="1" selection-start-column="65" selection-end-line="1" selection-end-column="81" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/SubscriptionUnitDataServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="36" column="128" selection-start-line="36" selection-start-column="128" selection-end-line="36" selection-end-column="128" />
         </state>
       </provider>
     </entry>
@@ -2056,17 +1974,114 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitDataController.java">
+    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/SubscriptionUnit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="255">
+          <caret line="25" column="16" lean-forward="true" selection-start-line="25" selection-start-column="16" selection-end-line="25" selection-end-column="16" />
+          <folding>
+            <element signature="e#1903#1904#0" expanded="true" />
+            <element signature="e#1955#1956#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/SubscriptionViewModel.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="6" column="18" lean-forward="true" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+        <state relative-caret-position="-64">
+          <caret line="5" column="31" lean-forward="true" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/SubscriptionUnitDataServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/BillingAccountDataController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="42" column="63" lean-forward="true" selection-start-line="42" selection-start-column="63" selection-end-line="42" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="41" column="9" lean-forward="true" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2071#2072#0" expanded="true" />
+            <element signature="e#2121#2122#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitDataController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/UserAccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="46" selection-start-line="9" selection-start-column="46" selection-end-line="9" selection-end-column="46" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/UserAccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+          <folding>
+            <element signature="e#1062#1063#0" expanded="true" />
+            <element signature="e#1105#1106#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/UserAccountViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/UserAccountDataServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="29" column="5" lean-forward="true" selection-start-line="29" selection-start-column="5" selection-end-line="29" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/UserAccountDataController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-47">
+          <caret line="15" column="14" lean-forward="true" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/UserAccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="123">
+          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/UserAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#708#709#0" expanded="true" />
+            <element signature="e#753#754#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

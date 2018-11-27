@@ -19,19 +19,19 @@ public class UserAccountDataServiceImpl implements UserAccountDataService {
 
     public UserAccountViewModel getUserAccountById(Long id) {
         RestTemplate restTemplate = new RestTemplate();
-        UserAccountViewModel userAccount = restTemplate.getForObject(backendServerUrl + "/api/user-accounts/{id}?id={id}",
+        return restTemplate.getForObject(backendServerUrl + "/api/user-accounts/{id}?id={id}",
                 UserAccountViewModel.class, id, id);
-        return userAccount;
     }
 
     public UserAccountViewModel getUserAccountByData(String login, String password) {
         RestTemplate restTemplate = new RestTemplate();
-        UserAccountViewModel userAccount = restTemplate.getForObject(backendServerUrl + "/api/user-accounts?login={login}&password={password}",
+        return restTemplate.getForObject(backendServerUrl + "/api/user-accounts?login={login}&password={password}",
                 UserAccountViewModel.class, login, password);
-        return userAccount;
     }
 
     public UserAccountViewModel saveUserAccount(UserAccountViewModel account) {
-        return null;
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.postForObject(backendServerUrl + "/api/user-accounts/save",
+                account, UserAccountViewModel.class);
     }
 }

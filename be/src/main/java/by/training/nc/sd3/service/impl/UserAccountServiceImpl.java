@@ -27,4 +27,9 @@ public class UserAccountServiceImpl implements UserAccountService {
         return this.userAccountRepository.findById(id);
     }
 
+    @Override
+    public UserAccount save(UserAccount userAccount) {
+        return userAccountRepository.save(userAccount);
+    }
+
 }

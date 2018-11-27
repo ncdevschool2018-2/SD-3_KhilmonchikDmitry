@@ -14,10 +14,6 @@ public class UserAccount {
     private String email;
     private boolean isAdmin;
 
-    public long getId() {
-        return id;
-    }
-
     public String getName() {
         return name;
     }
@@ -36,5 +32,21 @@ public class UserAccount {
 
     public Long getActiveBillingAccountId() {
         return activeBillingAccountId;
+    }
+
+    public void setActiveBillingAccountId(Long activeBillingAccountId) {
+        this.activeBillingAccountId = activeBillingAccountId;
+    }
+
+    @Override
+    public String toString() {
+        return "UserAccount{" +
+                "id=" + id +
+                ", activeBillingAccountId=" + activeBillingAccountId +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", isAdmin=" + isAdmin +
+                '}';
     }
 }

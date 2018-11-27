@@ -2,10 +2,7 @@ package by.training.nc.sd3.controller;
 
 import by.training.nc.sd3.entity.UserAccount;
 import by.training.nc.sd3.service.UserAccountService;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
 
@@ -28,5 +25,11 @@ public class UserAccountController {
     public Optional<UserAccount> getUserAccountById(@PathVariable(name = "id") Long id) {
         return userAccountService.getUserAccountById(id);
     }
-//СКЕЙЛЕР И ДЖОБЫ????
+
+    @PostMapping(value = "/save")
+    public UserAccount save(@RequestBody UserAccount userAccount) {
+        userAccount.setActiveBillingAccountId(Long.valueOf(0));
+        System.out.println(userAccount);
+        return userAccountService.save(userAccount);
+    }
 }
