@@ -26,8 +26,8 @@ export class UserService {
     return this.http.get<User>('http://localhost:8080/api/ua/getbydata', {params: params});
   }
 
-  createUser(user: User) {
-    return this.http.post<User>('http://localhost:8080/api/ua/save', user);
+  createUser(user: User, activeBillingAccountId: number) {
+    return this.http.post<User>('http://localhost:8080/api/ua/save?activeBillingAccountId='+activeBillingAccountId, user);
   }
 
 }

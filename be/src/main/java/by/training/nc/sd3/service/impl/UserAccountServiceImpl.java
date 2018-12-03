@@ -1,6 +1,8 @@
 package by.training.nc.sd3.service.impl;
 
+import by.training.nc.sd3.entity.BillingAccount;
 import by.training.nc.sd3.entity.UserAccount;
+import by.training.nc.sd3.repository.BillingAccountRepository;
 import by.training.nc.sd3.repository.UserAccountRepository;
 import by.training.nc.sd3.service.UserAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +14,13 @@ import java.util.Optional;
 public class UserAccountServiceImpl implements UserAccountService {
 
     private UserAccountRepository userAccountRepository;
+    private BillingAccountRepository billingAccountRepository;
 
     @Autowired
-    public UserAccountServiceImpl(UserAccountRepository userAccountRepository) {
+    public UserAccountServiceImpl(UserAccountRepository userAccountRepository,
+                                  BillingAccountRepository billingAccountRepository) {
         this.userAccountRepository = userAccountRepository;
+        this.billingAccountRepository = billingAccountRepository;
     }
 
     public Optional<UserAccount> getUserAccount(String name, String password) {
@@ -29,8 +34,13 @@ public class UserAccountServiceImpl implements UserAccountService {
 
     @Override
     public UserAccount save(UserAccount userAccount) {
-
-        return userAccountRepository.save(userAccount);
+        UserAccount ua = userAccountRepository.save(userAccount);
+        Optional<BillingAccount> billingAccount = this.billingAccountRepository.findById(userAccount.getActiveBillingAccountId());
+        if(billingAccount.isPresent()) {
+            billingAccount.get().setOwnerId(ua.getId());
+            this.billingAccountRepository.save(billingAccount.get());
+        }
+        return ua;
     }
 
 }

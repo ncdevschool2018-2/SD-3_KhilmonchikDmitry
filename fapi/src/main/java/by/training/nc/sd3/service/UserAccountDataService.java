@@ -7,5 +7,5 @@ import java.util.List;
 public interface UserAccountDataService {
     UserAccountViewModel getUserAccountById(Long id);
     UserAccountViewModel getUserAccountByData(String login, String password);
-    UserAccountViewModel saveUserAccount(UserAccountViewModel account);
+    UserAccountViewModel saveUserAccount(UserAccountViewModel account, Long activeBillingAccountId);
 }

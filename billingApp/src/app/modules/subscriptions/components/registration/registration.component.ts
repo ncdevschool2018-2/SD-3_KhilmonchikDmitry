@@ -4,6 +4,7 @@ import {HttpService} from '../../../../services/http.service';
 import {BillingAccount} from '../../../../shared/BillingAccount';
 import {UserService} from "../../../../services/user/user.service";
 import {BillingAccountService} from "../../../../services/billingAccount/billingAccount.service";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'registration',
@@ -20,7 +21,7 @@ export class RegistrationComponent {
 
   createUser(login: string, password: string, passwordRepeated: string, email: string) {
     if (password === passwordRepeated && password !== '' && login !== '' && email !== '') {
-      this.user = new User(1, login, password, email);
+      this.user = new User(null, login, password, email);
     }
     if (password !== passwordRepeated) {
       console.log('passwords do not match!');
@@ -31,7 +32,7 @@ export class RegistrationComponent {
                        billingAccountPassword: string, billingAccountPasswordRepeated: string) {
     if (billingAccountPassword === billingAccountPasswordRepeated && billingAccountPassword !== '' && billingAccountName !== ''
       && creditCardNumber !== '') {
-      this.billingAccount = new BillingAccount(1, this.user.id, creditCardNumber, billingAccountName, billingAccountPassword, 0);
+      this.billingAccount = new BillingAccount(null, null, creditCardNumber, billingAccountName, billingAccountPassword, 0);
     }
   }
 
@@ -42,7 +43,11 @@ export class RegistrationComponent {
     this.createBillingAccount(creditCardNumber, billingAccountName, billingAccountPassword, billingAccountPasswordRepeated);
     console.log(this.user);
     console.log(this.billingAccount);
-    this.billingHttp.createBillingAccount(this.billingAccount);
-    this.userHttp.createUser(this.user);
+    this.billingHttp.createBillingAccount(this.billingAccount).subscribe(
+      billingAccount => {
+        console.log(billingAccount);
+        this.userHttp.createUser(this.user, billingAccount.id);
+      }
+    );
   }
 }

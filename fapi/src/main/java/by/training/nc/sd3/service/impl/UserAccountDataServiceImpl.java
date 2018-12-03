@@ -29,9 +29,9 @@ public class UserAccountDataServiceImpl implements UserAccountDataService {
                 UserAccountViewModel.class, login, password);
     }
 
-    public UserAccountViewModel saveUserAccount(UserAccountViewModel account) {
+    public UserAccountViewModel saveUserAccount(UserAccountViewModel account, Long activeBillingAccountId) {
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.postForObject(backendServerUrl + "/api/user-accounts/save",
+        return restTemplate.postForObject(backendServerUrl + "/api/user-accounts/save?activeBillingAccountId=" + activeBillingAccountId,
                 account, UserAccountViewModel.class);
     }
 }

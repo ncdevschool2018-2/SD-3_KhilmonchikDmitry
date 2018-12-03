@@ -27,10 +27,10 @@ public class UserAccountDataController {
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public ResponseEntity<UserAccountViewModel> saveUserAccount(@RequestBody UserAccountViewModel userAccount) {
+    public ResponseEntity<UserAccountViewModel> saveUserAccount(@RequestBody UserAccountViewModel userAccount, @RequestParam Long activeBillingAccountId) {
         if (userAccount != null) {
             System.out.println(userAccount);
-            return ResponseEntity.ok(userAccountDataService.saveUserAccount(userAccount));
+            return ResponseEntity.ok(userAccountDataService.saveUserAccount(userAccount, activeBillingAccountId));
         }
         return null;
     }

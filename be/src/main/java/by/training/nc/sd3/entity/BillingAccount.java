@@ -14,6 +14,10 @@ public class BillingAccount {
     private String password;
     private int money;
 
+    public Long getId() {
+        return id;
+    }
+
     public Long getOwnerId() {
         return ownerId;
     }
@@ -36,5 +40,9 @@ public class BillingAccount {
 
     public void setMoney(int money) {
         this.money = money;
+    }
+
+    public void setOwnerId(Long ownerId) {
+        this.ownerId = ownerId;
     }
 }

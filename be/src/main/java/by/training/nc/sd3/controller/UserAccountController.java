@@ -27,8 +27,8 @@ public class UserAccountController {
     }
 
     @PostMapping(value = "/save")
-    public UserAccount save(@RequestBody UserAccount userAccount) {
-        userAccount.setActiveBillingAccountId(Long.valueOf(0));
+    public UserAccount save(@RequestBody UserAccount userAccount, @RequestParam Long activeBillingAccountId) {
+        userAccount.setActiveBillingAccountId(activeBillingAccountId);
         System.out.println(userAccount);
         return userAccountService.save(userAccount);
     }
