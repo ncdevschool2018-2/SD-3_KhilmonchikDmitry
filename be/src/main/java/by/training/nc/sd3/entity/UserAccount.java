@@ -14,6 +14,10 @@ public class UserAccount {
     private String email;
     private boolean isAdmin;
 
+    public Long getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }

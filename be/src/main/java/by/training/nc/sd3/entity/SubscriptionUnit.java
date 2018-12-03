@@ -29,7 +29,11 @@ public class SubscriptionUnit {
     @LastModifiedDate
     private Date writeOffDate;
 
-    public long getUserId() {
+    public Long getId() {
+        return id;
+    }
+
+    public Long getUserId() {
         return userId;
     }
 
@@ -79,5 +83,20 @@ public class SubscriptionUnit {
 
     public void setBillingAccount(BillingAccount billingAccount) {
         this.billingAccount = billingAccount;
+    }
+
+    @Override
+    public String toString() {
+        return "SubscriptionUnit{" +
+                "id=" + id +
+                ", userId=" + userId +
+                ", subscription=" + subscription +
+                ", billingAccount=" + billingAccount +
+                ", daysLeft=" + daysLeft +
+                ", willBeRenewed=" + willBeRenewed +
+                ", status=" + status +
+                ", creationDate=" + creationDate +
+                ", writeOffDate=" + writeOffDate +
+                '}';
     }
 }

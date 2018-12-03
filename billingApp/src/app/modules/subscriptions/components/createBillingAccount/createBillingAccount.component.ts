@@ -20,13 +20,13 @@ export class CreateBillingAccountComponent {
 
   createBillingAccount(name: string, creditCardNumber: string,
                        password: string, passwordRepeated: string) {
-    if(this.id >= 0) {
+    //if(this.id >= 0) {
       let newBillingAccount: BillingAccount;
       if (password === passwordRepeated) {
         newBillingAccount = new BillingAccount(null, this.id, creditCardNumber, name, password, 0);
       }
       this.http.createBillingAccount(newBillingAccount);
       console.log(newBillingAccount);
-    }
+    //}
   }
 }

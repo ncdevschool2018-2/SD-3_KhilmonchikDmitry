@@ -6,6 +6,8 @@ import by.training.nc.sd3.service.SubscriptionUnitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Optional;
+
 @Component
 public class SubscriptionUnitServiceImpl implements SubscriptionUnitService {
 
@@ -36,5 +38,11 @@ public class SubscriptionUnitServiceImpl implements SubscriptionUnitService {
     public Iterable<SubscriptionUnit> getByUserId(Long userAccountId) {
         return this.subscriptionUnitRepository.getSubscriptionUnitsByUserId(userAccountId);
     }
+
+    @Override
+    public Optional<SubscriptionUnit> getById(Long id) {
+        return this.subscriptionUnitRepository.findById(id);
+    }
+
 
 }

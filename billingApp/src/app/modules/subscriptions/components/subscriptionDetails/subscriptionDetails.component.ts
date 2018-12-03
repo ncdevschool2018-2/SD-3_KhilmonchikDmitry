@@ -36,6 +36,7 @@ export class SubscriptionDetailsComponent implements OnInit {
   }
 
   subscribe() {
+    console.log(this.subscription);
     let subscriptionUnit = new SubscriptionUnit(this.id, this.subscription, 30, true, true);
     this.subscriptionUnitService.saveSubscriptionUnit(subscriptionUnit);
   }

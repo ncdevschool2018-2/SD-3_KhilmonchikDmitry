@@ -12,4 +12,6 @@ public interface SubscriptionUnitRepository extends CrudRepository<SubscriptionU
 
     Iterable<SubscriptionUnit> getSubscriptionUnitsByUserId(@Param("userId") Long userAccountId);
 
+    @Override
+    void deleteById(Long aLong);
 }

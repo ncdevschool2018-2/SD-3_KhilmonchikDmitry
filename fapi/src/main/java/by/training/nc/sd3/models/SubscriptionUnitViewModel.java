@@ -30,6 +30,26 @@ public class SubscriptionUnitViewModel {
         return status;
     }
 
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
+    public void setSubscription(SubscriptionViewModel subscription) {
+        this.subscription = subscription;
+    }
+
+    public void setDaysLeft(int daysLeft) {
+        this.daysLeft = daysLeft;
+    }
+
+    public void setWillBeRenewed(boolean willBeRenewed) {
+        this.willBeRenewed = willBeRenewed;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
     @Override
     public String toString() {
         return "SubscriptionUnitViewModel{" +

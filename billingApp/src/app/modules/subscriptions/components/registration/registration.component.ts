@@ -42,7 +42,7 @@ export class RegistrationComponent {
     this.createBillingAccount(creditCardNumber, billingAccountName, billingAccountPassword, billingAccountPasswordRepeated);
     console.log(this.user);
     console.log(this.billingAccount);
-    this.userHttp.createUser(this.user);
     this.billingHttp.createBillingAccount(this.billingAccount);
+    this.userHttp.createUser(this.user);
   }
 }
