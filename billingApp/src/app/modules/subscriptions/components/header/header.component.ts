@@ -2,6 +2,7 @@ import {Component, Input, OnInit, Output} from '@angular/core';
 import {UserIDService} from '../../../../services/userID.service';
 import {SubscriptionService} from "../../../../services/subscription/subscription.service";
 import {Subscription} from "../../../../shared/Subscription";
+import {SubscriptionsShareService} from "../../../../services/subscriptionsShare.service";
 
 @Component({
   selector: 'header',
@@ -16,8 +17,20 @@ export class HeaderComponent implements OnInit {
   @Output() subscriptions: Subscription[];
   @Output() subscription: Subscription;
 
-  constructor(private http: SubscriptionService, private userIDService: UserIDService) {
+  constructor(private http: SubscriptionService, private userIDService: UserIDService,
+              private subscriptionShareService: SubscriptionsShareService) {
     this.userIDService.setID(-1);
+    this.http.getSubscriptions().subscribe(
+      subscriptions =>
+        this.subscriptionShareService.setSubscriptions(subscriptions)
+    )
+  }
+
+  getAllSubscriptions() {
+    this.http.getSubscriptions().subscribe(
+      subscriptions =>
+        this.subscriptionShareService.setSubscriptions(subscriptions)
+    )
   }
 
   ngOnInit() {
@@ -29,16 +42,14 @@ export class HeaderComponent implements OnInit {
 
   search(name: string): Subscription {
     this.http.getSubscriptionByName(name).subscribe(subscription => {
-      this.subscription = subscription;
-      console.log(subscription);
+      this.subscriptionShareService.setSubscriptions([subscription]);
     });
     return this.subscription;
   }
 
   filter(category: string): Subscription[] {
     this.http.getSubscriptionByCategory(category).subscribe(subscriptions => {
-      this.subscriptions = subscriptions;
-      console.log(subscriptions);
+      this.subscriptionShareService.setSubscriptions(subscriptions);
     });
     return this.subscriptions;
   }

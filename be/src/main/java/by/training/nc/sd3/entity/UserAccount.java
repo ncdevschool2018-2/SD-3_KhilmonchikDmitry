@@ -14,6 +14,17 @@ public class UserAccount {
     private String email;
     private boolean isAdmin;
 
+    public UserAccount() {
+    }
+
+    public UserAccount(Long activeBillingAccountId, String name, String password, String email, boolean isAdmin) {
+        this.activeBillingAccountId = activeBillingAccountId;
+        this.name = name;
+        this.password = password;
+        this.email = email;
+        this.isAdmin = isAdmin;
+    }
+
     public Long getId() {
         return id;
     }
