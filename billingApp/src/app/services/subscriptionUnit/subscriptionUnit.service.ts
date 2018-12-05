@@ -16,7 +16,12 @@ export class SubscriptionUnitService {
   }
 
   public saveSubscriptionUnit(subscriptionUnit: SubscriptionUnit) {
-    this.http.post('http://localhost:8080/api/subsunits/save', subscriptionUnit);
+    return this.http.post<SubscriptionUnit>('http://localhost:8080/api/subsunits/save', subscriptionUnit);
+  }
+
+  public deleteSubscriptionUnit(subscriptionUnit: SubscriptionUnit) {
+    console.log(subscriptionUnit.id);
+    return this.http.delete('http://localhost:8080/api/subsunits/delete/' + subscriptionUnit.id + '?id=' + subscriptionUnit.id);
   }
 
 }

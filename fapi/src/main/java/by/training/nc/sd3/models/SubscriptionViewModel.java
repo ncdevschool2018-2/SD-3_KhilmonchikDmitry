@@ -77,4 +77,17 @@ public class SubscriptionViewModel {
     public String getDescription() {
         return description;
     }
+
+    @Override
+    public String toString() {
+        return "SubscriptionViewModel{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", category=" + category +
+                ", perMonth=" + perMonth +
+                ", perThreeMonth=" + perThreeMonth +
+                ", perYear=" + perYear +
+                '}';
+    }
 }

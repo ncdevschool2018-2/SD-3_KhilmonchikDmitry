@@ -51,7 +51,6 @@ public class SubscriptionUnitController {
 
     @RequestMapping(value = "get-by-user-id", method = RequestMethod.GET)
     public Iterable<SubscriptionUnit> getByUserAccountId(@RequestParam("userId") Long id) {
-        System.out.println(id);
         return subscriptionUnitService.getByUserId(id);
     }
 }

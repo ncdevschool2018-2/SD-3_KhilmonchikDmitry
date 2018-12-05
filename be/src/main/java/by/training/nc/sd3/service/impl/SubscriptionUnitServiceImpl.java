@@ -43,6 +43,4 @@ public class SubscriptionUnitServiceImpl implements SubscriptionUnitService {
     public Optional<SubscriptionUnit> getById(Long id) {
         return this.subscriptionUnitRepository.findById(id);
     }
-
-
 }

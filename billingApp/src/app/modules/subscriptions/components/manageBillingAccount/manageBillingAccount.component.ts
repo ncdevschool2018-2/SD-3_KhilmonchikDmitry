@@ -27,8 +27,7 @@ export class ManageBillingAccountComponent implements OnInit {
   deleteBillingAccount(billingAccountId: number, password: string) {
     let billingAccount: BillingAccount;
     billingAccount = new BillingAccount(billingAccountId, null, null, null, password, null);
-    console.log(billingAccount);
-    this.http.checkBillingAccountPassword(billingAccount).subscribe(result => console.log(result));
+    this.http.deleteBillingAccount(billingAccount).subscribe(result => console.log(result));
   }
 
 }

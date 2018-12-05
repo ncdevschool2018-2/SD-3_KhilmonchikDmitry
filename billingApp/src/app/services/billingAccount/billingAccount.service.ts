@@ -19,6 +19,11 @@ export class BillingAccountService {
     return this.http.post<BillingAccount>('http://localhost:8080/api/ba/save', billingAccount);
   }
 
+  public deleteBillingAccount(billingAccount: BillingAccount) {
+    return this.http.delete('http://localhost:8080/api/ba/delete/' + billingAccount.id + '?id=' + billingAccount.id +
+      '&password=' + billingAccount.password);
+  }
+
   public checkBillingAccountPassword(billingAccount: BillingAccount) {
     return this.http.post<BillingAccount>('http://localhost:8080/api/ba/checkpasswordbyid', billingAccount);
   }

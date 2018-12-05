@@ -27,4 +27,10 @@ export class UserSubscriptionsComponent implements OnInit {
       console.log(subscriptionUnits);
     });
   }
+
+  unsubscribe(subscriptionUnit: SubscriptionUnit) {
+    this.http.deleteSubscriptionUnit(subscriptionUnit).subscribe(
+      res => console.log(res)
+    );
+  }
 }

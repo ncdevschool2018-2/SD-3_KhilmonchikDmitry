@@ -29,60 +29,91 @@ public class SubscriptionUnit {
     @LastModifiedDate
     private Date writeOffDate;
 
+    public SubscriptionUnit() {
+    }
+
+    public SubscriptionUnit(Long userId, Subscription subscription, BillingAccount billingAccount, int daysLeft,
+                            boolean willBeRenewed, boolean status, Date creationDate, Date writeOffDate) {
+        this.userId = userId;
+        this.subscription = subscription;
+        this.billingAccount = billingAccount;
+        this.daysLeft = daysLeft;
+        this.willBeRenewed = willBeRenewed;
+        this.status = status;
+        this.creationDate = creationDate;
+        this.writeOffDate = writeOffDate;
+    }
+
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public Long getUserId() {
         return userId;
     }
 
+    public void setUserId(Long userId) {
+        this.userId = userId;
+    }
+
     public Subscription getSubscription() {
         return subscription;
     }
 
-    public int getDaysLeft() {
-        return daysLeft;
-    }
-
-    public boolean isWillBeRenewed() {
-        return willBeRenewed;
-    }
-
-    public boolean isStatus() {
-        return status;
-    }
-
-    public Date getCreationDate() {
-        return creationDate;
+    public void setSubscription(Subscription subscription) {
+        this.subscription = subscription;
     }
 
     public BillingAccount getBillingAccount() {
         return billingAccount;
     }
 
-    public Date getWriteOffDate() {
-        return writeOffDate;
+    public void setBillingAccount(BillingAccount billingAccount) {
+        this.billingAccount = billingAccount;
+    }
+
+    public int getDaysLeft() {
+        return daysLeft;
     }
 
     public void setDaysLeft(int daysLeft) {
         this.daysLeft = daysLeft;
     }
 
+    public boolean isWillBeRenewed() {
+        return willBeRenewed;
+    }
+
     public void setWillBeRenewed(boolean willBeRenewed) {
         this.willBeRenewed = willBeRenewed;
+    }
+
+    public boolean isStatus() {
+        return status;
     }
 
     public void setStatus(boolean status) {
         this.status = status;
     }
 
-    public void setWriteOffDate(Date writeOffDate) {
-        this.writeOffDate = writeOffDate;
+    public Date getCreationDate() {
+        return creationDate;
     }
 
-    public void setBillingAccount(BillingAccount billingAccount) {
-        this.billingAccount = billingAccount;
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    public Date getWriteOffDate() {
+        return writeOffDate;
+    }
+
+    public void setWriteOffDate(Date writeOffDate) {
+        this.writeOffDate = writeOffDate;
     }
 
     @Override

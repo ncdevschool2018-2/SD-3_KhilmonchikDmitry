@@ -22,9 +22,8 @@ export class UserBillingAccountsComponent implements OnInit{
     this.id = this.userIdService.getID();
     this.http.getBillingAccountsByOwnerId(this.id).subscribe(billingAccounts => {
       this.billingAccounts = billingAccounts;
-      console.log(billingAccounts);
+      console.log(this.billingAccounts);
     });
     this.selectedBillingAccountIndex = 0;
   }
-
 }

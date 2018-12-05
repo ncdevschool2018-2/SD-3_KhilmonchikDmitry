@@ -40,13 +40,14 @@ export class RegistrationComponent {
                 creditCardNumber: string, billingAccountName: string,
                 billingAccountPassword: string, billingAccountPasswordRepeated: string) {
     this.createUser(login, password, passwordRepeated, email);
-    this.createBillingAccount(creditCardNumber, billingAccountName, billingAccountPassword, billingAccountPasswordRepeated);
-    console.log(this.user);
-    console.log(this.billingAccount);
+    this.createBillingAccount(creditCardNumber, billingAccountName, billingAccountPassword,
+      billingAccountPasswordRepeated);
     this.billingHttp.createBillingAccount(this.billingAccount).subscribe(
       billingAccount => {
-        console.log(billingAccount);
-        this.userHttp.createUser(this.user, billingAccount.id);
+        this.userHttp.createUser(this.user, billingAccount.id).subscribe(
+          user =>
+            console.log(user)
+        )
       }
     );
   }

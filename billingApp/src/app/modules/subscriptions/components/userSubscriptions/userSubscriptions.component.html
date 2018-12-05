@@ -17,7 +17,7 @@
       <td>{{subscription.willBeRenewed}}</td>
       <td>{{subscription.status}}</td>
       <td>
-        <button type="submit" class="btn btn-success" class="btn btn-light">Unsubscribe</button>
+        <button type="submit" class="btn btn-success" class="btn btn-light" (click)="unsubscribe(subscription)">Unsubscribe</button>
       </td>
     </tr>
     </tbody>

@@ -9,7 +9,6 @@ public class Subscription {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long activeBillingAccount;
     private String name;
     private String description;
     private int category;
@@ -17,32 +16,73 @@ public class Subscription {
     private int perThreeMonths;
     private int perYear;
 
-    public long getId() {
+    public Subscription() {
+    }
+
+    public Subscription(String name, String description,
+                        String category, int perMonth, int perThreeMonths, int perYear) {
+        this.name = name;
+        this.description = description;
+        this.category = Categories.valueOf(category).ordinal();
+        this.perMonth = perMonth;
+        this.perThreeMonths = perThreeMonths;
+        this.perYear = perYear;
+    }
+
+    public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getDescription() {
         return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public int getCategory() {
         return category;
     }
 
+    public void setCategory(String category) {
+        this.category = Categories.valueOf(category).ordinal();
+    }
+
     public int getPerMonth() {
         return perMonth;
+    }
+
+    public void setPerMonth(int perMonth) {
+        this.perMonth = perMonth;
     }
 
     public int getPerThreeMonths() {
         return perThreeMonths;
     }
 
+    public void setPerThreeMonths(int perThreeMonths) {
+        this.perThreeMonths = perThreeMonths;
+    }
+
     public int getPerYear() {
         return perYear;
+    }
+
+    public void setPerYear(int perYear) {
+        this.perYear = perYear;
     }
 
     @Override
