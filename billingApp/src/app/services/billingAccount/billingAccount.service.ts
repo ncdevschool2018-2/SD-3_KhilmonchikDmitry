@@ -28,4 +28,8 @@ export class BillingAccountService {
     return this.http.post<BillingAccount>('http://localhost:8080/api/ba/checkpasswordbyid', billingAccount);
   }
 
+  public addMoney(billingAccount: BillingAccount) {
+    return this.http.post<BillingAccount>('http://localhost:8080/api/ba/addMoney', billingAccount);
+  }
+
 }

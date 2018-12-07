@@ -11,4 +11,5 @@ public interface BillingAccountDataService {
     boolean checkPasswordById(String password, Long id);
     BillingAccountViewModel saveBillingAccount(BillingAccountViewModel account);
     void deleteBillingAccountById(Long id, String password);
+    BillingAccountViewModel addMoney(BillingAccountViewModel billingAccountViewModel);
 }

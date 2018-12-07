@@ -54,4 +54,13 @@ public class BillingAccountDataServiceImpl implements BillingAccountDataService 
         restTemplate.delete(backendServerUrl +
                         "/api/billing-accounts/delete/" + id + "?id=" + id + "&password=" + password);
     }
+
+    @Override
+    public BillingAccountViewModel addMoney(BillingAccountViewModel billingAccountViewModel) {
+        System.out.println(billingAccountViewModel);
+        RestTemplate restTemplate = new RestTemplate();
+        BillingAccountViewModel billingAccount = restTemplate.postForObject(backendServerUrl + "/api/billing-accounts/add-money",
+                billingAccountViewModel, BillingAccountViewModel.class);
+        return  billingAccount;
+    }
 }

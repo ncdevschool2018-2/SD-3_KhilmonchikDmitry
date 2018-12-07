@@ -11,5 +11,5 @@ public interface BillingAccountService {
     Optional<BillingAccount> getById(Long id);
     BillingAccount save(BillingAccount billingAccount);
     void delete(Long id, String password);
-
+    BillingAccount addMoney(BillingAccount billingAccount);
 }

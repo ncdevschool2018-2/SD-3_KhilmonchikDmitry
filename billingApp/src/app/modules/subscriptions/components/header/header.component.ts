@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
   @Output() subscriptions: Subscription[];
   @Output() subscription: Subscription;
 
-  constructor(private http: SubscriptionService, private userIDService: UserIDService,
+  constructor(private http: SubscriptionService, public userIDService: UserIDService,
               private subscriptionShareService: SubscriptionsShareService) {
     this.userIDService.setID(-1);
     this.http.getSubscriptions().subscribe(

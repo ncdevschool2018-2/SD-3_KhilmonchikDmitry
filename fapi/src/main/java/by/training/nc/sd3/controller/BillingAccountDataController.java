@@ -49,4 +49,13 @@ public class BillingAccountDataController {
     public void deleteBillingAccount(@PathVariable Long id, @RequestParam String password) {
         billingAccountDataService.deleteBillingAccountById(id, password);
     }
+
+    @RequestMapping(value = "/addMoney", method = RequestMethod.POST)
+    public ResponseEntity<BillingAccountViewModel> addMoney(@RequestBody BillingAccountViewModel billingAccount) {
+        if (billingAccount != null) {
+            System.out.println(billingAccount);
+            return ResponseEntity.ok(billingAccountDataService.addMoney(billingAccount));
+        }
+        return null;
+    }
 }

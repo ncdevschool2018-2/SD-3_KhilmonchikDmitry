@@ -23,7 +23,7 @@ export class UserService {
 
   getUserById(id: number): Observable<User> {
     let params = new HttpParams().set('id', id.toString());
-    return this.http.get<User>('http://localhost:8080/api/ua/getbydata', {params: params});
+    return this.http.get<User>('http://localhost:8080/api/ua/getbyid', {params: params});
   }
 
   createUser(user: User, activeBillingAccountId: number) {

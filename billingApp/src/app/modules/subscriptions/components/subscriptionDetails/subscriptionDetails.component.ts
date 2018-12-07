@@ -15,16 +15,30 @@ import {SubscriptionUnit} from "../../../../shared/SubscriptionUnit";
 
 export class SubscriptionDetailsComponent implements OnInit {
   @Output() subscription: Subscription;
+  isSubscribed: boolean;
   id;
 
   constructor(private http: SubscriptionService, private route: ActivatedRoute,
-              private userIdService: UserIDService, private subscriptionUnitService: SubscriptionUnitService) {
+              private userIdService: UserIDService,
+              private subscriptionUnitService: SubscriptionUnitService) {
     this.subscription = new Subscription();
   }
 
   ngOnInit() {
     this.getSubscription();
+    this.isSubscribed = false;
     this.id = this.userIdService.getID()[0];
+    if(this.id > -1) {
+      let subsctiptionUnits: SubscriptionUnit[];
+      this.subscriptionUnitService.getSubscriptionUnitsById(this.id).subscribe(
+        subsctiptionUnits => {
+          for(let i = 0; i < subsctiptionUnits.length; i++) {
+            if(subsctiptionUnits[i].subscription.name === this.subscription.name)
+              this.isSubscribed = true;
+          }
+        }
+      );
+    }
   }
 
   getSubscription() {
@@ -41,6 +55,18 @@ export class SubscriptionDetailsComponent implements OnInit {
     this.subscriptionUnitService.saveSubscriptionUnit(subscriptionUnit).subscribe(
       subscriptionUnit =>
         console.log(subscriptionUnit)
+    );
+  }
+
+  unsubscribe() {
+    this.subscriptionUnitService.getSubscriptionUnitsById(this.id).subscribe(
+      subsctiptionUnits => {
+        for(let i = 0; i < subsctiptionUnits.length; i++) {
+          if(subsctiptionUnits[i].subscription.name === this.subscription.name) {
+            this.subscriptionUnitService.deleteSubscriptionUnit(subsctiptionUnits[i]);
+          }
+        }
+      }
     );
   }
 }

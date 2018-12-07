@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {SubscriptionUnitService} from "../../../../services/subscriptionUnit/subscriptionUnit.service";
 import {UserIDService} from "../../../../services/userID.service";
 import {SubscriptionUnit} from "../../../../shared/SubscriptionUnit";
+import {UserService} from "../../../../services/user/user.service";
+import {User} from "../../../../shared/User";
 
 @Component({
   selector: 'userSubscriptions',
@@ -12,12 +14,20 @@ import {SubscriptionUnit} from "../../../../shared/SubscriptionUnit";
 export class UserSubscriptionsComponent implements OnInit {
   subscriptionUnits: SubscriptionUnit[];
   id;
+  user: User;
 
-  constructor(private http: SubscriptionUnitService, private userIdService: UserIDService) {
+  constructor(private http: SubscriptionUnitService, private userIdService: UserIDService,
+              private userService: UserService) {
   }
 
   ngOnInit() {
     this.id = this.userIdService.getID();
+    this.userService.getUserById(this.id).subscribe(
+      user => {
+        this.user = user;
+        console.log(this.user);
+      }
+    );
     this.getSubscriptionUnitsById();
   }
 

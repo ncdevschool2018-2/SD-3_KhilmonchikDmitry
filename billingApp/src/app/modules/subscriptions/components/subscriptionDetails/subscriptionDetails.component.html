@@ -35,7 +35,8 @@
           <option>1 year</option>
         </select>
         <p></p>
-        <button type="submit" class="btn btn-success" class="btn btn-light" (click)="subscribe()" routerLink="">Subscribe</button>
+        <button *ngIf="!isSubscribed" type="submit" class="btn btn-success" class="btn btn-light" (click)="subscribe()" routerLink="profileDetails">Subscribe</button>
+        <button *ngIf="isSubscribed" type="submit" class="btn btn-success" class="btn btn-light" (click)="unsubscribe()" routerLink="profileDetails">Unsubscribe</button>
       </li>
     </ul>
   </div>

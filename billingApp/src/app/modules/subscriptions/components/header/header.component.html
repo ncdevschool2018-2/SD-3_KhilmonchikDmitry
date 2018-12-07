@@ -52,8 +52,8 @@
       <img src="../../../../../assets/icons/account.png" class="rounded float-right"
            width="100" height="100"
            [routerLink]="loggedUserID >= 0 ? '/profileDetails' : ''">
-      <button *ngIf="loggedUserID < 0" type="button" class="btn btn-primary" routerLink="/login">Sign in</button>
-      <button *ngIf="loggedUserID >= 0" type="button" class="btn btn-primary" routerLink="" (click)="logOut()">Sign
+      <button *ngIf="userIDService.getID() < 0" type="button" class="btn btn-primary" routerLink="/login">Sign in</button>
+      <button *ngIf="userIDService.getID() >= 0" type="button" class="btn btn-primary" routerLink="" (click)="logOut()">Sign
         out
       </button>
     </div>

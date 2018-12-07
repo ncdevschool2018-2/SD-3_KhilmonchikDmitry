@@ -71,4 +71,16 @@ public class BillingAccountViewModel {
     public String getCreditCardNumber() {
         return creditCardNumber;
     }
+
+    @Override
+    public String toString() {
+        return "BillingAccountViewModel{" +
+                "id=" + id +
+                ", ownerId=" + ownerId +
+                ", creditCardNumber='" + creditCardNumber + '\'' +
+                ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", money=" + money +
+                '}';
+    }
 }

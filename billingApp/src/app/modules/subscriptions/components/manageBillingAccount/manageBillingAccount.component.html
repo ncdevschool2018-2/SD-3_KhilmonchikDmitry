@@ -2,33 +2,36 @@
   <div class="col"></div>
 
   <div class="col-6">
-    <form>
-      <div class="form-group">
-        <label for="billingAccountSelect">Select billing account</label>
-        <select #selectedBillingAccount id="billingAccountSelect" class="form-control">
-          <option *ngFor="let billingAccount of billingAccounts">{{billingAccount.name}}</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="BillingAccountPassword">Billing account password</label>
-        <input type="password" class="form-control" id="BillingAccountPassword">
-      </div>
-      <button type="button" (click)="deleteBillingAccount(billingAccounts[selectedBillingAccount.selectedIndex].id,
-       billingAccounts[selectedBillingAccount.selectedIndex].password);" class="btn btn-danger">Delete billing account</button>
-      <div class="form-group">
-        <label for="CreditCardPassword">Credit card password</label>
-        <input type="password" class="form-control" id="CreditCardPassword">
-        <small id="CreditCardPasswordHelp" class="form-text text-muted">We'll never steal your money (probably).</small>
-      </div>
-      <div class="form-group">
-        <label for="BillingAccountSum">Enter the sum of money</label>
-        <input type="number" class="form-control" id="BillingAccountSum">
-        <small id="PaymentHelp" class="form-text text-muted">This amount of money will be written off your credit
-          card.
-        </small>
-      </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
+    <div class="form-group">
+      <label for="billingAccountSelect">Select billing account</label>
+      <select #selectedBillingAccount id="billingAccountSelect" class="form-control">
+        <option *ngFor="let billingAccount of billingAccounts">{{billingAccount.name}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="BillingAccountPassword">Billing account password</label>
+      <input #password type="password" class="form-control" id="BillingAccountPassword">
+    </div>
+    <button type="button" (click)="deleteBillingAccount(billingAccounts[selectedBillingAccount.selectedIndex].id,
+       billingAccounts[selectedBillingAccount.selectedIndex].password);" class="btn btn-danger"
+            routerLink="../profileDetails">Delete billing account
+    </button>
+    <div class="form-group">
+      <label for="CreditCardNumber">Credit card number</label>
+      <input #creditCardNumber type="password" class="form-control" id="CreditCardNumber">
+      <small id="CreditCardNumberHelp" class="form-text text-muted">We'll never steal your money (probably).</small>
+    </div>
+    <div class="form-group">
+      <label for="BillingAccountSum">Enter the sum of money</label>
+      <input #sumOfMoney type="number" class="form-control" id="BillingAccountSum">
+      <small id="PaymentHelp" class="form-text text-muted">This amount of money will be written off your credit
+        card.
+      </small>
+    </div>
+    <button
+      (click)="addMoney(selectedBillingAccount.value, password.value, creditCardNumber.value, sumOfMoney.value);"
+      class="btn btn-primary" routerLink="../profileDetails">Submit
+    </button>
   </div>
 
   <div class="col"></div>

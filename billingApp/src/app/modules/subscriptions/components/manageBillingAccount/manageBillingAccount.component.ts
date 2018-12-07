@@ -18,7 +18,7 @@ export class ManageBillingAccountComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.id = this.userIdService.getID();
+    this.id = this.userIdService.getID()[0];
     this.http.getBillingAccountsByOwnerId(this.id).subscribe(billingAccounts => {
       this.billingAccounts = billingAccounts;
     });
@@ -30,4 +30,10 @@ export class ManageBillingAccountComponent implements OnInit {
     this.http.deleteBillingAccount(billingAccount).subscribe(result => console.log(result));
   }
 
+  addMoney(name: string, password: string, creditCardNumber: string, sum: string) {
+    let billingAccount: BillingAccount = new BillingAccount(null, this.id, creditCardNumber, name, password, Number(sum));
+    this.http.addMoney(billingAccount).subscribe(
+      billingAccount=> console.log(billingAccount)
+    );
+  }
 }

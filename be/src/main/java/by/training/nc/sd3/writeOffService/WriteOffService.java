@@ -29,12 +29,12 @@ public class WriteOffService {
 
     @Scheduled(fixedDelay = 5000)
     public void writeOff() {
-        /*Iterable<SubscriptionUnit> subscriptionUnits = subscriptionUnitService.getSubscriptionUnits();
+        Iterable<SubscriptionUnit> subscriptionUnits = subscriptionUnitService.getSubscriptionUnits();
         subscriptionUnits.forEach(
                 subscriptionUnit -> {
                     if(subscriptionUnit.isWillBeRenewed()) {
                         Date date = new Date();
-                        if(date.getTime() - subscriptionUnit.getWriteOffDate().getTime() >= 86400000
+                        if(date.getTime() - subscriptionUnit.getWriteOffDate().getTime() >= 10000
                         && subscriptionUnit.getDaysLeft() > 0) {
                             subscriptionUnit.setDaysLeft(subscriptionUnit.getDaysLeft() - 1);
                             subscriptionUnit.setWriteOffDate(date);
@@ -42,10 +42,10 @@ public class WriteOffService {
                         }
                         if(subscriptionUnit.getDaysLeft() == 0 && subscriptionUnit.isWillBeRenewed() && subscriptionUnit.isStatus())
                         {
-                            Optional<BillingAccount> billingAccountOptional = billingAccountService.getById(subscriptionUnit.getBillingAccountId());
+                            Optional<BillingAccount> billingAccountOptional = billingAccountService.getById(subscriptionUnit.getId());
                             if(billingAccountOptional.isPresent()) {
                                 BillingAccount billingAccount = billingAccountOptional.get();
-                                Long subscriptionId = subscriptionUnit.getSubscriptionId();
+                                Long subscriptionId = subscriptionUnit.getId();
                                 Optional<Subscription> subscriptionOptional = subscriptionService.getSubscriptionById(subscriptionId);
                                 if(subscriptionOptional.isPresent()) {
                                     Subscription subscription = subscriptionOptional.get();
@@ -64,6 +64,6 @@ public class WriteOffService {
                         this.subscriptionUnitService.save(subscriptionUnit);
                     }
                 }
-        );*/
+        );
     }
 }

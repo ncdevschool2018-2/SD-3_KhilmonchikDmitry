@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {User} from '../../../../shared/User';
-import {HttpService} from '../../../../services/http.service';
 import {UserIDService} from '../../../../services/userID.service';
 import {UserService} from "../../../../services/user/user.service";
 

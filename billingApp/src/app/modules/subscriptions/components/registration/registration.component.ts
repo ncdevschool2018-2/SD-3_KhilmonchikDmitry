@@ -5,6 +5,7 @@ import {BillingAccount} from '../../../../shared/BillingAccount';
 import {UserService} from "../../../../services/user/user.service";
 import {BillingAccountService} from "../../../../services/billingAccount/billingAccount.service";
 import {Observable} from "rxjs";
+import {UserIDService} from "../../../../services/userID.service";
 
 @Component({
   selector: 'registration',
@@ -16,7 +17,8 @@ export class RegistrationComponent {
   user: User;
   billingAccount: BillingAccount;
 
-  constructor(private userHttp: UserService, private billingHttp: BillingAccountService) {
+  constructor(private userHttp: UserService, private billingHttp: BillingAccountService,
+              private userIdService: UserIDService) {
   }
 
   createUser(login: string, password: string, passwordRepeated: string, email: string) {
@@ -45,8 +47,10 @@ export class RegistrationComponent {
     this.billingHttp.createBillingAccount(this.billingAccount).subscribe(
       billingAccount => {
         this.userHttp.createUser(this.user, billingAccount.id).subscribe(
-          user =>
-            console.log(user)
+          user => {
+            this.userIdService.setID(user.id);
+            console.log(this.userIdService.getID());
+          }
         )
       }
     );

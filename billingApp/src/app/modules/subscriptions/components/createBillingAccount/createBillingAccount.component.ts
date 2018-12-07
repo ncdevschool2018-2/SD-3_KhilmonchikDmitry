@@ -25,8 +25,7 @@ export class CreateBillingAccountComponent {
       if (password === passwordRepeated) {
         newBillingAccount = new BillingAccount(null, this.id, creditCardNumber, name, password, 0);
       }
-      this.http.createBillingAccount(newBillingAccount);
-      console.log(newBillingAccount);
+      this.http.createBillingAccount(newBillingAccount).subscribe();
     }
   }
 }
