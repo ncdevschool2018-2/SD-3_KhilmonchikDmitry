@@ -69,4 +69,10 @@ public class SubscriptionUnitServiceImpl implements SubscriptionUnitService {
     public Optional<SubscriptionUnit> getById(Long id) {
         return this.subscriptionUnitRepository.findById(id);
     }
+
+    @Override
+    public SubscriptionUnit changeStatus(SubscriptionUnit subscriptionUnit) {
+        subscriptionUnit.setStatus(!subscriptionUnit.isStatus());
+        return this.subscriptionUnitRepository.save(subscriptionUnit);
+    }
 }

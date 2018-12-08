@@ -28,7 +28,7 @@ public class WriteOffService {
     }
 
     @Scheduled(fixedDelay = 5000)
-    public void writeOff() {
+    public void writeOff() {/*
         Iterable<SubscriptionUnit> subscriptionUnits = subscriptionUnitService.getSubscriptionUnits();
         subscriptionUnits.forEach(
                 subscriptionUnit -> {
@@ -64,6 +64,6 @@ public class WriteOffService {
                         this.subscriptionUnitService.save(subscriptionUnit);
                     }
                 }
-        );
+        );*/
     }
 }

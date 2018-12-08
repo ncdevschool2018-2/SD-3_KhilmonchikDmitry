@@ -32,4 +32,9 @@ public class SubscriptionUnitDataController {
         return ResponseEntity.ok(subscriptionUnitDataService.save(subscriptionUnitViewModel));
     }
 
+    @PostMapping(value = "/changestatus")
+    public ResponseEntity<SubscriptionUnitViewModel> changeStatus(@RequestBody SubscriptionUnitViewModel subscriptionUnitViewModel) {
+        return ResponseEntity.ok(subscriptionUnitDataService.changeStatus(subscriptionUnitViewModel));
+    }
+
 }

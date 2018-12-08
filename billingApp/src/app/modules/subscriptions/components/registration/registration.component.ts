@@ -23,7 +23,7 @@ export class RegistrationComponent {
 
   createUser(login: string, password: string, passwordRepeated: string, email: string) {
     if (password === passwordRepeated && password !== '' && login !== '' && email !== '') {
-      this.user = new User(null, login, password, email);
+      this.user = new User(null, login, password, email, false);
     }
     if (password !== passwordRepeated) {
       console.log('passwords do not match!');

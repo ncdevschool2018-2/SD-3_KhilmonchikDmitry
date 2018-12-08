@@ -11,4 +11,6 @@ public interface SubscriptionUnitDataService {
     public void delete(Long id);
 
     public SubscriptionUnitViewModel save(SubscriptionUnitViewModel subscriptionUnitViewModel);
+
+    public SubscriptionUnitViewModel changeStatus(SubscriptionUnitViewModel subscriptionUnitViewModel);
 }

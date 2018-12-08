@@ -44,4 +44,12 @@ public class SubscriptionUnitDataServiceImpl implements SubscriptionUnitDataServ
         return null;
     }
 
+    @Override
+    public SubscriptionUnitViewModel changeStatus(SubscriptionUnitViewModel subscriptionUnitViewModel) {
+        RestTemplate restTemplate = new RestTemplate();
+        SubscriptionUnitViewModel subscriptionUnit = restTemplate.postForObject(backendServerUrl + "/api/subscription-units/change-status",
+                subscriptionUnitViewModel, SubscriptionUnitViewModel.class);
+        return subscriptionUnit;
+    }
+
 }

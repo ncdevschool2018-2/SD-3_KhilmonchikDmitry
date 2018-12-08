@@ -24,4 +24,8 @@ export class SubscriptionUnitService {
     return this.http.delete('http://localhost:8080/api/subsunits/delete/' + subscriptionUnit.id + '?id=' + subscriptionUnit.id);
   }
 
+  public changeStatusSubscriptionUnit(subscriptionUnit: SubscriptionUnit) {
+    return this.http.post<SubscriptionUnit>('http://localhost:8080/api/subsunits/changestatus', subscriptionUnit);
+  }
+
 }

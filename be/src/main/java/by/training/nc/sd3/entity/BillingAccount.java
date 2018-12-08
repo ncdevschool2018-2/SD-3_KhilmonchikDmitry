@@ -13,16 +13,18 @@ public class BillingAccount {
     private String name;
     private String password;
     private int money;
+    private boolean isBanned;
 
     public BillingAccount() {
     }
 
-    public BillingAccount(Long ownerId, String creditCardNumber, String name, String password, int money) {
+    public BillingAccount(Long ownerId, String creditCardNumber, String name, String password, int money, boolean isBanned) {
         this.ownerId = ownerId;
         this.creditCardNumber = creditCardNumber;
         this.name = name;
         this.password = password;
         this.money = money;
+        this.isBanned = isBanned;
     }
 
     public Long getId() {
@@ -55,5 +57,13 @@ public class BillingAccount {
 
     public void setOwnerId(Long ownerId) {
         this.ownerId = ownerId;
+    }
+
+    public boolean isBanned() {
+        return isBanned;
+    }
+
+    public void setBanned(boolean banned) {
+        isBanned = banned;
     }
 }

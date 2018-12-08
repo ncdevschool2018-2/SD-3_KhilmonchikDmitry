@@ -25,6 +25,7 @@ export class UserSubscriptionsComponent implements OnInit {
     this.userService.getUserById(this.id).subscribe(
       user => {
         this.user = user;
+        this.user.isAdmin = true;
         console.log(this.user);
       }
     );
@@ -42,5 +43,9 @@ export class UserSubscriptionsComponent implements OnInit {
     this.http.deleteSubscriptionUnit(subscriptionUnit).subscribe(
       res => console.log(res)
     );
+  }
+
+  changeStatus(subscriptionUnit: SubscriptionUnit) {
+    return this.http.changeStatusSubscriptionUnit(subscriptionUnit).subscribe();
   }
 }

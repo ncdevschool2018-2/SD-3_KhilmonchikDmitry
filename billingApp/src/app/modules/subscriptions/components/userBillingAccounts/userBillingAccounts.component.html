@@ -6,6 +6,7 @@
   </select>
   <h2>Money left</h2>
   <input *ngIf="billingAccounts" #moneyField class="form-control" type="text" placeholder="{{billingAccountSelect.selectedIndex}}" readonly>
+  <p></p>
   <button type="button" class="btn btn-success" routerLink="/manageBillingAccount">Manage billing account</button>
   <p></p>
   <button type="button" class="btn btn-success" routerLink="/createBillingAccount">Create billing account</button>

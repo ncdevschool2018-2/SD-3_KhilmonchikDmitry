@@ -53,4 +53,9 @@ public class SubscriptionUnitController {
     public Iterable<SubscriptionUnit> getByUserAccountId(@RequestParam("userId") Long id) {
         return subscriptionUnitService.getByUserId(id);
     }
+
+    @PostMapping(value = "change-status")
+    public SubscriptionUnit changeStatus(@RequestBody SubscriptionUnit subscriptionUnit) {
+        return subscriptionUnitService.changeStatus(subscriptionUnit);
+    }
 }

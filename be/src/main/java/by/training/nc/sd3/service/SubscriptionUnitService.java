@@ -18,4 +18,6 @@ public interface SubscriptionUnitService {
 
     Optional<SubscriptionUnit> getById(Long id);
 
+    SubscriptionUnit changeStatus(SubscriptionUnit subscriptionUnit);
+
 }
