@@ -10,16 +10,18 @@ public class UserAccountViewModel {
     private String password;
     private String email;
     private boolean isAdmin;
+    private boolean isBanned;
 
     public UserAccountViewModel() {
     }
 
-    public UserAccountViewModel(Long id, String name, String password, String email, boolean isAdmin) {
-        this.email = email;
+    public UserAccountViewModel(Long id, String name, String password, String email, boolean isAdmin, boolean isBanned) {
         this.id = id;
         this.name = name;
         this.password = password;
+        this.email = email;
         this.isAdmin = isAdmin;
+        this.isBanned = isBanned;
     }
 
     public Long getId() {
@@ -40,5 +42,9 @@ public class UserAccountViewModel {
 
     public boolean isAdmin() {
         return isAdmin;
+    }
+
+    public boolean isBanned() {
+        return isBanned;
     }
 }

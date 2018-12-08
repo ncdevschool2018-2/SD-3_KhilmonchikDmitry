@@ -63,4 +63,20 @@ public class BillingAccountDataServiceImpl implements BillingAccountDataService 
                 billingAccountViewModel, BillingAccountViewModel.class);
         return  billingAccount;
     }
+
+    @Override
+    public BillingAccountViewModel ban(BillingAccountViewModel billingAccountViewModel) {
+        RestTemplate restTemplate = new RestTemplate();
+        BillingAccountViewModel billingAccount = restTemplate.postForObject(backendServerUrl + "/api/billing-accounts/ban",
+                billingAccountViewModel, BillingAccountViewModel.class);
+        return  billingAccount;
+    }
+
+    @Override
+    public BillingAccountViewModel unBan(BillingAccountViewModel billingAccountViewModel) {
+        RestTemplate restTemplate = new RestTemplate();
+        BillingAccountViewModel billingAccount = restTemplate.postForObject(backendServerUrl + "/api/billing-accounts/unban",
+                billingAccountViewModel, BillingAccountViewModel.class);
+        return  billingAccount;
+    }
 }

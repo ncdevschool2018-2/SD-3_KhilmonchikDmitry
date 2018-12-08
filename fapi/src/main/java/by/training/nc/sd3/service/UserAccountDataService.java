@@ -8,4 +8,6 @@ public interface UserAccountDataService {
     UserAccountViewModel getUserAccountById(Long id);
     UserAccountViewModel getUserAccountByData(String login, String password);
     UserAccountViewModel saveUserAccount(UserAccountViewModel account, Long activeBillingAccountId);
+    UserAccountViewModel ban(UserAccountViewModel userAccountViewModel);
+    UserAccountViewModel unBan(UserAccountViewModel userAccountViewModel);
 }

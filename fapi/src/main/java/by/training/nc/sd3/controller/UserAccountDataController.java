@@ -1,5 +1,6 @@
 package by.training.nc.sd3.controller;
 
+import by.training.nc.sd3.models.BillingAccountViewModel;
 import by.training.nc.sd3.models.UserAccountViewModel;
 import by.training.nc.sd3.service.UserAccountDataService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +34,15 @@ public class UserAccountDataController {
             return ResponseEntity.ok(userAccountDataService.saveUserAccount(userAccount, activeBillingAccountId));
         }
         return null;
+    }
+
+    @PostMapping(value = "ban")
+    public ResponseEntity<UserAccountViewModel> ban(@RequestBody UserAccountViewModel userAccountViewModel) {
+        return ResponseEntity.ok(userAccountDataService.ban(userAccountViewModel));
+    }
+
+    @PostMapping(value = "unban")
+    public ResponseEntity<UserAccountViewModel> unBan(@RequestBody UserAccountViewModel userAccountViewModel) {
+        return ResponseEntity.ok(userAccountDataService.unBan(userAccountViewModel));
     }
 }

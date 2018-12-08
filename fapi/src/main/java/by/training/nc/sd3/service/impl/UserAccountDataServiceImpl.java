@@ -34,4 +34,18 @@ public class UserAccountDataServiceImpl implements UserAccountDataService {
         return restTemplate.postForObject(backendServerUrl + "/api/user-accounts/save?activeBillingAccountId=" + activeBillingAccountId,
                 account, UserAccountViewModel.class);
     }
+
+    @Override
+    public UserAccountViewModel ban(UserAccountViewModel userAccountViewModel) {
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.postForObject(backendServerUrl + "/api/user-accounts/ban",
+                userAccountViewModel, UserAccountViewModel.class);
+    }
+
+    @Override
+    public UserAccountViewModel unBan(UserAccountViewModel userAccountViewModel) {
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.postForObject(backendServerUrl + "/api/user-accounts/unban",
+                userAccountViewModel, UserAccountViewModel.class);
+    }
 }

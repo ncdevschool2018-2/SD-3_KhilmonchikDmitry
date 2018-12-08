@@ -43,4 +43,16 @@ public class UserAccountServiceImpl implements UserAccountService {
         return ua;
     }
 
+    @Override
+    public UserAccount ban(UserAccount userAccount) {
+        userAccount.setBanned(true);
+        return this.userAccountRepository.save(userAccount);
+    }
+
+    @Override
+    public UserAccount unBan(UserAccount userAccount) {
+        userAccount.setBanned(false);
+        return this.userAccountRepository.save(userAccount);
+    }
+
 }

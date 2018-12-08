@@ -3,28 +3,24 @@
   <component name="ChangeListManager">
     <list default="true" id="9f598fc7-b33d-4934-a527-6a84586ba27a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/BillingAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/BillingAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/UserAccount.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/UserAccount.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/SubscriptionUnitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/SubscriptionUnitService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/SubscriptionUnitServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/SubscriptionUnitServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/writeOffService/WriteOffService.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/writeOffService/WriteOffService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/target/classes/by/training/nc/sd3/controller/SubscriptionUnitController.class" beforeDir="false" afterPath="$PROJECT_DIR$/be/target/classes/by/training/nc/sd3/controller/SubscriptionUnitController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/target/classes/by/training/nc/sd3/service/SubscriptionUnitService.class" beforeDir="false" afterPath="$PROJECT_DIR$/be/target/classes/by/training/nc/sd3/service/SubscriptionUnitService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/target/classes/by/training/nc/sd3/service/impl/SubscriptionUnitServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/be/target/classes/by/training/nc/sd3/service/impl/SubscriptionUnitServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/target/classes/by/training/nc/sd3/writeOffService/WriteOffService.class" beforeDir="false" afterPath="$PROJECT_DIR$/be/target/classes/by/training/nc/sd3/writeOffService/WriteOffService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/registration/registration.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/registration/registration.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userBillingAccounts/userBillingAccounts.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userBillingAccounts/userBillingAccounts.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userSubscriptions/userSubscriptions.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userSubscriptions/userSubscriptions.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userSubscriptions/userSubscriptions.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userSubscriptions/userSubscriptions.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billingApp/src/app/services/subscriptionUnit/subscriptionUnit.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/billingApp/src/app/services/subscriptionUnit/subscriptionUnit.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/BillingAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/BillingAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/UserAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/UserAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/BillingAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/BillingAccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/UserAccountService.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/UserAccountService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/BillingAccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/BillingAccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/UserAccountServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/UserAccountServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billingApp/src/app/shared/BillingAccount.ts" beforeDir="false" afterPath="$PROJECT_DIR$/billingApp/src/app/shared/BillingAccount.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/billingApp/src/app/shared/User.ts" beforeDir="false" afterPath="$PROJECT_DIR$/billingApp/src/app/shared/User.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/SubscriptionUnitDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/SubscriptionUnitDataService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/SubscriptionUnitDataServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/SubscriptionUnitDataServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/by/training/nc/sd3/controller/SubscriptionUnitDataController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/by/training/nc/sd3/service/SubscriptionUnitDataService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/target/classes/by/training/nc/sd3/service/impl/SubscriptionUnitDataServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/BillingAccountDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/BillingAccountDataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/UserAccountDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/UserAccountDataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/BillingAccountViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/BillingAccountViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/UserAccountViewModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/UserAccountViewModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/BillingAccountDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/BillingAccountDataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/UserAccountDataService.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/UserAccountDataService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/BillingAccountDataServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/BillingAccountDataServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/UserAccountDataServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/UserAccountDataServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/target/classes/by/training/nc/sd3/models/BillingAccountViewModel.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/fapi/target/classes/by/training/nc/sd3/models/UserAccountViewModel.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/be/target/" />
@@ -102,12 +98,12 @@
           <entry key="billing_account" value="23" />
           <entry key="class" value="20" />
           <entry key="html" value="42" />
-          <entry key="java" value="253" />
+          <entry key="java" value="274" />
           <entry key="properties" value="1" />
           <entry key="sql" value="1" />
           <entry key="subscription" value="4" />
           <entry key="subscription_unit" value="13" />
-          <entry key="ts" value="112" />
+          <entry key="ts" value="116" />
           <entry key="user_account" value="13" />
           <entry key="xml" value="1" />
         </counts>
@@ -117,10 +113,10 @@
           <entry key="CLASS" value="20" />
           <entry key="Database Element" value="53" />
           <entry key="HTML" value="42" />
-          <entry key="JAVA" value="253" />
+          <entry key="JAVA" value="274" />
           <entry key="Properties" value="1" />
           <entry key="Scratch" value="1" />
-          <entry key="TypeScript" value="112" />
+          <entry key="TypeScript" value="116" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
@@ -128,18 +124,18 @@
         <counts>
           <entry key="cell" value="27" />
           <entry key="html" value="715" />
-          <entry key="java" value="2430" />
-          <entry key="ts" value="2148" />
+          <entry key="java" value="2676" />
+          <entry key="ts" value="2192" />
           <entry key="txt" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="715" />
-          <entry key="JAVA" value="2430" />
+          <entry key="JAVA" value="2676" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="Scratch" value="27" />
-          <entry key="TypeScript" value="2148" />
+          <entry key="TypeScript" value="2192" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -150,7 +146,26 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/UserAccountDataController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="45" column="82" selection-start-line="45" selection-start-column="82" selection-end-line="45" selection-end-column="82" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/UserAccountDataServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="248">
+              <caret line="47" column="83" selection-start-line="47" selection-start-column="83" selection-end-line="47" selection-end-column="83" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -163,14 +178,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/repository/SubscriptionUnitRepository.java" />
-        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/UserAccountViewModel.java" />
-        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/UserAccountDataController.java" />
-        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/UserAccountDataServiceImpl.java" />
-        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/UserAccountService.java" />
-        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/UserAccountServiceImpl.java" />
-        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/UserAccountDataService.java" />
-        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/UserAccountController.java" />
         <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/SubscriptionViewModel.java" />
         <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/Subscription.java" />
         <option value="$PROJECT_DIR$/billingApp/src/app/shared/SubscriptionUnit.ts" />
@@ -180,15 +187,8 @@
         <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/createBillingAccount/createBillingAccount.component.ts" />
         <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userBillingAccounts/userBillingAccounts.component.ts" />
         <option value="$PROJECT_DIR$/billingApp/src/app/services/billingAccount/billingAccount.service.ts" />
-        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/BillingAccountDataService.java" />
-        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/BillingAccountDataController.java" />
-        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/BillingAccountController.java" />
-        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/BillingAccountService.java" />
         <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/repository/BillingAccountRepository.java" />
-        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/BillingAccountViewModel.java" />
-        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/BillingAccountServiceImpl.java" />
         <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/manageBillingAccount/manageBillingAccount.component.html" />
-        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/BillingAccountDataServiceImpl.java" />
         <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/manageBillingAccount/manageBillingAccount.component.ts" />
         <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/BackendApplication.java" />
         <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/login/login.component..ts" />
@@ -199,7 +199,6 @@
         <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/subscriptionDetails/subscriptionDetails.component.html" />
         <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/subscriptionDetails/subscriptionDetails.component.ts" />
         <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userBillingAccounts/userBillingAccounts.component.html" />
-        <option value="$PROJECT_DIR$/billingApp/src/app/shared/User.ts" />
         <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/registration/registration.component.ts" />
         <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userSubscriptions/userSubscriptions.component.ts" />
         <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userSubscriptions/userSubscriptions.component.html" />
@@ -214,6 +213,22 @@
         <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/writeOffService/WriteOffService.java" />
         <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/BillingAccount.java" />
         <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/UserAccount.java" />
+        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/UserAccountViewModel.java" />
+        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/BillingAccountViewModel.java" />
+        <option value="$PROJECT_DIR$/billingApp/src/app/shared/User.ts" />
+        <option value="$PROJECT_DIR$/billingApp/src/app/shared/BillingAccount.ts" />
+        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/BillingAccountService.java" />
+        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/BillingAccountServiceImpl.java" />
+        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/UserAccountServiceImpl.java" />
+        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/UserAccountService.java" />
+        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/UserAccountController.java" />
+        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/BillingAccountDataService.java" />
+        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/BillingAccountDataController.java" />
+        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/BillingAccountController.java" />
+        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/BillingAccountDataServiceImpl.java" />
+        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/UserAccountDataController.java" />
+        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/UserAccountDataService.java" />
+        <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/UserAccountDataServiceImpl.java" />
       </list>
     </option>
   </component>
@@ -490,6 +505,16 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="sd3" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SD-3_HilmonchikDmitry" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SD-3_HilmonchikDmitry" type="462c0819:PsiDirectoryNode" />
+              <item name="fapi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="sd3" type="462c0819:PsiDirectoryNode" />
               <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -520,7 +545,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/desmond1999d/Documents/IntelliJIDEA/SD-3_HilmonchikDmitry/be/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitController.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544283994863" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544285439034" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../MyLib/MyLib" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -538,7 +563,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.BackendApplication">
+  <component name="RunManager" selected="Spring Boot.FapiApplication">
     <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="be" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="by.training.nc.sd3.BackendApplication" />
@@ -589,12 +614,12 @@
       <workItem from="1543871263169" duration="6667000" />
       <workItem from="1543997136067" duration="11418000" />
       <workItem from="1544047344508" duration="3318000" />
-      <workItem from="1544132927856" duration="19315000" />
+      <workItem from="1544132927856" duration="20437000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65051000" />
+    <option name="totallyTimeSpent" value="66173000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -607,6 +632,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="848" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Image Layers" order="0" />
       <window_info id="UI Designer" order="1" />
@@ -668,90 +694,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/BillingAccountDataServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="59" column="51" selection-start-line="59" selection-start-column="51" selection-end-line="59" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/manageBillingAccount/manageBillingAccount.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/billingApp/src/app/services/billingAccount/billingAccount.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="27" column="42" lean-forward="true" selection-start-line="27" selection-start-column="42" selection-end-line="27" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/billingApp/src/app/shared/BillingAccount.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/billingApp/src/app/services/http.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/billingApp/src/app/services/userID.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="14" column="11" lean-forward="true" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/billingApp/src/app/services/subscriptionsShare.service.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="10" column="2" selection-start-line="10" selection-start-column="2" selection-end-line="10" selection-end-column="57" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/manageBillingAccount/manageBillingAccount.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="313">
-          <caret line="24" column="3" lean-forward="true" selection-start-line="24" selection-start-column="3" selection-end-line="24" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userBillingAccounts/userBillingAccounts.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="27" column="3" selection-start-line="27" selection-start-column="3" selection-end-line="27" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#48#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/Subscription.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="51" column="29" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/repository/SubscriptionUnitRepository.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="12" column="59" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/SubscriptionController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -767,13 +709,6 @@
             <element signature="e#450#451#0" expanded="true" />
             <element signature="e#519#520#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/BillingAccountController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="20" column="21" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="21" />
         </state>
       </provider>
     </entry>
@@ -794,13 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/UserAccountDataController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/billingApp/src/app/services/user/user.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -808,20 +736,6 @@
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/BillingAccountServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="67" column="45" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/BillingAccountService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -923,13 +837,6 @@
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/billingApp/src/app/shared/User.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="60" selection-start-line="2" selection-start-column="60" selection-end-line="2" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -1050,6 +957,131 @@
             <element signature="e#1404#1405#0" expanded="true" />
             <element signature="e#1437#1438#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/UserAccountViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="46" column="31" lean-forward="true" selection-start-line="46" selection-start-column="31" selection-end-line="46" selection-end-column="31" />
+          <folding>
+            <element signature="e#1048#1049#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/BillingAccountViewModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="87" column="28" lean-forward="true" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
+          <folding>
+            <element signature="e#1692#1693#0" expanded="true" />
+            <element signature="e#1723#1724#0" expanded="true" />
+            <element signature="e#1768#1769#0" expanded="true" />
+            <element signature="e#1801#1802#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/billingApp/src/app/shared/BillingAccount.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="69" selection-start-line="3" selection-start-column="69" selection-end-line="3" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/billingApp/src/app/shared/User.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="47" selection-start-line="3" selection-start-column="47" selection-end-line="3" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/BillingAccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" column="56" lean-forward="true" selection-start-line="14" selection-start-column="4" selection-end-line="15" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/BillingAccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="74" column="52" lean-forward="true" selection-start-line="73" selection-start-column="8" selection-end-line="74" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/UserAccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="23" column="5" lean-forward="true" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/UserAccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="45" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/BillingAccountDataService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="15" column="31" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/BillingAccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="53" column="29" selection-start-line="53" selection-start-column="29" selection-end-line="53" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/BillingAccountDataServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="77" column="123" selection-start-line="77" selection-start-column="123" selection-end-line="77" selection-end-column="123" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/UserAccountController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="41" column="56" selection-start-line="41" selection-start-column="56" selection-end-line="41" selection-end-column="56" />
+          <folding>
+            <element signature="e#1310#1311#0" expanded="true" />
+            <element signature="e#1373#1374#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/BillingAccountDataController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="69" column="5" lean-forward="true" selection-start-line="61" selection-start-column="4" selection-end-line="69" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/UserAccountDataService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="11" column="28" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/UserAccountDataController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="45" column="82" selection-start-line="45" selection-start-column="82" selection-end-line="45" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/UserAccountDataServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="248">
+          <caret line="47" column="83" selection-start-line="47" selection-start-column="83" selection-end-line="47" selection-end-column="83" />
         </state>
       </provider>
     </entry>

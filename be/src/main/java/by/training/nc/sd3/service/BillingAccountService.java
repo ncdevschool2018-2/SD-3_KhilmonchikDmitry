@@ -12,4 +12,6 @@ public interface BillingAccountService {
     BillingAccount save(BillingAccount billingAccount);
     void delete(Long id, String password);
     BillingAccount addMoney(BillingAccount billingAccount);
+    BillingAccount ban(BillingAccount billingAccount);
+    BillingAccount unBan(BillingAccount billingAccount);
 }

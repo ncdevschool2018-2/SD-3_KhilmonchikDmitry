@@ -11,14 +11,16 @@ public class BillingAccountViewModel {
     private String name;
     private String password;
     private int money;
+    private boolean isBanned;
 
-    public BillingAccountViewModel(Long id, Long ownerId, String creditCardNumber, String name, String password, int money) {
-        this.ownerId = ownerId;
+    public BillingAccountViewModel(Long id, Long ownerId, String creditCardNumber, String name, String password, int money, boolean isBanned) {
         this.id = id;
+        this.ownerId = ownerId;
+        this.creditCardNumber = creditCardNumber;
         this.name = name;
         this.password = password;
         this.money = money;
-        this.creditCardNumber = creditCardNumber;
+        this.isBanned = isBanned;
     }
 
     public BillingAccountViewModel() {
@@ -70,6 +72,14 @@ public class BillingAccountViewModel {
 
     public String getCreditCardNumber() {
         return creditCardNumber;
+    }
+
+    public boolean isBanned() {
+        return isBanned;
+    }
+
+    public void setBanned(boolean banned) {
+        isBanned = banned;
     }
 
     @Override

@@ -31,4 +31,14 @@ public class UserAccountController {
         userAccount.setActiveBillingAccountId(activeBillingAccountId);
         return userAccountService.save(userAccount);
     }
+
+    @PostMapping(value = "ban")
+    public UserAccount ban(@RequestBody UserAccount userAccount) {
+        return this.userAccountService.ban(userAccount);
+    }
+
+    @PostMapping(value = "unBan")
+    public UserAccount unBan(@RequestBody UserAccount userAccount) {
+        return this.userAccountService.unBan(userAccount);
+    }
 }

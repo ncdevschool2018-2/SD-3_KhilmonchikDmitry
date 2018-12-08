@@ -69,5 +69,17 @@ public class BillingAccountServiceImpl implements BillingAccountService {
         return billingAccount;
     }
 
+    @Override
+    public BillingAccount ban(BillingAccount billingAccount) {
+        billingAccount.setBanned(true);
+        return this.repository.save(billingAccount);
+    }
+
+    @Override
+    public BillingAccount unBan(BillingAccount billingAccount) {
+        billingAccount.setBanned(false);
+        return this.repository.save(billingAccount);
+    }
+
 
 }

@@ -58,4 +58,14 @@ public class BillingAccountDataController {
         }
         return null;
     }
+
+    @PostMapping(value = "ban")
+    public ResponseEntity<BillingAccountViewModel> ban(@RequestBody BillingAccountViewModel billingAccount) {
+        return ResponseEntity.ok(billingAccountDataService.ban(billingAccount));
+    }
+
+    @PostMapping(value = "unban")
+    public ResponseEntity<BillingAccountViewModel> unBan(@RequestBody BillingAccountViewModel billingAccount) {
+        return ResponseEntity.ok(billingAccountDataService.unBan(billingAccount));
+    }
 }
