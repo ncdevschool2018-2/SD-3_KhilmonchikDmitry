@@ -1143,52 +1143,52 @@
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="288" parent="278" name="PRIMARY">
+    <column id="288" parent="278" name="isBanned">
+      <Position>7</Position>
+      <DataType>tinyint(4)|0s</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="289" parent="278" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="289" parent="279" name="id">
+    <column id="290" parent="279" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="290" parent="279" name="name">
+    <column id="291" parent="279" name="name">
       <Position>2</Position>
       <DataType>varchar(45)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="291" parent="279" name="description">
+    <column id="292" parent="279" name="description">
       <Position>3</Position>
       <DataType>varchar(100)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="292" parent="279" name="category">
+    <column id="293" parent="279" name="category">
       <Position>4</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="293" parent="279" name="perMonth">
+    <column id="294" parent="279" name="perMonth">
       <Position>5</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="294" parent="279" name="perThreeMonths">
+    <column id="295" parent="279" name="perThreeMonths">
       <Position>6</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="295" parent="279" name="perYear">
+    <column id="296" parent="279" name="perYear">
       <Position>7</Position>
       <DataType>int(11)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="296" parent="279" name="activeBillingAccount">
-      <Position>8</Position>
-      <DataType>int(11)|0s</DataType>
-      <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="297" parent="279" name="id_UNIQUE">
@@ -1332,21 +1332,27 @@
       <DataType>tinyint(1)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="324" parent="281" name="id_UNIQUE">
+    <column id="324" parent="281" name="isBanned">
+      <Position>7</Position>
+      <DataType>tinyint(4)|0s</DataType>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="325" parent="281" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <index id="325" parent="281" name="activeBillingAccount_idx">
+    <index id="326" parent="281" name="activeBillingAccount_idx">
       <ColNames>activeBillingAccountId</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="326" parent="281" name="PRIMARY">
+    <key id="327" parent="281" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="327" parent="281" name="id_UNIQUE">
+    <key id="328" parent="281" name="id_UNIQUE">
       <ColNames>id</ColNames>
       <UnderlyingIndexName>id_UNIQUE</UnderlyingIndexName>
     </key>

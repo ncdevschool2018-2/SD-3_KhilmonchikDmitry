@@ -18,7 +18,7 @@
       <td>{{subscription.status}}</td>
       <td>
         <button *ngIf="!user.isAdmin" type="button" class="btn btn-success" (click)="unsubscribe(subscription)">Unsubscribe</button>
-        <button *ngIf="user.isAdmin && subscription.status" type="button" class="btn btn-success" (click)="changeStatus(subscription)">Ban</button>
+        <button *ngIf="user.isAdmin && subscription.status" type="button" class="btn btn-danger" (click)="changeStatus(subscription)">Ban</button>
         <button *ngIf="user.isAdmin && !subscription.status" type="button" class="btn btn-success" (click)="changeStatus(subscription)">Unban</button>
       </td>
     </tr>

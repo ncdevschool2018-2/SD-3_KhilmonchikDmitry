@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {BillingAccountService} from "../../../../services/billingAccount/billingAccount.service";
 import {BillingAccount} from "../../../../shared/BillingAccount";
 import {UserIDService} from "../../../../services/userID.service";
+import {User} from "../../../../shared/User";
+import {UserService} from "../../../../services/user/user.service";
 
 @Component({
   selector: 'userBillingAccounts',
@@ -11,19 +13,36 @@ import {UserIDService} from "../../../../services/userID.service";
 
 export class UserBillingAccountsComponent implements OnInit{
 
-  private billingAccounts: BillingAccount[];
+  public billingAccounts: BillingAccount[];
   private id;
-  public selectedBillingAccountIndex: number;
+  public user: User;
 
-  constructor(private http: BillingAccountService, private userIdService: UserIDService) {
+  constructor(private http: BillingAccountService, private userIdService: UserIDService,
+              private userService: UserService) {
   }
 
   ngOnInit() {
     this.id = this.userIdService.getID();
+    this.userService.getUserById(this.id).subscribe(
+      user => {
+        this.user = user;
+        this.user.isAdmin = true;
+        console.log(this.user);
+      }
+    );
     this.http.getBillingAccountsByOwnerId(this.id).subscribe(billingAccounts => {
       this.billingAccounts = billingAccounts;
       console.log(this.billingAccounts);
     });
-    this.selectedBillingAccountIndex = 0;
+  }
+
+  ban(billingAccount: BillingAccount) {
+    this.http.ban(billingAccount).subscribe(
+      billingAccount1 => console.log(billingAccount1)
+    );
+  }
+
+  unBan(billingAccount: BillingAccount) {
+    this.http.unBan(billingAccount).subscribe();
   }
 }

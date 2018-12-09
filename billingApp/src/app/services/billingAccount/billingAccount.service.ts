@@ -32,4 +32,12 @@ export class BillingAccountService {
     return this.http.post<BillingAccount>('http://localhost:8080/api/ba/addMoney', billingAccount);
   }
 
+  public ban(billingAccount: BillingAccount) {
+    return this.http.post<BillingAccount>('http://localhost:8080/api/ba/ban', billingAccount);
+  }
+
+  public unBan(billingAccount: BillingAccount) {
+    return this.http.post<BillingAccount>('http://localhost:8080/api/ba/unban', billingAccount);
+  }
+
 }

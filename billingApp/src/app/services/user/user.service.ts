@@ -30,4 +30,12 @@ export class UserService {
     return this.http.post<User>('http://localhost:8080/api/ua/save?activeBillingAccountId='+activeBillingAccountId, user);
   }
 
+  ban(user: User) {
+    return this.http.post<User>('http://localhost:8080/api/ua/ban', user);
+  }
+
+  unBan(user: User) {
+    return this.http.post<User>('http://localhost:8080/api/ua/unban', user);
+  }
+
 }
