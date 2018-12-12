@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {SubscriptionUnitService} from "../../../../services/subscriptionUnit/subscriptionUnit.service";
 import {UserIDService} from "../../../../services/userID.service";
 import {SubscriptionUnit} from "../../../../shared/SubscriptionUnit";
 import {UserService} from "../../../../services/user/user.service";
 import {User} from "../../../../shared/User";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'userSubscriptions',
@@ -14,20 +15,16 @@ import {User} from "../../../../shared/User";
 export class UserSubscriptionsComponent implements OnInit {
   subscriptionUnits: SubscriptionUnit[];
   id;
-  user: User;
+  user;
 
-  constructor(private http: SubscriptionUnitService, private userIdService: UserIDService,
-              private userService: UserService) {
+  constructor(private http: SubscriptionUnitService, public userIdService: UserIDService,
+              public userService: UserService) {
   }
 
   ngOnInit() {
     this.id = this.userIdService.getID();
     this.userService.getUserById(this.id).subscribe(
-      user => {
-        this.user = user;
-        this.user.isAdmin = true;
-        console.log(this.user);
-      }
+      u => this.user = u
     );
     this.getSubscriptionUnitsById();
   }
@@ -46,6 +43,6 @@ export class UserSubscriptionsComponent implements OnInit {
   }
 
   changeStatus(subscriptionUnit: SubscriptionUnit) {
-    return this.http.changeStatusSubscriptionUnit(subscriptionUnit).subscribe();
+    this.http.changeStatusSubscriptionUnit(subscriptionUnit).subscribe();
   }
 }

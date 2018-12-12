@@ -9,4 +9,7 @@ public interface SubscriptionDataService {
     SubscriptionViewModel getSubscriptionById(Long id);
     List<SubscriptionViewModel> getSubscriptionByCategory(String category);
     SubscriptionViewModel getSubscriptionByName(String name);
+    SubscriptionViewModel save(SubscriptionViewModel subscriptionViewModel);
+    SubscriptionViewModel ban(Long id);
+    SubscriptionViewModel unBan(Long id);
 }

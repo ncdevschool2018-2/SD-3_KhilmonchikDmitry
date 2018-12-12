@@ -1,45 +1,59 @@
-<div class="row">
+<div *ngIf="(user !== undefined && user.isAdmin === true) || id < 0">
+  <div class="row">
 
-  <div class="col"></div>
+    <div class="col"></div>
 
-  <div class="col-10">
-    <ul class="list-group">
-      <li class="list-group-item">
-        <h1>{{subscription.name}}</h1>
-        <p class="lead">{{subscription.description}}</p>
-        <table class="table">
-          <thead>
-          <tr>
-            <th scope="col">Period</th>
-            <th scope="col">Sum</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-            <td>Month</td>
-            <td>{{subscription.perMonth + "$"}}</td>
-          </tr>
-          <tr>
-            <td>3 months</td>
-            <td>{{subscription.perThreeMonth + "$"}}</td>
-          </tr>
-          <tr>
-            <td>1 year</td>
-            <td>{{subscription.perYear + "$"}}</td>
-          </tr>
-          </tbody>
-        </table>
-        <select class="form-control">
-          <option>1 month</option>
-          <option>3 months</option>
-          <option>1 year</option>
-        </select>
-        <p></p>
-        <button *ngIf="!isSubscribed" type="submit" class="btn btn-success" class="btn btn-light" (click)="subscribe()" routerLink="profileDetails">Subscribe</button>
-        <button *ngIf="isSubscribed" type="submit" class="btn btn-success" class="btn btn-light" (click)="unsubscribe()" routerLink="profileDetails">Unsubscribe</button>
-      </li>
-    </ul>
+    <div class="col-10">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <h1>{{subscription.name}}</h1>
+          <p class="lead">{{subscription.description}}</p>
+          <table class="table">
+            <thead>
+            <tr>
+              <th scope="col">Period</th>
+              <th scope="col">Sum</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Month</td>
+              <td>{{subscription.perMonth + "$"}}</td>
+            </tr>
+            <tr>
+              <td>3 months</td>
+              <td>{{subscription.perThreeMonth + "$"}}</td>
+            </tr>
+            <tr>
+              <td>1 year</td>
+              <td>{{subscription.perYear + "$"}}</td>
+            </tr>
+            </tbody>
+          </table>
+          <select class="form-control">
+            <option>1 month</option>
+            <option>3 months</option>
+            <option>1 year</option>
+          </select>
+          <p></p>
+          <div *ngIf="id > -1">
+            <button *ngIf="!user.isAdmin && !isSubscribed" type="submit" class="btn btn-success" (click)="subscribe()"
+                    routerLink="profileDetails">Subscribe
+            </button>
+            <button *ngIf="!user.isAdmin && isSubscribed" type="submit" class="btn btn-danger" (click)="unsubscribe()"
+                    routerLink="profileDetails">Unsubscribe
+            </button>
+            <button *ngIf="user.isAdmin && !subscription.isBanned" type="submit" class="btn btn-danger"
+                    (click)="ban()" routerLink="profileDetails">Ban
+            </button>
+            <button *ngIf="user.isAdmin && subscription.isBanned" type="submit" class="btn btn-success"
+                    (click)="unBan()" routerLink="profileDetails">Unban
+            </button>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col"></div>
   </div>
-
-  <div class="col"></div>
 </div>

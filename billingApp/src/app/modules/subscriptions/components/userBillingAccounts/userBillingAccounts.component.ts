@@ -26,8 +26,6 @@ export class UserBillingAccountsComponent implements OnInit{
     this.userService.getUserById(this.id).subscribe(
       user => {
         this.user = user;
-        this.user.isAdmin = true;
-        console.log(this.user);
       }
     );
     this.http.getBillingAccountsByOwnerId(this.id).subscribe(billingAccounts => {

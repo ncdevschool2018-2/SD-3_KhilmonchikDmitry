@@ -34,4 +34,19 @@ public class SubscriptionDataController {
     public ResponseEntity<List<SubscriptionViewModel>> getSubscriptionByCategory(@RequestParam String category) {
         return ResponseEntity.ok(subscriptionDataService.getSubscriptionByCategory(category));
     }
+
+    @PostMapping(value = "/save")
+    public ResponseEntity<SubscriptionViewModel> save(@RequestBody SubscriptionViewModel subscriptionViewModel) {
+        return ResponseEntity.ok(subscriptionDataService.save(subscriptionViewModel));
+    }
+
+    @PostMapping(value = "/ban")
+    public ResponseEntity<SubscriptionViewModel> ban(@RequestParam Long id) {
+        return ResponseEntity.ok(subscriptionDataService.ban(id));
+    }
+
+    @PostMapping(value = "/unban")
+    public ResponseEntity<SubscriptionViewModel> unBan(@RequestParam Long id) {
+        return ResponseEntity.ok(subscriptionDataService.unBan(id));
+    }
 }

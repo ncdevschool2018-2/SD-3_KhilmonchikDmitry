@@ -42,4 +42,28 @@ public class SubscriptionDataServiceImpl implements SubscriptionDataService {
         return restTemplate.getForObject(backendServerUrl + "/api/subscriptions/by-name?name={name}",
                 SubscriptionViewModel.class, name);
     }
+
+    @Override
+    public SubscriptionViewModel save(SubscriptionViewModel subscriptionViewModel) {
+        RestTemplate restTemplate = new RestTemplate();
+        SubscriptionViewModel subscription = restTemplate.postForObject(backendServerUrl + "/api/subscriptions/save",
+                subscriptionViewModel, SubscriptionViewModel.class);
+        return subscription;
+    }
+
+    @Override
+    public SubscriptionViewModel ban(Long id) {
+        RestTemplate restTemplate = new RestTemplate();
+        SubscriptionViewModel subscription = restTemplate.postForObject(backendServerUrl + "/api/subscriptions/ban",
+                id, SubscriptionViewModel.class);
+        return subscription;
+    }
+
+    @Override
+    public SubscriptionViewModel unBan(Long id) {
+        RestTemplate restTemplate = new RestTemplate();
+        SubscriptionViewModel subscription = restTemplate.postForObject(backendServerUrl + "/api/subscriptions/unban",
+                id, SubscriptionViewModel.class);
+        return subscription;
+    }
 }

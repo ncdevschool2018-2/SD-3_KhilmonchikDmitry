@@ -7,6 +7,7 @@ import {RegistrationComponent} from './modules/subscriptions/components/registra
 import {CreateBillingAccountComponent} from './modules/subscriptions/components/createBillingAccount/createBillingAccount.component';
 import {ProfileDetailsComponent} from './modules/subscriptions/components/profileDetails/profileDetails.component';
 import {ManageBillingAccountComponent} from './modules/subscriptions/components/manageBillingAccount/manageBillingAccount.component';
+import {AdminAccountComponent} from "./modules/subscriptions/components/adminAccount/adminAccount.component";
 
 const routes: Routes = [
   { path: 'subscriptions', component: SubscriptionsListComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'registration', component: RegistrationComponent },
   { path: 'createBillingAccount', component: CreateBillingAccountComponent },
   { path: 'profileDetails', component: ProfileDetailsComponent },
-  { path: 'manageBillingAccount', component: ManageBillingAccountComponent }
+  { path: 'manageBillingAccount', component: ManageBillingAccountComponent },
+  { path: 'adminAccount', component: AdminAccountComponent }
 ];
 
 @NgModule({

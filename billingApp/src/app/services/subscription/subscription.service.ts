@@ -31,4 +31,16 @@ export class SubscriptionService {
     return this.http.get<Subscription[]>('http://localhost:8080/api/subs/getbycategory', {params: params});
   }
 
+  saveSubscription(subscription: Subscription): Observable<Subscription> {
+    return this.http.post<Subscription>('http://localhost:8080/api/subs/save', subscription);
+  }
+
+  banSubscription(id: number): Observable<Subscription> {
+    return this.http.post<Subscription>('http://localhost:8080/api/subs/ban?id=' + id, id);
+  }
+
+  unBanSubscription(id: number): Observable<Subscription> {
+    return this.http.post<Subscription>('http://localhost:8080/api/subs/unban?id=' + id, id);
+  }
+
 }

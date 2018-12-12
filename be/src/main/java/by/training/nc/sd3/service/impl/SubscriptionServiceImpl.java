@@ -52,4 +52,31 @@ public class SubscriptionServiceImpl implements SubscriptionService {
         return responseSubscription.get();
     }
 
+    @Override
+    public Subscription save(Subscription subscription) {
+        return this.subscriptionRepository.save(subscription);
+    }
+
+    @Override
+    public Subscription ban(Long id) {
+        Optional<Subscription> subscriptionOptional = this.subscriptionRepository.findById(id);
+        if(subscriptionOptional.isPresent()) {
+            Subscription subscription = subscriptionOptional.get();
+            subscription.setBanned(true);
+            return this.subscriptionRepository.save(subscription);
+        }
+        return null;
+    }
+
+    @Override
+    public Subscription unBan(Long id) {
+        Optional<Subscription> subscriptionOptional = this.subscriptionRepository.findById(id);
+        if(subscriptionOptional.isPresent()) {
+            Subscription subscription = subscriptionOptional.get();
+            subscription.setBanned(false);
+            return this.subscriptionRepository.save(subscription);
+        }
+        return null;
+    }
+
 }

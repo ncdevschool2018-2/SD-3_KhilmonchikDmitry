@@ -11,4 +11,7 @@ public interface SubscriptionService {
     Optional<Subscription> getSubscriptionById(Long id);
     Iterable<Subscription> getSubscriptionsByCategory(Long category);
     Subscription getSubscriptionsByName(String name);
+    Subscription save(Subscription subscription);
+    Subscription ban(Long id);
+    Subscription unBan(Long id);
 }

@@ -15,18 +15,21 @@ public class Subscription {
     private int perMonth;
     private int perThreeMonths;
     private int perYear;
+    private boolean isBanned;
 
     public Subscription() {
     }
 
     public Subscription(String name, String description,
-                        String category, int perMonth, int perThreeMonths, int perYear) {
+                        int category, int perMonth, int perThreeMonths,
+                        int perYear, boolean isBanned) {
         this.name = name;
         this.description = description;
-        this.category = Categories.valueOf(category).ordinal();
+        this.category = category;
         this.perMonth = perMonth;
         this.perThreeMonths = perThreeMonths;
         this.perYear = perYear;
+        this.isBanned = isBanned;
     }
 
     public Long getId() {
@@ -83,6 +86,14 @@ public class Subscription {
 
     public void setPerYear(int perYear) {
         this.perYear = perYear;
+    }
+
+    public boolean isBanned() {
+        return isBanned;
+    }
+
+    public void setBanned(boolean banned) {
+        isBanned = banned;
     }
 
     @Override

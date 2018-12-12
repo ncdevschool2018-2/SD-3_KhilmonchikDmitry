@@ -44,6 +44,14 @@ public class UserAccountViewModel {
         return isAdmin;
     }
 
+    public void setAdmin(boolean admin) {
+        isAdmin = admin;
+    }
+
+    public void setBanned(boolean banned) {
+        isBanned = banned;
+    }
+
     public boolean isBanned() {
         return isBanned;
     }

@@ -35,4 +35,19 @@ public class SubscriptionController {
     public Subscription getSubscriptionsByName(@RequestParam String name) {
         return subscriptionService.getSubscriptionsByName(name);
     }
+
+    @PostMapping(value = "save")
+    public Subscription save(@RequestBody Subscription subscription) {
+        return subscriptionService.save(subscription);
+    }
+
+    @PostMapping(value = "ban")
+    public Subscription ban(@RequestBody Long id) {
+        return subscriptionService.ban(id);
+    }
+
+    @PostMapping(value = "unban")
+    public Subscription unBan(@RequestBody Long id) {
+        return subscriptionService.unBan(id);
+    }
 }

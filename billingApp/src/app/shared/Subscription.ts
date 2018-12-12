@@ -1,16 +1,21 @@
 export class Subscription {
+  public id: number;
   public name: String;
   public description: String;
   public perMonth: number;
   public perThreeMonth: number;
   public perYear: number;
+  public isBanned: boolean;
 
-  public SubscriptionViewModel(name: String, description: String, perMonth: number, perThreeMonth: number, perYear: number) {
+  public SubscriptionViewModel(name: String, description: String, perMonth: number, id: number,
+                               perThreeMonth: number, perYear: number, isBanned: boolean) {
+    this.id = id;
     this.name = name;
     this.description = description;
     this.perMonth = perMonth;
     this.perThreeMonth = perThreeMonth;
     this.perYear = perYear;
+    this.isBanned = isBanned;
   }
 
   getName() {

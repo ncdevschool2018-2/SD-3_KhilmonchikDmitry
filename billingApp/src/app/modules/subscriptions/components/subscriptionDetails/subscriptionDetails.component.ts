@@ -6,6 +6,8 @@ import {Subscription} from "../../../../shared/Subscription";
 import {UserIDService} from "../../../../services/userID.service";
 import {SubscriptionUnitService} from "../../../../services/subscriptionUnit/subscriptionUnit.service";
 import {SubscriptionUnit} from "../../../../shared/SubscriptionUnit";
+import {UserService} from "../../../../services/user/user.service";
+import {User} from "../../../../shared/User";
 
 @Component({
   selector: 'subscriptionsDetails',
@@ -14,13 +16,17 @@ import {SubscriptionUnit} from "../../../../shared/SubscriptionUnit";
 })
 
 export class SubscriptionDetailsComponent implements OnInit {
-  @Output() subscription: Subscription;
+  subscription: Subscription;
   isSubscribed: boolean;
   id;
+  user: User;
+  subscriptionId: any;
+
 
   constructor(private http: SubscriptionService, private route: ActivatedRoute,
               private userIdService: UserIDService,
-              private subscriptionUnitService: SubscriptionUnitService) {
+              private subscriptionUnitService: SubscriptionUnitService,
+              private userService: UserService) {
     this.subscription = new Subscription();
   }
 
@@ -29,22 +35,34 @@ export class SubscriptionDetailsComponent implements OnInit {
     this.isSubscribed = false;
     this.id = this.userIdService.getID()[0];
     if(this.id > -1) {
-      let subsctiptionUnits: SubscriptionUnit[];
       this.subscriptionUnitService.getSubscriptionUnitsById(this.id).subscribe(
-        subsctiptionUnits => {
-          for(let i = 0; i < subsctiptionUnits.length; i++) {
-            if(subsctiptionUnits[i].subscription.name === this.subscription.name)
+        subscriptionUnits => {
+          for(let i = 0; i < subscriptionUnits.length; i++) {
+            if(subscriptionUnits[i].subscription.name === this.subscription.name)
               this.isSubscribed = true;
           }
+        }
+      );
+      this.userService.getUserById(this.id).subscribe(
+        user => {
+          this.user = user;
+          console.log(this.user);
         }
       );
     }
   }
 
+  ban() {
+    this.http.banSubscription(toNumber(this.subscriptionId)).subscribe();
+  }
+
+  unBan() {
+    this.http.unBanSubscription(toNumber(this.subscriptionId)).subscribe();
+  }
+
   getSubscription() {
-    let id: any = this.route.snapshot.paramMap.get('id');
-    console.log(id);
-    this.http.getSubscriptionById(toNumber(id)).subscribe(subscription => {
+    this.subscriptionId = this.route.snapshot.paramMap.get('id');
+    this.http.getSubscriptionById(toNumber(this.subscriptionId)).subscribe(subscription => {
       this.subscription = subscription;
     });
   }

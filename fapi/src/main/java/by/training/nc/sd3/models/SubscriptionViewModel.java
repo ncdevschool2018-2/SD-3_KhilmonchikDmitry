@@ -8,11 +8,12 @@ public class SubscriptionViewModel {
     private int perMonth;
     private int perThreeMonth;
     private int perYear;
+    private boolean isBanned;
 
     public SubscriptionViewModel() {
     }
 
-    public SubscriptionViewModel(Long id, String name, String description, int category, int perMonth, int perThreeMonth, int perYear) {
+    public SubscriptionViewModel(Long id, String name, String description, int category, int perMonth, int perThreeMonth, int perYear, boolean isBanned) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -20,6 +21,7 @@ public class SubscriptionViewModel {
         this.perMonth = perMonth;
         this.perThreeMonth = perThreeMonth;
         this.perYear = perYear;
+        this.isBanned = isBanned;
     }
 
     public Long getId() {
@@ -76,6 +78,14 @@ public class SubscriptionViewModel {
 
     public String getDescription() {
         return description;
+    }
+
+    public boolean isBanned() {
+        return isBanned;
+    }
+
+    public void setBanned(boolean banned) {
+        isBanned = banned;
     }
 
     @Override

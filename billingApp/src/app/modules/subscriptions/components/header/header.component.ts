@@ -3,6 +3,8 @@ import {UserIDService} from '../../../../services/userID.service';
 import {SubscriptionService} from "../../../../services/subscription/subscription.service";
 import {Subscription} from "../../../../shared/Subscription";
 import {SubscriptionsShareService} from "../../../../services/subscriptionsShare.service";
+import {User} from "../../../../shared/User";
+import {UserService} from "../../../../services/user/user.service";
 
 @Component({
   selector: 'header',
@@ -12,21 +14,17 @@ import {SubscriptionsShareService} from "../../../../services/subscriptionsShare
 
 export class HeaderComponent implements OnInit {
 
-  @Input() loggedUserIDObs = this.userIDService.data$;
+  loggedUserIDObs = this.userIDService.data$;
   loggedUserID;
-  @Output() subscriptions: Subscription[];
-  @Output() subscription: Subscription;
+  isAdminObs = this.userIDService.admin;
+  isAdmin;
+  subscriptions: Subscription[];
+  subscription: Subscription;
 
   constructor(private http: SubscriptionService, public userIDService: UserIDService,
-              private subscriptionShareService: SubscriptionsShareService) {
+              private subscriptionShareService: SubscriptionsShareService,
+              private userService: UserService) {
     this.userIDService.setID(-1);
-    this.http.getSubscriptions().subscribe(
-      subscriptions =>
-        this.subscriptionShareService.setSubscriptions(subscriptions)
-    )
-  }
-
-  getAllSubscriptions() {
     this.http.getSubscriptions().subscribe(
       subscriptions =>
         this.subscriptionShareService.setSubscriptions(subscriptions)
@@ -36,8 +34,17 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
     this.loggedUserIDObs.subscribe(loggedUserID => {
       this.loggedUserID = loggedUserID;
-      console.log(this.loggedUserID);
     });
+    this.isAdminObs.subscribe( isAdmin => {
+      this.isAdmin = isAdmin
+    });
+  }
+
+  getAllSubscriptions() {
+    this.http.getSubscriptions().subscribe(
+      subscriptions =>
+        this.subscriptionShareService.setSubscriptions(subscriptions)
+    )
   }
 
   search(name: string): Subscription {
