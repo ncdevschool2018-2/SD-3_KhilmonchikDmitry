@@ -10,6 +10,7 @@ import by.training.nc.sd3.service.SubscriptionUnitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
 import java.util.Optional;
 
 @Component
@@ -33,26 +34,34 @@ public class SubscriptionUnitServiceImpl implements SubscriptionUnitService {
     }
 
     public SubscriptionUnit save(SubscriptionUnit subscriptionUnit) {
-        Optional<UserAccount> userAccountOptional =  this.userAccountRepository.findById(subscriptionUnit.getUserId());
-        if(userAccountOptional.isPresent()) {
+        Optional<UserAccount> userAccountOptional = this.userAccountRepository.findById(subscriptionUnit.getUserId());
+        subscriptionUnit.setCreationDate(new Date());
+        subscriptionUnit.setWriteOffDate(new Date());
+        if (userAccountOptional.isPresent()) {
             UserAccount user = userAccountOptional.get();
             Optional<BillingAccount> billingAccountOptional =
                     this.billingAccountRepository.findById(user.getActiveBillingAccountId());
-            if(billingAccountOptional.isPresent()) {
+            if (billingAccountOptional.isPresent()) {
                 BillingAccount billingAccount = billingAccountOptional.get();
-                if(billingAccount.getMoney() >= subscriptionUnit.getSubscription().getPerMonth()) {
+                if (billingAccount.getMoney() >= subscriptionUnit.getSubscription().getPerMonth()) {
                     billingAccount.setMoney(billingAccount.getMoney() - subscriptionUnit.getSubscription().getPerMonth());
                     this.billingAccountRepository.save(billingAccount);
                     return this.subscriptionUnitRepository.save(subscriptionUnit);
                 }
             }
         }
-        return  null;
+        return null;
     }
 
     @Override
     public void delete(Long id) {
-        this.subscriptionUnitRepository.deleteById(id);
+        Iterable<SubscriptionUnit> subscriptionUnitOptional = this.subscriptionUnitRepository.findAll();
+        subscriptionUnitOptional.forEach(
+                subscriptionUnit -> {
+                    if (subscriptionUnit.getId().equals(id))
+                        this.subscriptionUnitRepository.delete(subscriptionUnit);
+                }
+        );
     }
 
     @Override
@@ -73,6 +82,11 @@ public class SubscriptionUnitServiceImpl implements SubscriptionUnitService {
     @Override
     public SubscriptionUnit changeStatus(SubscriptionUnit subscriptionUnit) {
         subscriptionUnit.setStatus(!subscriptionUnit.isStatus());
+        return this.subscriptionUnitRepository.save(subscriptionUnit);
+    }
+
+    @Override
+    public SubscriptionUnit update(SubscriptionUnit subscriptionUnit) {
         return this.subscriptionUnitRepository.save(subscriptionUnit);
     }
 }

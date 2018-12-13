@@ -20,4 +20,6 @@ public interface SubscriptionUnitService {
 
     SubscriptionUnit changeStatus(SubscriptionUnit subscriptionUnit);
 
+    SubscriptionUnit update(SubscriptionUnit subscriptionUnit);
+
 }

@@ -28,42 +28,36 @@ public class WriteOffService {
     }
 
     @Scheduled(fixedDelay = 5000)
-    public void writeOff() {/*
+    public void writeOff() {
         Iterable<SubscriptionUnit> subscriptionUnits = subscriptionUnitService.getSubscriptionUnits();
         subscriptionUnits.forEach(
                 subscriptionUnit -> {
-                    if(subscriptionUnit.isWillBeRenewed()) {
+                    if (subscriptionUnit.isWillBeRenewed()) {
                         Date date = new Date();
-                        if(date.getTime() - subscriptionUnit.getWriteOffDate().getTime() >= 10000
-                        && subscriptionUnit.getDaysLeft() > 0) {
+                        if (date.getTime() - subscriptionUnit.getWriteOffDate().getTime() >= 1000
+                                && subscriptionUnit.getDaysLeft() > 0) {
                             subscriptionUnit.setDaysLeft(subscriptionUnit.getDaysLeft() - 1);
                             subscriptionUnit.setWriteOffDate(date);
                             System.out.println(subscriptionUnit.getDaysLeft());
                         }
-                        if(subscriptionUnit.getDaysLeft() == 0 && subscriptionUnit.isWillBeRenewed() && subscriptionUnit.isStatus())
-                        {
-                            Optional<BillingAccount> billingAccountOptional = billingAccountService.getById(subscriptionUnit.getId());
-                            if(billingAccountOptional.isPresent()) {
+                        if (subscriptionUnit.getDaysLeft() == 0 && subscriptionUnit.isWillBeRenewed() && subscriptionUnit.isStatus()) {
+                            Optional<BillingAccount> billingAccountOptional = billingAccountService.getById(subscriptionUnit.getBillingAccount().getId());
+                            if (billingAccountOptional.isPresent()) {
                                 BillingAccount billingAccount = billingAccountOptional.get();
-                                Long subscriptionId = subscriptionUnit.getId();
-                                Optional<Subscription> subscriptionOptional = subscriptionService.getSubscriptionById(subscriptionId);
-                                if(subscriptionOptional.isPresent()) {
-                                    Subscription subscription = subscriptionOptional.get();
-                                    int fee = subscription.getPerMonth();
-                                    if(billingAccount.getMoney() - fee > 0) {
-                                        billingAccount.setMoney(billingAccount.getMoney() - fee);
-                                        subscriptionUnit.setDaysLeft(30);
-                                    } else  {
-                                        subscriptionUnit.setWillBeRenewed(false);
-                                    }
-                                    this.billingAccountService.save(billingAccount);
+                                int fee = subscriptionUnit.getSubscription().getPerMonth();
+                                if (billingAccount.getMoney() - fee > 0) {
+                                    billingAccount.setMoney(billingAccount.getMoney() - fee);
+                                    subscriptionUnit.setDaysLeft(30);
+                                } else {
+                                    subscriptionUnit.setWillBeRenewed(false);
                                 }
+                                this.billingAccountService.save(billingAccount);
+                                System.out.println(billingAccountOptional.get().getMoney());
                             }
-                            System.out.println(billingAccountOptional.get().getMoney());
                         }
-                        this.subscriptionUnitService.save(subscriptionUnit);
+                        this.subscriptionUnitService.update(subscriptionUnit);
                     }
                 }
-        );*/
+        );
     }
 }

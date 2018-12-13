@@ -1,4 +1,4 @@
-<div *ngIf="(user !== undefined && user.isAdmin === true) || id < 0">
+<div *ngIf="user !== undefined || id < 0">
   <div class="row">
 
     <div class="col"></div>
@@ -38,10 +38,10 @@
           <p></p>
           <div *ngIf="id > -1">
             <button *ngIf="!user.isAdmin && !isSubscribed" type="submit" class="btn btn-success" (click)="subscribe()"
-                    routerLink="profileDetails">Subscribe
+                    routerLink="../profileDetails">Subscribe
             </button>
             <button *ngIf="!user.isAdmin && isSubscribed" type="submit" class="btn btn-danger" (click)="unsubscribe()"
-                    routerLink="profileDetails">Unsubscribe
+                    routerLink="../profileDetails">Unsubscribe
             </button>
             <button *ngIf="user.isAdmin && !subscription.isBanned" type="submit" class="btn btn-danger"
                     (click)="ban()" routerLink="profileDetails">Ban

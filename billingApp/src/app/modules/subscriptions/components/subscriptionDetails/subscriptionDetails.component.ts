@@ -81,7 +81,7 @@ export class SubscriptionDetailsComponent implements OnInit {
       subsctiptionUnits => {
         for(let i = 0; i < subsctiptionUnits.length; i++) {
           if(subsctiptionUnits[i].subscription.name === this.subscription.name) {
-            this.subscriptionUnitService.deleteSubscriptionUnit(subsctiptionUnits[i]);
+            this.subscriptionUnitService.deleteSubscriptionUnit(subsctiptionUnits[i]).subscribe();
           }
         }
       }
