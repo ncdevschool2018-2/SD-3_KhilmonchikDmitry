@@ -1,10 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SubscriptionUnitService} from "../../../../services/subscriptionUnit/subscriptionUnit.service";
 import {UserIDService} from "../../../../services/userID.service";
 import {SubscriptionUnit} from "../../../../shared/SubscriptionUnit";
 import {UserService} from "../../../../services/user/user.service";
-import {User} from "../../../../shared/User";
-import {Observable} from "rxjs";
 
 @Component({
   selector: 'userSubscriptions',
@@ -16,6 +14,7 @@ export class UserSubscriptionsComponent implements OnInit {
   subscriptionUnits: SubscriptionUnit[];
   id;
   user;
+  interval: any;
 
   constructor(private http: SubscriptionUnitService, public userIdService: UserIDService,
               public userService: UserService) {
@@ -23,6 +22,13 @@ export class UserSubscriptionsComponent implements OnInit {
 
   ngOnInit() {
     this.id = this.userIdService.getID();
+    this.refreshData();
+    this.interval = setInterval(() => {
+      this.refreshData();
+    }, 5000);
+  }
+
+  refreshData() {
     this.userService.getUserById(this.id).subscribe(
       u => this.user = u
     );

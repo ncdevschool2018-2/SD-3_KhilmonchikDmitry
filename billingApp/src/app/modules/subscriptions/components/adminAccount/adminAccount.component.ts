@@ -10,11 +10,19 @@ import {UserService} from "../../../../services/user/user.service";
 
 export class AdminAccountComponent implements OnInit {
   users: User[];
+  interval: any;
 
   constructor(private http: UserService) {
   }
 
   ngOnInit() {
+    this.refreshData();
+    this.interval = setInterval(() => {
+      this.refreshData();
+    }, 5000);
+  }
+
+  refreshData() {
     this.http.getAllUsers().subscribe(users=> this.users = users);
   }
 }

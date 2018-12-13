@@ -11,11 +11,12 @@ import {UserService} from "../../../../services/user/user.service";
   styleUrls: ['./userBillingAccounts.component.css']
 })
 
-export class UserBillingAccountsComponent implements OnInit{
+export class UserBillingAccountsComponent implements OnInit {
 
   public billingAccounts: BillingAccount[];
   private id;
   public user: User;
+  interval: any;
 
   constructor(private http: BillingAccountService, private userIdService: UserIDService,
               private userService: UserService) {
@@ -23,6 +24,13 @@ export class UserBillingAccountsComponent implements OnInit{
 
   ngOnInit() {
     this.id = this.userIdService.getID();
+    this.refreshData();
+    this.interval = setInterval(() => {
+      this.refreshData();
+    }, 5000);
+  }
+
+  refreshData() {
     this.userService.getUserById(this.id).subscribe(
       user => {
         this.user = user;
