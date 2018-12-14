@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col"></div>
+
+  <div class="col-6">
+    <div class="form-group">
+      <label for="subscriptionName">Subscription name</label>
+      <input #subscriptionName class="form-control" id="subscriptionName">
+    </div>
+    <div class="form-group">
+      <label for="subscriptionDescription">Subscription description</label>
+      <input #subscriptionDescription class="form-control" id="subscriptionDescription">
+    </div>
+    <div class="form-group">
+      <label for="categoriesSelect">Select billing account</label>
+      <select #categoriesSelect id="categoriesSelect" class="form-control">
+        <option *ngFor="let category of categoriesValues()">{{category}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="feePerMonth">Fee per month</label>
+      <input #feePerMonth type="number" min="0" class="form-control" id="feePerMonth">
+    </div>
+    <div class="form-group">
+      <label for="feePerThreeMonths">Fee per three months</label>
+      <input #feePerThreeMonths type="number" min="0" class="form-control" id="feePerThreeMonths">
+    </div>
+    <div class="form-group">
+      <label for="feePerYear">Fee per year</label>
+      <input #feePerYear type="number" min="0" class="form-control" id="feePerYear">
+    </div>
+    <button
+      class="btn btn-primary" (click)="createSubscription(subscriptionName.value, subscriptionDescription.value, categoriesSelect.selectedIndex,
+      feePerMonth.value, feePerThreeMonths.value, feePerYear.value)" routerLink="">Submit
+    </button>
+  </div>
+
+  <div class="col"></div>
+</div>

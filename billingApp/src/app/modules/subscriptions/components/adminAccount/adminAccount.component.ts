@@ -38,7 +38,6 @@ export class AdminAccountComponent implements OnInit {
   refreshData() {
     this.userService.getAllUsers().subscribe(users => {
       this.users = users;
-      console.log(this.users);
     });
   }
 }

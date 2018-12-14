@@ -14,7 +14,7 @@
     </div>
     <button type="button" (click)="deleteBillingAccount(billingAccounts[selectedBillingAccount.selectedIndex].id,
        billingAccounts[selectedBillingAccount.selectedIndex].password);" class="btn btn-danger"
-            routerLink="../profileDetails">Delete billing account
+            [routerLink]="'../user/' + id">Delete billing account
     </button>
     <div class="form-group">
       <label for="CreditCardNumber">Credit card number</label>
@@ -23,14 +23,14 @@
     </div>
     <div class="form-group">
       <label for="BillingAccountSum">Enter the sum of money</label>
-      <input #sumOfMoney type="number" class="form-control" id="BillingAccountSum">
+      <input #sumOfMoney type="number" min="0" class="form-control" id="BillingAccountSum">
       <small id="PaymentHelp" class="form-text text-muted">This amount of money will be written off your credit
         card.
       </small>
     </div>
     <button
       (click)="addMoney(selectedBillingAccount.value, password.value, creditCardNumber.value, sumOfMoney.value);"
-      class="btn btn-primary" routerLink="../profileDetails">Submit
+      class="btn btn-primary" [routerLink]="'../user/' + id">Submit
     </button>
   </div>
 

@@ -12,7 +12,7 @@ import {UserIDService} from "../../../../services/userID.service";
 export class ManageBillingAccountComponent implements OnInit {
 
   private billingAccounts: BillingAccount[];
-  private id;
+  public id;
 
   constructor(private http: BillingAccountService, private userIdService: UserIDService) {
   }

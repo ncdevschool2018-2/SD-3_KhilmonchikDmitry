@@ -26,7 +26,6 @@ export class SubscriptionDetailsComponent implements OnInit {
               private userIdService: UserIDService,
               private subscriptionUnitService: SubscriptionUnitService,
               private userService: UserService) {
-    this.subscription = new Subscription();
   }
 
   ngOnInit() {

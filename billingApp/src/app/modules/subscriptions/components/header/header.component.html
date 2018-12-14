@@ -43,6 +43,11 @@
                     (click)="filter('streaming')" routerLink="/subscriptions">Streaming
             </button>
           </li>
+          <li *ngIf="isAdmin" class="nav-item">
+            <button class="btn btn-success"
+                    (click)="filter('streaming')" routerLink="/createSubscription">Create
+            </button>
+          </li>
         </ul>
       </div>
     </div>

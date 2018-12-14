@@ -1,4 +1,4 @@
-import {Component, Input, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UserIDService} from '../../../../services/userID.service';
 import {SubscriptionService} from "../../../../services/subscription/subscription.service";
 import {Subscription} from "../../../../shared/Subscription";
@@ -68,5 +68,6 @@ export class HeaderComponent implements OnInit {
 
   logOut() {
     this.userIDService.setID(-1);
+    this.isAdmin = false;
   }
 }

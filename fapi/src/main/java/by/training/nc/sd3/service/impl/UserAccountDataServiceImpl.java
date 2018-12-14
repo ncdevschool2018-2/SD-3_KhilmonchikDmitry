@@ -40,7 +40,7 @@ public class UserAccountDataServiceImpl implements UserAccountDataService {
     @Override
     public UserAccountViewModel unBan(UserAccountViewModel userAccountViewModel) {
         RestTemplate restTemplate = new RestTemplate();
-        return restTemplate.postForObject(backendServerUrl + "/api/user-accounts/unban",
+        return restTemplate.postForObject(backendServerUrl + "/api/user-accounts/unBan",
                 userAccountViewModel, UserAccountViewModel.class);
     }
 

@@ -14,6 +14,7 @@ import {UserBillingAccountsComponent} from './components/userBillingAccounts/use
 import {ProfileDetailsComponent} from './components/profileDetails/profileDetails.component';
 import {AdminAccountComponent} from './components/adminAccount/adminAccount.component';
 import {ManageBillingAccountComponent} from './components/manageBillingAccount/manageBillingAccount.component';
+import {CreateSubscriptionComponent} from "./components/createSubscription/createSubscription.component";
 
 @NgModule({
   imports: [
@@ -33,7 +34,8 @@ import {ManageBillingAccountComponent} from './components/manageBillingAccount/m
     UserBillingAccountsComponent,
     ProfileDetailsComponent,
     AdminAccountComponent,
-    ManageBillingAccountComponent
+    ManageBillingAccountComponent,
+    CreateSubscriptionComponent
   ],
   declarations: [
     SubscriptionsListComponent,
@@ -46,7 +48,8 @@ import {ManageBillingAccountComponent} from './components/manageBillingAccount/m
     UserBillingAccountsComponent,
     ProfileDetailsComponent,
     AdminAccountComponent,
-    ManageBillingAccountComponent
+    ManageBillingAccountComponent,
+    CreateSubscriptionComponent
   ],
   providers: []
 })
