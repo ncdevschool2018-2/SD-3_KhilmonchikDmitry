@@ -29,23 +29,25 @@ export class UserSubscriptionsComponent implements OnInit {
   }
 
   refreshData() {
-    this.userService.getUserById(this.id).subscribe(
-      u => this.user = u
-    );
-    this.getSubscriptionUnitsById();
+    if(this.id > -1) {
+      this.userService.getUserById(this.id).subscribe(
+        u => {
+          this.user = u
+          this.user.isAdmin = u.isAdmin;
+        }
+      );
+      this.getSubscriptionUnitsById();
+    }
   }
 
   getSubscriptionUnitsById(): void {
     this.http.getSubscriptionUnitsById(this.id).subscribe( subscriptionUnits => {
       this.subscriptionUnits = subscriptionUnits;
-      console.log(subscriptionUnits);
     });
   }
 
   unsubscribe(subscriptionUnit: SubscriptionUnit) {
-    this.http.deleteSubscriptionUnit(subscriptionUnit).subscribe(
-      res => console.log(res)
-    );
+    this.http.deleteSubscriptionUnit(subscriptionUnit).subscribe();
   }
 
   changeStatus(subscriptionUnit: SubscriptionUnit) {

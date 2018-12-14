@@ -10,8 +10,8 @@ export class UserService {
   constructor(private http: HttpClient) {
   }
 
-  getAllUsers(): Observable<User[]> {
-    return this.http.get<User[]>('http://localhost:8080/api/ua/get');
+  getAllUsers(): Observable<any> {
+    return this.http.post('http://localhost:8080/api/ua/getall', null);
   }
 
   getUser(login: string, password: string): Observable<User> {

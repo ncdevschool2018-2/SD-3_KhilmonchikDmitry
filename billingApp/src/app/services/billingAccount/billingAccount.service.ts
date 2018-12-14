@@ -4,7 +4,6 @@ import {Observable} from "rxjs";
 import {BillingAccount} from "../../shared/BillingAccount";
 
 @Injectable()
-
 export class BillingAccountService {
 
   constructor(private http: HttpClient) {

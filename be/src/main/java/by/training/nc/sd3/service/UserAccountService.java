@@ -10,4 +10,5 @@ public interface UserAccountService {
     UserAccount save(UserAccount userAccount);
     UserAccount ban(UserAccount userAccount);
     UserAccount unBan(UserAccount userAccount);
+    Iterable<UserAccount> getAll();
 }

@@ -43,7 +43,7 @@ public class UserAccount {
         return email;
     }
 
-    public boolean isAdmin() {
+    public boolean getIsAdmin() {
         return isAdmin;
     }
 
@@ -55,11 +55,11 @@ public class UserAccount {
         this.activeBillingAccountId = activeBillingAccountId;
     }
 
-    public boolean isBanned() {
+    public boolean getIsBanned() {
         return isBanned;
     }
 
-    public void setBanned(boolean banned) {
+    public void setIsBanned(boolean banned) {
         isBanned = banned;
     }
 

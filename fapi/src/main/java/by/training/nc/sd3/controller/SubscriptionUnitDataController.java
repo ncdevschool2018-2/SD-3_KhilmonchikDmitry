@@ -28,7 +28,6 @@ public class SubscriptionUnitDataController {
 
     @PostMapping(value = "/save")
     public ResponseEntity<SubscriptionUnitViewModel> save(@RequestBody SubscriptionUnitViewModel subscriptionUnitViewModel) {
-        System.out.println(subscriptionUnitViewModel);
         return ResponseEntity.ok(subscriptionUnitDataService.save(subscriptionUnitViewModel));
     }
 

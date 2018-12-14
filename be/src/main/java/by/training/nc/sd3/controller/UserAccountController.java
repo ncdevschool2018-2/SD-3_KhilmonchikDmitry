@@ -26,6 +26,11 @@ public class UserAccountController {
         return userAccountService.getUserAccountById(id);
     }
 
+    @PostMapping(value = "/get-all")
+    public Iterable<UserAccount> getAll() {
+        return userAccountService.getAll();
+    }
+
     @PostMapping(value = "/save")
     public UserAccount save(@RequestBody UserAccount userAccount, @RequestParam Long activeBillingAccountId) {
         userAccount.setActiveBillingAccountId(activeBillingAccountId);

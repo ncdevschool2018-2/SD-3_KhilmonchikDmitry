@@ -31,15 +31,17 @@ export class UserBillingAccountsComponent implements OnInit {
   }
 
   refreshData() {
-    this.userService.getUserById(this.id).subscribe(
-      user => {
-        this.user = user;
-      }
-    );
-    this.http.getBillingAccountsByOwnerId(this.id).subscribe(billingAccounts => {
-      this.billingAccounts = billingAccounts;
-      console.log(this.billingAccounts);
-    });
+    if(this.id > -1) {
+      this.userService.getUserById(this.id).subscribe(
+        user => {
+          this.user = user;
+          this.user.isAdmin = user.isAdmin;
+        }
+      );
+      this.http.getBillingAccountsByOwnerId(this.id).subscribe(billingAccounts => {
+        this.billingAccounts = billingAccounts;
+      });
+    }
   }
 
   ban(billingAccount: BillingAccount) {

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {User} from '../../../../shared/User';
 import {UserService} from "../../../../services/user/user.service";
+import {UserIDService} from "../../../../services/userID.service";
 
 @Component({
   selector: 'adminAccount',
@@ -12,17 +13,32 @@ export class AdminAccountComponent implements OnInit {
   users: User[];
   interval: any;
 
-  constructor(private http: UserService) {
+  constructor(private userService: UserService, private userIdService: UserIDService) {
   }
 
   ngOnInit() {
-    this.refreshData();
-    this.interval = setInterval(() => {
+    if (this.userIdService.getID()[0] > -1) {
       this.refreshData();
-    }, 5000);
+      this.interval = setInterval(() => {
+        this.refreshData();
+      }, 5000);
+    }
+  }
+
+  unBan(user: User) {
+    if (user.isBanned)
+      this.userService.unBan(user).subscribe();
+  }
+
+  ban(user: User) {
+    if(!user.isBanned)
+    this.userService.ban(user).subscribe();
   }
 
   refreshData() {
-    this.http.getAllUsers().subscribe(users=> this.users = users);
+    this.userService.getAllUsers().subscribe(users => {
+      this.users = users;
+      console.log(this.users);
+    });
   }
 }

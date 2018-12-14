@@ -6,11 +6,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-
 @Service
 public class UserAccountDataServiceImpl implements UserAccountDataService {
 
@@ -47,5 +42,12 @@ public class UserAccountDataServiceImpl implements UserAccountDataService {
         RestTemplate restTemplate = new RestTemplate();
         return restTemplate.postForObject(backendServerUrl + "/api/user-accounts/unban",
                 userAccountViewModel, UserAccountViewModel.class);
+    }
+
+    @Override
+    public UserAccountViewModel[] getAll() {
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.postForObject(backendServerUrl + "/api/user-accounts/get-all", null,
+                UserAccountViewModel[].class);
     }
 }

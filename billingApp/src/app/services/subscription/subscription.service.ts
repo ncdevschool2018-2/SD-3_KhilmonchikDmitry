@@ -21,13 +21,11 @@ export class SubscriptionService {
 
   getSubscriptionByName(name: string): Observable<Subscription> {
     let params = new HttpParams().set('name', name);
-    console.log(name);
     return this.http.get<Subscription>('http://localhost:8080/api/subs/getbyname', {params: params});
   }
 
   getSubscriptionByCategory(category: string): Observable<Subscription[]> {
     let params = new HttpParams().set('category', category);
-    console.log(category);
     return this.http.get<Subscription[]>('http://localhost:8080/api/subs/getbycategory', {params: params});
   }
 

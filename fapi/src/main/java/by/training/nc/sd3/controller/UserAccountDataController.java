@@ -22,6 +22,16 @@ public class UserAccountDataController {
         return ResponseEntity.ok(userAccountDataService.getUserAccountById(id));
     }
 
+    @PostMapping(value = "/getall")
+    public ResponseEntity<UserAccountViewModel[]> getAll() {
+        return ResponseEntity.ok(userAccountDataService.getAll());
+    }
+
+    @RequestMapping(value = "/user")
+    public UserAccountViewModel user(UserAccountViewModel userAccountViewModel) {
+        return userAccountViewModel;
+    }
+
     @RequestMapping(value = "/getbydata", method = RequestMethod.GET)
     public ResponseEntity<UserAccountViewModel> getUserAccountByData(@RequestParam String login, @RequestParam String password) {
         return ResponseEntity.ok(userAccountDataService.getUserAccountByData(login, password));

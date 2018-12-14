@@ -20,7 +20,6 @@ export class SubscriptionUnitService {
   }
 
   public deleteSubscriptionUnit(subscriptionUnit: SubscriptionUnit) {
-    console.log(subscriptionUnit.id);
     return this.http.delete('http://localhost:8080/api/subsunits/delete/' + subscriptionUnit.id + '?id=' + subscriptionUnit.id);
   }
 

@@ -53,7 +53,6 @@ public class BillingAccountDataController {
     @RequestMapping(value = "/addMoney", method = RequestMethod.POST)
     public ResponseEntity<BillingAccountViewModel> addMoney(@RequestBody BillingAccountViewModel billingAccount) {
         if (billingAccount != null) {
-            System.out.println(billingAccount);
             return ResponseEntity.ok(billingAccountDataService.addMoney(billingAccount));
         }
         return null;

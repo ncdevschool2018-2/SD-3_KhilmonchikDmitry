@@ -1,4 +1,4 @@
-import {Component, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {SubscriptionService} from "../../../../services/subscription/subscription.service";
 import {toNumber} from "ngx-bootstrap/timepicker/timepicker.utils";
@@ -22,7 +22,6 @@ export class SubscriptionDetailsComponent implements OnInit {
   user: User;
   subscriptionId: any;
 
-
   constructor(private http: SubscriptionService, private route: ActivatedRoute,
               private userIdService: UserIDService,
               private subscriptionUnitService: SubscriptionUnitService,
@@ -31,6 +30,10 @@ export class SubscriptionDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.refreshData();
+  }
+
+  refreshData() {
     this.getSubscription();
     this.isSubscribed = false;
     this.id = this.userIdService.getID()[0];
@@ -46,7 +49,7 @@ export class SubscriptionDetailsComponent implements OnInit {
       this.userService.getUserById(this.id).subscribe(
         user => {
           this.user = user;
-          console.log(this.user);
+          this.user.isAdmin = user.isAdmin;
         }
       );
     }
@@ -72,16 +75,18 @@ export class SubscriptionDetailsComponent implements OnInit {
     console.log(subscriptionUnit);
     this.subscriptionUnitService.saveSubscriptionUnit(subscriptionUnit).subscribe(
       subscriptionUnit =>
-        console.log(subscriptionUnit)
+        this.isSubscribed = true
     );
   }
 
   unsubscribe() {
     this.subscriptionUnitService.getSubscriptionUnitsById(this.id).subscribe(
-      subsctiptionUnits => {
-        for(let i = 0; i < subsctiptionUnits.length; i++) {
-          if(subsctiptionUnits[i].subscription.name === this.subscription.name) {
-            this.subscriptionUnitService.deleteSubscriptionUnit(subsctiptionUnits[i]).subscribe();
+      subscriptionUnits => {
+        for(let i = 0; i < subscriptionUnits.length; i++) {
+          if(subscriptionUnits[i].subscription.name === this.subscription.name) {
+            this.subscriptionUnitService.deleteSubscriptionUnit(subscriptionUnits[i]).subscribe(
+              subscriptionUnit => this.isSubscribed = false
+            );
           }
         }
       }

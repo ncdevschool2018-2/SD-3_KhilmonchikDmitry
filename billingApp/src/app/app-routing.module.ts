@@ -17,7 +17,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'registration', component: RegistrationComponent },
   { path: 'createBillingAccount', component: CreateBillingAccountComponent },
-  { path: 'profileDetails', component: ProfileDetailsComponent },
+  { path: 'user/:id', component: ProfileDetailsComponent },
   { path: 'manageBillingAccount', component: ManageBillingAccountComponent },
   { path: 'adminAccount', component: AdminAccountComponent }
 ];
