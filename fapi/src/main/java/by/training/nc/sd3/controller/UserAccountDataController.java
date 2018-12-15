@@ -32,8 +32,8 @@ public class UserAccountDataController {
         return userAccountViewModel;
     }
 
-    @RequestMapping(value = "/getbydata", method = RequestMethod.GET)
-    public ResponseEntity<UserAccountViewModel> getUserAccountByData(@RequestParam String login, @RequestParam String password) {
+    @RequestMapping(value = "/getbydata", method = RequestMethod.POST)
+    public ResponseEntity<UserAccountViewModel> getUserAccountByData(@RequestParam String login, @RequestBody String password) {
         return ResponseEntity.ok(userAccountDataService.getUserAccountByData(login, password));
     }
 
@@ -54,5 +54,11 @@ public class UserAccountDataController {
     @PostMapping(value = "unban")
     public ResponseEntity<UserAccountViewModel> unBan(@RequestBody UserAccountViewModel userAccountViewModel) {
         return ResponseEntity.ok(userAccountDataService.unBan(userAccountViewModel));
+    }
+
+    @PostMapping(value = "changeBillingAccount")
+    public ResponseEntity<UserAccountViewModel> changeActiveBillingAccount(@RequestBody UserAccountViewModel userAccountViewModel,
+                                                                           @RequestParam Long billingAccountId) {
+        return ResponseEntity.ok(userAccountDataService.changeActiveBillingAccount(userAccountViewModel, billingAccountId));
     }
 }

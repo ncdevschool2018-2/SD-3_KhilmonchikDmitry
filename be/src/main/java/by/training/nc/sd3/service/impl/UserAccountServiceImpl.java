@@ -60,4 +60,10 @@ public class UserAccountServiceImpl implements UserAccountService {
         return this.userAccountRepository.findAll();
     }
 
+    @Override
+    public UserAccount changeActiveBillingAccount(UserAccount userAccount, Long billingAccountId) {
+        userAccount.setActiveBillingAccountId(billingAccountId);
+        return this.userAccountRepository.save(userAccount);
+    }
+
 }

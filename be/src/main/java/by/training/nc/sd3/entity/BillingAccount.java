@@ -59,7 +59,7 @@ public class BillingAccount {
         this.ownerId = ownerId;
     }
 
-    public boolean isBanned() {
+    public boolean getIsBanned() {
         return isBanned;
     }
 

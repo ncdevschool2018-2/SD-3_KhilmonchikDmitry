@@ -14,11 +14,8 @@ export class UserService {
     return this.http.post('http://localhost:8080/api/ua/getall', null);
   }
 
-  getUser(login: string, password: string): Observable<User> {
-
-    let params = new HttpParams().set('login', login);
-    params = params.set('password', password);
-    return this.http.get<User>('http://localhost:8080/api/ua/getbydata', {params: params});
+  getUser(login: string, password: string): Observable<any> {
+    return this.http.post('http://localhost:8080/api/ua/getbydata?login=' + login, password);
   }
 
   getUserById(id: number): Observable<User> {
@@ -36,6 +33,10 @@ export class UserService {
 
   unBan(user: User) {
     return this.http.post<User>('http://localhost:8080/api/ua/unban', user);
+  }
+
+  changeActiveBillingAccount(user: User, billingAccountId: number) {
+    return this.http.post<User>('http://localhost:8080/api/ua/changeBillingAccount?billingAccountId=' + billingAccountId, user);
   }
 
 }

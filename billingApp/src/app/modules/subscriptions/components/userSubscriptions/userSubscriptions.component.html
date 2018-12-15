@@ -6,8 +6,7 @@
       <th scope="col">Subscription</th>
       <th scope="col">Days left</th>
       <th scope="col">Will be renewed</th>
-      <th scope="col">Status</th>
-      <th scope="col"></th>
+      <th scope="col">Action</th>
     </tr>
     </thead>
     <tbody>
@@ -15,12 +14,12 @@
       <td>{{subscription.subscription.name}}</td>
       <td>{{subscription.daysLeft}}</td>
       <td>{{subscription.willBeRenewed}}</td>
-      <td>{{subscription.status}}</td>
       <td>
-        <button *ngIf="!user.isAdmin" type="button" class="btn btn-outline-danger"
+        <button *ngIf="!user.isAdmin && subscription.status" type="button" class="btn btn-outline-danger"
                 (click)="unsubscribe(subscription)">Unsubscribe
         </button>
-        <button *ngIf="user.isAdmin && subscription.status" type="button" class="btn btn-danger"
+        <p class="text-danger" *ngIf="!subscription.status && !user.isAdmin">Banned</p>
+        <button *ngIf="user.isAdmin && subscription.status" type="button" class="btn btn-outline-danger"
                 (click)="changeStatus(subscription)">Ban
         </button>
         <button *ngIf="user.isAdmin && !subscription.status" type="button" class="btn btn-success"

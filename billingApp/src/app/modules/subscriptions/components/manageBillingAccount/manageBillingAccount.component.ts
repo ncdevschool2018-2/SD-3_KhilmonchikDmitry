@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {BillingAccount} from "../../../../shared/BillingAccount";
 import {BillingAccountService} from "../../../../services/billingAccount/billingAccount.service";
 import {UserIDService} from "../../../../services/userID.service";
+import {UserService} from "../../../../services/user/user.service";
 
 @Component({
   selector: 'manageBillingAccount',
@@ -14,7 +15,9 @@ export class ManageBillingAccountComponent implements OnInit {
   private billingAccounts: BillingAccount[];
   public id;
 
-  constructor(private http: BillingAccountService, private userIdService: UserIDService) {
+  constructor(private http: BillingAccountService,
+              private userIdService: UserIDService,
+              private userService: UserService) {
   }
 
   ngOnInit() {
@@ -27,13 +30,21 @@ export class ManageBillingAccountComponent implements OnInit {
   deleteBillingAccount(billingAccountId: number, password: string) {
     let billingAccount: BillingAccount;
     billingAccount = new BillingAccount(billingAccountId, null, null, null, password, null);
-    this.http.deleteBillingAccount(billingAccount).subscribe(result => console.log(result));
+    this.http.deleteBillingAccount(billingAccount).subscribe();
   }
 
   addMoney(name: string, password: string, creditCardNumber: string, sum: string) {
     let billingAccount: BillingAccount = new BillingAccount(null, this.id, creditCardNumber, name, password, Number(sum));
-    this.http.addMoney(billingAccount).subscribe(
-      billingAccount=> console.log(billingAccount)
-    );
+    this.http.addMoney(billingAccount).subscribe();
+  }
+
+  changeActiveBillingAccount(billingAccount: BillingAccount) {
+    this.userService.getUserById(this.id).subscribe(
+      user => {
+        this.userService.changeActiveBillingAccount(user, billingAccount.id).subscribe(
+          user => console.log(user)
+        );
+      }
+    )
   }
 }

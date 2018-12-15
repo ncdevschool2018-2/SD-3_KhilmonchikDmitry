@@ -46,4 +46,10 @@ public class UserAccountController {
     public UserAccount unBan(@RequestBody UserAccount userAccount) {
         return this.userAccountService.unBan(userAccount);
     }
+
+    @PostMapping(value = "change-billing-account")
+    public UserAccount changeBillingAccount(@RequestBody UserAccount userAccount,
+                                            @RequestParam Long billingAccountId) {
+        return this.userAccountService.changeActiveBillingAccount(userAccount, billingAccountId);
+    }
 }

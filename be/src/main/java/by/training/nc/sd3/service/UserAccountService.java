@@ -11,4 +11,5 @@ public interface UserAccountService {
     UserAccount ban(UserAccount userAccount);
     UserAccount unBan(UserAccount userAccount);
     Iterable<UserAccount> getAll();
+    UserAccount changeActiveBillingAccount(UserAccount userAccount, Long billingAccountId);
 }

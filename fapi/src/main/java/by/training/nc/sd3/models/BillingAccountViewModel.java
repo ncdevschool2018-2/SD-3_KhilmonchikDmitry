@@ -74,7 +74,7 @@ public class BillingAccountViewModel {
         return creditCardNumber;
     }
 
-    public boolean isBanned() {
+    public boolean getIsBanned() {
         return isBanned;
     }
 

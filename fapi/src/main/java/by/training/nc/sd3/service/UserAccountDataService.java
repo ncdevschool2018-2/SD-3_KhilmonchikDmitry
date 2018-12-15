@@ -9,4 +9,6 @@ public interface UserAccountDataService {
     UserAccountViewModel ban(UserAccountViewModel userAccountViewModel);
     UserAccountViewModel unBan(UserAccountViewModel userAccountViewModel);
     UserAccountViewModel[] getAll();
+    UserAccountViewModel changeActiveBillingAccount(UserAccountViewModel userAccountViewModel,
+                                                    Long billingAccountId);
 }
