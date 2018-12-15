@@ -1,28 +1,26 @@
-<div *ngIf="user !== undefined">
-  <div class="col">
-    <p></p>
-    <h2>Billing account</h2>
-    <select #billingAccountSelect class="form-control">
-      <option *ngFor="let billingAccount of billingAccounts">{{billingAccount.name}}</option>
-    </select>
-    <h2>Money left</h2>
-    <input *ngIf="billingAccounts" #moneyField class="form-control" type="text"
-           placeholder="{{billingAccounts[billingAccountSelect.selectedIndex].money}}" readonly>
-    <p></p>
-    <button *ngIf="!user.isAdmin" type="button" class="btn btn-success" routerLink="/manageBillingAccount">Manage
-      billing account
-    </button>
-    <button *ngIf="user.isAdmin && !billingAccounts[billingAccountSelect.selectedIndex].isBanned" type="button"
-            (click)="ban(billingAccounts[billingAccountSelect.selectedIndex])" class="btn btn-danger">Ban billing
-      account
-    </button>
-    <button *ngIf="user.isAdmin && billingAccounts[billingAccountSelect.selectedIndex].isBanned" type="button"
-            (click)="unBan(billingAccounts[billingAccountSelect.selectedIndex])" class="btn btn-success">Unban billing
-      account
-    </button>
-    <p></p>
-    <button *ngIf="!user.isAdmin" type="button" class="btn btn-success" routerLink="/createBillingAccount">Create
-      billing account
-    </button>
-  </div>
+<div *ngIf="user !== undefined && !user.isBanned">
+  <h2>Billing account</h2>
+  <select #billingAccountSelect class="form-control">
+    <option *ngFor="let billingAccount of billingAccounts">{{billingAccount.name}}</option>
+  </select>
+  <h2>Money left</h2>
+  <input *ngIf="billingAccounts" #moneyField class="form-control" type="text"
+         placeholder="{{billingAccounts[billingAccountSelect.selectedIndex].money}}" readonly>
+  <p></p>
+  <button *ngIf="!user.isAdmin" type="button" class="btn btn-outline-success" routerLink="/manageBillingAccount">Manage
+    billing account
+  </button>
+  <button *ngIf="user.isAdmin && !billingAccounts[billingAccountSelect.selectedIndex].isBanned" type="button"
+          (click)="ban(billingAccounts[billingAccountSelect.selectedIndex])" class="btn btn-outline-danger">Ban billing
+    account
+  </button>
+  <button *ngIf="user.isAdmin && billingAccounts[billingAccountSelect.selectedIndex].isBanned" type="button"
+          (click)="unBan(billingAccounts[billingAccountSelect.selectedIndex])" class="btn btn-outline-success">Unban
+    billing
+    account
+  </button>
+  <p></p>
+  <button *ngIf="!user.isAdmin" type="button" class="btn btn-outline-success" routerLink="/createBillingAccount">Create
+    billing account
+  </button>
 </div>

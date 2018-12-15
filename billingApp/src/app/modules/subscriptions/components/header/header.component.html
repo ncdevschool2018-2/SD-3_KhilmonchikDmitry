@@ -1,66 +1,40 @@
-<div class="row">
-  <div class="col">
-    <a class="nav-link" (click)="getAllSubscriptions()" routerLink="/subscriptions">
-      <img src="../../../../../assets/icons/icon.png" class="rounded float-left" width="100" height="100">
-    </a>
-  </div>
-  <div class="col-6">
-    <div class="nav justify-content-center">
-      <div>
-        <nav class="navbar navbar-light bg-light">
-          <form class="form-inline  justify-content-center">
-            <input #searchRequest class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button type='button' routerLink="/subscriptions" (click)="search(searchRequest.value)"
-                    class="btn btn-outline-success my-2 my-sm-0">Search
-            </button>
-          </form>
-        </nav>
-      </div>
-      <div>
-        <ul class="nav">
-          <li class="nav-item">
-            <button class="btn btn-primary"
-                    (click)="filter('development')" routerLink="/subscriptions">Development
-            </button>
-          </li>
-          <li class="nav-item">
-            <button class="btn btn-primary"
-                    (click)="filter('music')" routerLink="/subscriptions">Music
-            </button>
-          </li>
-          <li class="nav-item">
-            <button class="btn btn-primary"
-                    (click)="filter('films')" routerLink="/subscriptions">Films
-            </button>
-          </li>
-          <li class="nav-item">
-            <button class="btn btn-primary"
-                    (click)="filter('office')" routerLink="/subscriptions">Office
-            </button>
-          </li>
-          <li class="nav-item">
-            <button class="btn btn-primary"
-                    (click)="filter('streaming')" routerLink="/subscriptions">Streaming
-            </button>
-          </li>
-          <li *ngIf="isAdmin" class="nav-item">
-            <button class="btn btn-success"
-                    (click)="filter('streaming')" routerLink="/createSubscription">Create
-            </button>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="nav justify-content-center">
-      <img src="../../../../../assets/icons/account.png" class="rounded float-right"
-           width="100" height="100"
-           [routerLink]="loggedUserID >= 0 ? (isAdmin ? '/adminAccount' : '/user/'+userIDService.getID()[0]) : ''">
-      <button *ngIf="userIDService.getID() < 0" type="button" class="btn btn-primary" routerLink="/login">Sign in</button>
-      <button *ngIf="userIDService.getID() >= 0" type="button" class="btn btn-primary" routerLink="" (click)="logOut()">Sign
-        out
+<nav class="navbar navbar-light bg-light navbar-expand">
+  <a class="nav-link" (click)="getAllSubscriptions()" routerLink="/subscriptions">
+    <img src="../../../../../assets/icons/icon.png" class="nav-icon">
+  </a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" (click)="filter('development')" routerLink="/subscriptions">Development</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="filter('music')" routerLink="/subscriptions">Music</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="filter('films')" routerLink="/subscriptions">Films</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" (click)="filter('office')" routerLink="/subscriptions">Office</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link"  (click)="filter('streaming')" routerLink="/subscriptions">Streaming</a>
+      </li>
+      <li *ngIf="isAdmin" class="nav-item">
+        <a class="nav-link" routerLink="/createSubscription">Create</a>
+      </li>
+    </ul>
+    <form class="form-inline justify-content-center">
+      <input #searchRequest class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button type="button" routerLink="/subscriptions" (click)="search(searchRequest.value)"
+              class="btn btn-outline-success my-2 my-sm-0">Search
       </button>
-    </div>
+    </form>
   </div>
-</div>
+    <img src="../../../../../assets/icons/account.png" class="nav-icon"
+         [routerLink]="loggedUserID >= 0 ? (isAdmin ? '/adminAccount' : '/user/'+userIDService.getID()[0]) : ''">
+    <button *ngIf="userIDService.getID() < 0" type="button" class="btn btn-primary" routerLink="/login">Sign in
+    </button>
+    <button *ngIf="userIDService.getID() >= 0" type="button" class="btn btn-primary" routerLink="" (click)="logOut()">
+      Sign out
+    </button>
+</nav>

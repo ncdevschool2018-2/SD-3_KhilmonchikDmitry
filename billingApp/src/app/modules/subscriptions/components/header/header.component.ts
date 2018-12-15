@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit {
   subscriptions: Subscription[];
   subscription: Subscription;
   isAdmin: boolean = false;
+  interval;
 
   constructor(private http: SubscriptionService, public userIDService: UserIDService,
               private subscriptionShareService: SubscriptionsShareService,
@@ -33,8 +34,10 @@ export class HeaderComponent implements OnInit {
     this.loggedUserIDObs.subscribe(loggedUserID => {
       this.loggedUserID = loggedUserID[0];
       this.getIsAdmin();
-      console.log(this.isAdmin);
     });
+    this.interval = setInterval(() => {
+      this.getAllSubscriptions();
+    }, 5000);
   }
 
   getIsAdmin() {

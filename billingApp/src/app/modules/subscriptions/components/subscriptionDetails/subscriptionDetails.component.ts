@@ -70,25 +70,29 @@ export class SubscriptionDetailsComponent implements OnInit {
   }
 
   subscribe() {
-    let subscriptionUnit = new SubscriptionUnit(null, this.id, this.subscription, 30, true, true);
-    console.log(subscriptionUnit);
-    this.subscriptionUnitService.saveSubscriptionUnit(subscriptionUnit).subscribe(
-      subscriptionUnit =>
-        this.isSubscribed = true
-    );
+    if(!this.user.isBanned) {
+      let subscriptionUnit = new SubscriptionUnit(null, this.id, this.subscription, 30, true, true);
+      console.log(subscriptionUnit);
+      this.subscriptionUnitService.saveSubscriptionUnit(subscriptionUnit).subscribe(
+        subscriptionUnit =>
+          this.isSubscribed = true
+      );
+    }
   }
 
   unsubscribe() {
-    this.subscriptionUnitService.getSubscriptionUnitsById(this.id).subscribe(
-      subscriptionUnits => {
-        for(let i = 0; i < subscriptionUnits.length; i++) {
-          if(subscriptionUnits[i].subscription.name === this.subscription.name) {
-            this.subscriptionUnitService.deleteSubscriptionUnit(subscriptionUnits[i]).subscribe(
-              subscriptionUnit => this.isSubscribed = false
-            );
+    if(!this.user.isBanned) {
+      this.subscriptionUnitService.getSubscriptionUnitsById(this.id).subscribe(
+        subscriptionUnits => {
+          for (let i = 0; i < subscriptionUnits.length; i++) {
+            if (subscriptionUnits[i].subscription.name === this.subscription.name) {
+              this.subscriptionUnitService.deleteSubscriptionUnit(subscriptionUnits[i]).subscribe(
+                subscriptionUnit => this.isSubscribed = false
+              );
+            }
           }
         }
-      }
-    );
+      );
+    }
   }
 }

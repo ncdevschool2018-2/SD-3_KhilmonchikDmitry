@@ -37,12 +37,15 @@
           </select>
           <p></p>
           <div *ngIf="id > -1">
-            <button *ngIf="!user.isAdmin && !isSubscribed" type="submit" class="btn btn-success" (click)="subscribe()"
+            <button *ngIf="!user.isAdmin && !isSubscribed && !user.isBanned" type="submit" class="btn btn-success"
+                    (click)="subscribe()"
                     routerLink="../profileDetails">Subscribe
             </button>
-            <button *ngIf="!user.isAdmin && isSubscribed" type="submit" class="btn btn-danger" (click)="unsubscribe()"
+            <button *ngIf="!user.isAdmin && isSubscribed && !user.isBanned" type="submit" class="btn btn-danger"
+                    (click)="unsubscribe()"
                     routerLink="../profileDetails">Unsubscribe
             </button>
+            <p *ngIf="user.isBanned">Opsie, it seems your account is banned.</p>
             <button *ngIf="user.isAdmin && !subscription.isBanned" type="submit" class="btn btn-danger"
                     (click)="ban()" routerLink="profileDetails">Ban
             </button>

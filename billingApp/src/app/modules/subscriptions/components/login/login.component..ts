@@ -20,9 +20,10 @@ export class LoginComponent {
   signIn(login: string, password: string): void {
     this.http.getUser(login, password).subscribe(
       userRet => {
-        this.user = userRet;
-        console.log(this.user);
-        this.userIDService.setID(userRet.id);
+        if(userRet !== null) {
+          this.user = userRet;
+          this.userIDService.setID(userRet.id);
+        }
       });
   }
 

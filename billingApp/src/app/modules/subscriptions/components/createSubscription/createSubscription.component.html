@@ -4,11 +4,11 @@
   <div class="col-6">
     <div class="form-group">
       <label for="subscriptionName">Subscription name</label>
-      <input #subscriptionName class="form-control" id="subscriptionName">
+      <input #subscriptionName maxlength="40" class="form-control" id="subscriptionName">
     </div>
     <div class="form-group">
       <label for="subscriptionDescription">Subscription description</label>
-      <input #subscriptionDescription class="form-control" id="subscriptionDescription">
+      <textarea #subscriptionDescription maxlength="90" class="form-control" id="subscriptionDescription"></textarea>
     </div>
     <div class="form-group">
       <label for="categoriesSelect">Select billing account</label>
@@ -18,15 +18,15 @@
     </div>
     <div class="form-group">
       <label for="feePerMonth">Fee per month</label>
-      <input #feePerMonth type="number" min="0" class="form-control" id="feePerMonth">
+      <input #feePerMonth max="1000" type="number" min="0" class="form-control" id="feePerMonth">
     </div>
     <div class="form-group">
       <label for="feePerThreeMonths">Fee per three months</label>
-      <input #feePerThreeMonths type="number" min="0" class="form-control" id="feePerThreeMonths">
+      <input #feePerThreeMonths max="1000" type="number" min="0" class="form-control" id="feePerThreeMonths">
     </div>
     <div class="form-group">
       <label for="feePerYear">Fee per year</label>
-      <input #feePerYear type="number" min="0" class="form-control" id="feePerYear">
+      <input #feePerYear max="1000" type="number" min="0" class="form-control" id="feePerYear">
     </div>
     <button
       class="btn btn-primary" (click)="createSubscription(subscriptionName.value, subscriptionDescription.value, categoriesSelect.selectedIndex,

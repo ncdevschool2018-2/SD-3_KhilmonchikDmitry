@@ -10,7 +10,7 @@
     </div>
     <div class="form-group">
       <label for="BillingAccountPassword">Billing account password</label>
-      <input #password type="password" class="form-control" id="BillingAccountPassword">
+      <input #password maxlength="40" type="password" class="form-control" id="BillingAccountPassword">
     </div>
     <button type="button" (click)="deleteBillingAccount(billingAccounts[selectedBillingAccount.selectedIndex].id,
        billingAccounts[selectedBillingAccount.selectedIndex].password);" class="btn btn-danger"
@@ -18,17 +18,17 @@
     </button>
     <div class="form-group">
       <label for="CreditCardNumber">Credit card number</label>
-      <input #creditCardNumber type="password" class="form-control" id="CreditCardNumber">
+      <input #creditCardNumber maxlength="40" type="password" class="form-control" id="CreditCardNumber">
       <small id="CreditCardNumberHelp" class="form-text text-muted">We'll never steal your money (probably).</small>
     </div>
     <div class="form-group">
       <label for="BillingAccountSum">Enter the sum of money</label>
-      <input #sumOfMoney type="number" min="0" class="form-control" id="BillingAccountSum">
+      <input #sumOfMoney max="1000" type="number" min="0" class="form-control" id="BillingAccountSum">
       <small id="PaymentHelp" class="form-text text-muted">This amount of money will be written off your credit
         card.
       </small>
     </div>
-    <button
+    <button type="submit"
       (click)="addMoney(selectedBillingAccount.value, password.value, creditCardNumber.value, sumOfMoney.value);"
       class="btn btn-primary" [routerLink]="'../user/' + id">Submit
     </button>
