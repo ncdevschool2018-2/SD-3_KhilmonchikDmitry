@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {BillingAccountService} from "../../../../services/billingAccount/billingAccount.service";
 import {BillingAccount} from "../../../../shared/BillingAccount";
 import {UserIDService} from "../../../../services/userID.service";

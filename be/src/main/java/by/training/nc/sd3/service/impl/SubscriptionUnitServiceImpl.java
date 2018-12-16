@@ -43,11 +43,27 @@ public class SubscriptionUnitServiceImpl implements SubscriptionUnitService {
                     this.billingAccountRepository.findById(user.getActiveBillingAccountId());
             if (billingAccountOptional.isPresent()) {
                 BillingAccount billingAccount = billingAccountOptional.get();
-                if (billingAccount.getMoney() >= subscriptionUnit.getSubscription().getPerMonth()) {
-                    billingAccount.setMoney(billingAccount.getMoney() - subscriptionUnit.getSubscription().getPerMonth());
-                    this.billingAccountRepository.save(billingAccount);
-                    return this.subscriptionUnitRepository.save(subscriptionUnit);
+
+                if (subscriptionUnit.getDaysLeft() == 30) {
+                    if (billingAccount.getMoney() >= subscriptionUnit.getSubscription().getPerMonth()) {
+                        billingAccount.setMoney(billingAccount.getMoney() - subscriptionUnit.getSubscription().getPerMonth());
+                        this.billingAccountRepository.save(billingAccount);
+                        return this.subscriptionUnitRepository.save(subscriptionUnit);
+                    }
+                } else if (subscriptionUnit.getDaysLeft() == 90) {
+                    if (billingAccount.getMoney() >= subscriptionUnit.getSubscription().getPerThreeMonths()) {
+                        billingAccount.setMoney(billingAccount.getMoney() - subscriptionUnit.getSubscription().getPerThreeMonths());
+                        this.billingAccountRepository.save(billingAccount);
+                        return this.subscriptionUnitRepository.save(subscriptionUnit);
+                    }
+                } else if (subscriptionUnit.getDaysLeft() == 365) {
+                    if (billingAccount.getMoney() >= subscriptionUnit.getSubscription().getPerYear()) {
+                        billingAccount.setMoney(billingAccount.getMoney() - subscriptionUnit.getSubscription().getPerYear());
+                        this.billingAccountRepository.save(billingAccount);
+                        return this.subscriptionUnitRepository.save(subscriptionUnit);
+                    }
                 }
+
             }
         }
         return null;

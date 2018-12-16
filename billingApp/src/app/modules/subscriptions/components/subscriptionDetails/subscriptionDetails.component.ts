@@ -55,11 +55,15 @@ export class SubscriptionDetailsComponent implements OnInit {
   }
 
   ban() {
-    this.http.banSubscription(toNumber(this.subscriptionId)).subscribe();
+    this.http.banSubscription(toNumber(this.subscriptionId)).subscribe(
+      subscription => this.subscription = subscription
+    );
   }
 
   unBan() {
-    this.http.unBanSubscription(toNumber(this.subscriptionId)).subscribe();
+    this.http.unBanSubscription(toNumber(this.subscriptionId)).subscribe(
+      subscription => this.subscription = subscription
+    );
   }
 
   getSubscription() {
@@ -69,10 +73,20 @@ export class SubscriptionDetailsComponent implements OnInit {
     });
   }
 
-  subscribe() {
+  periodDecision(selectDOMElement) {
+    let days: number;
+    if(selectDOMElement.selectedIndex === 0)
+      days = 30;
+    else if(selectDOMElement.selectedIndex === 1)
+      days = 90;
+    else if(selectDOMElement.selectedIndex === 2)
+      days = 365;
+    this.subscribe(days)
+  }
+
+  subscribe(days: number) {
     if(!this.user.isBanned) {
-      let subscriptionUnit = new SubscriptionUnit(null, this.id, this.subscription, 30, true, true);
-      console.log(subscriptionUnit);
+      let subscriptionUnit = new SubscriptionUnit(null, this.id, this.subscription, days, true, true);
       this.subscriptionUnitService.saveSubscriptionUnit(subscriptionUnit).subscribe(
         subscriptionUnit =>
           this.isSubscribed = true

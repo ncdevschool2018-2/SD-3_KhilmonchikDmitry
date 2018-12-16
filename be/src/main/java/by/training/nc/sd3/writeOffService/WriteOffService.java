@@ -27,35 +27,42 @@ public class WriteOffService {
         this.subscriptionService = subscriptionService;
     }
 
+    private void pay(SubscriptionUnit subscriptionUnit) {
+        Optional<BillingAccount> billingAccountOptional = billingAccountService.getById(subscriptionUnit.getBillingAccount().getId());
+        if (billingAccountOptional.isPresent()) {
+            BillingAccount billingAccount = billingAccountOptional.get();
+            int fee = subscriptionUnit.getSubscription().getPerMonth();
+            if (billingAccount.getMoney() - fee > 0) {
+                billingAccount.setMoney(billingAccount.getMoney() - fee);
+                subscriptionUnit.setWillBeRenewed(true);
+                subscriptionUnit.setDaysLeft(30);
+            } else {
+                subscriptionUnit.setWillBeRenewed(false);
+            }
+            this.billingAccountService.save(billingAccount);
+        } else {
+            subscriptionUnit.setStatus(false);
+        }
+    }
+
     @Scheduled(fixedDelay = 5000)
     public void writeOff() {
-//        Iterable<SubscriptionUnit> subscriptionUnits = subscriptionUnitService.getSubscriptionUnits();
-//        subscriptionUnits.forEach(
-//                subscriptionUnit -> {
-//                    if (subscriptionUnit.isWillBeRenewed()) {
-//                        Date date = new Date();
-//                        if (date.getTime() - subscriptionUnit.getWriteOffDate().getTime() >= 1000
-//                                && subscriptionUnit.getDaysLeft() > 0) {
-//                            subscriptionUnit.setDaysLeft(subscriptionUnit.getDaysLeft() - 1);
-//                            subscriptionUnit.setWriteOffDate(date);
-//                        }
-//                        if (subscriptionUnit.getDaysLeft() == 0 && subscriptionUnit.isWillBeRenewed() && subscriptionUnit.isStatus()) {
-//                            Optional<BillingAccount> billingAccountOptional = billingAccountService.getById(subscriptionUnit.getBillingAccount().getId());
-//                            if (billingAccountOptional.isPresent()) {
-//                                BillingAccount billingAccount = billingAccountOptional.get();
-//                                int fee = subscriptionUnit.getSubscription().getPerMonth();
-//                                if (billingAccount.getMoney() - fee > 0) {
-//                                    billingAccount.setMoney(billingAccount.getMoney() - fee);
-//                                    subscriptionUnit.setDaysLeft(30);
-//                                } else {
-//                                    subscriptionUnit.setWillBeRenewed(false);
-//                                }
-//                                this.billingAccountService.save(billingAccount);
-//                            }
-//                        }
-//                        this.subscriptionUnitService.update(subscriptionUnit);
-//                    }
-//                }
-//        );
+        Iterable<SubscriptionUnit> subscriptionUnits = subscriptionUnitService.getSubscriptionUnits();
+        subscriptionUnits.forEach(
+                subscriptionUnit -> {
+                    if (subscriptionUnit.isStatus()) {
+                        Date date = new Date();
+                        if (date.getTime() - subscriptionUnit.getWriteOffDate().getTime() >= 1000
+                                && subscriptionUnit.getDaysLeft() > 0 && subscriptionUnit.isStatus()) {
+                            subscriptionUnit.setDaysLeft(subscriptionUnit.getDaysLeft() - 1);
+                            subscriptionUnit.setWriteOffDate(date);
+                        }
+                        if (subscriptionUnit.getDaysLeft() == 0 && subscriptionUnit.isStatus()) {
+                            pay(subscriptionUnit);
+                        }
+                        this.subscriptionUnitService.update(subscriptionUnit);
+                    }
+                }
+        );
     }
 }

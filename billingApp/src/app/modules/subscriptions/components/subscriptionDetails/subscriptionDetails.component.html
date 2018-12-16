@@ -30,27 +30,31 @@
             </tr>
             </tbody>
           </table>
-          <select class="form-control">
+          <select #periodSelect class="form-control">
             <option>1 month</option>
             <option>3 months</option>
             <option>1 year</option>
           </select>
           <p></p>
           <div *ngIf="id > -1">
-            <button *ngIf="!user.isAdmin && !isSubscribed && !user.isBanned" type="submit" class="btn btn-success"
-                    (click)="subscribe()"
-                    routerLink="../profileDetails">Subscribe
-            </button>
-            <button *ngIf="!user.isAdmin && isSubscribed && !user.isBanned" type="submit" class="btn btn-danger"
-                    (click)="unsubscribe()"
-                    routerLink="../profileDetails">Unsubscribe
-            </button>
-            <p *ngIf="user.isBanned">Opsie, it seems your account is banned.</p>
+            <div *ngIf="!subscription.isBanned">
+              <button *ngIf="!user.isAdmin && !isSubscribed && !user.isBanned" type="submit" class="btn btn-success"
+                      (click)="periodDecision(periodSelect)"
+                      routerLink="../profileDetails">Subscribe
+              </button>
+              <button *ngIf="!user.isAdmin && isSubscribed && !user.isBanned" type="submit" class="btn btn-danger"
+                      (click)="unsubscribe()"
+                      routerLink="../profileDetails">Unsubscribe
+              </button>
+              <p *ngIf="user.isBanned && !user.isAdmin" class="text-danger">Opsie, it seems your account is banned.</p>
+            </div>
+            <p *ngIf="!user.isAdmin && subscription.isBanned" class="text-danger">Service is temporarily
+              unavailable.</p>
             <button *ngIf="user.isAdmin && !subscription.isBanned" type="submit" class="btn btn-danger"
-                    (click)="ban()" routerLink="profileDetails">Ban
+                    (click)="ban()">Ban
             </button>
             <button *ngIf="user.isAdmin && subscription.isBanned" type="submit" class="btn btn-success"
-                    (click)="unBan()" routerLink="profileDetails">Unban
+                    (click)="unBan()">Unban
             </button>
           </div>
         </li>

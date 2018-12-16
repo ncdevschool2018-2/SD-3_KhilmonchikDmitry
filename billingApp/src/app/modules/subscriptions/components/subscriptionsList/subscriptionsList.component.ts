@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {SubscriptionService} from '../../../../services/subscription/subscription.service';
 import {Subscription} from '../../../../shared/Subscription';
 import {SubscriptionsShareService} from "../../../../services/subscriptionsShare.service";
+import {UserIDService} from "../../../../services/userID.service";
+import {User} from "../../../../shared/User";
+import {UserService} from "../../../../services/user/user.service";
 
 @Component({
   selector: 'subscriptionsList',
@@ -13,7 +15,9 @@ export class SubscriptionsListComponent implements OnInit {
 
   subscriptions: Subscription[];
 
-  constructor(private subscriptionShareService: SubscriptionsShareService) {
+  constructor(private subscriptionShareService: SubscriptionsShareService,
+              private userIdService: UserIDService,
+              private userService: UserService) {
   }
 
   ngOnInit() {

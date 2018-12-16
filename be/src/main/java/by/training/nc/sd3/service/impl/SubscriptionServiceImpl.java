@@ -62,7 +62,7 @@ public class SubscriptionServiceImpl implements SubscriptionService {
         Optional<Subscription> subscriptionOptional = this.subscriptionRepository.findById(id);
         if(subscriptionOptional.isPresent()) {
             Subscription subscription = subscriptionOptional.get();
-            subscription.setBanned(true);
+            subscription.setIsBanned(true);
             return this.subscriptionRepository.save(subscription);
         }
         return null;
@@ -73,7 +73,7 @@ public class SubscriptionServiceImpl implements SubscriptionService {
         Optional<Subscription> subscriptionOptional = this.subscriptionRepository.findById(id);
         if(subscriptionOptional.isPresent()) {
             Subscription subscription = subscriptionOptional.get();
-            subscription.setBanned(false);
+            subscription.setIsBanned(false);
             return this.subscriptionRepository.save(subscription);
         }
         return null;
