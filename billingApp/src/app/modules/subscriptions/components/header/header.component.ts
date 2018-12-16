@@ -35,9 +35,6 @@ export class HeaderComponent implements OnInit {
       this.loggedUserID = loggedUserID[0];
       this.getIsAdmin();
     });
-    this.interval = setInterval(() => {
-      this.getAllSubscriptions();
-    }, 5000);
   }
 
   getIsAdmin() {
