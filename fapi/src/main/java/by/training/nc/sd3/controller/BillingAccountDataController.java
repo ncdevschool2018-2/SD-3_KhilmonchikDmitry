@@ -31,15 +31,9 @@ public class BillingAccountDataController {
         return ResponseEntity.ok(billingAccountDataService.getBillingAccountsByOwnerId(id));
     }
 
-    @RequestMapping(value = "/checkpasswordbyid", method = RequestMethod.POST)
-    public ResponseEntity<Boolean> checkPasswordById(@RequestBody BillingAccountViewModel ba) {
-        return ResponseEntity.ok(billingAccountDataService.checkPasswordById(ba.getPassword(), ba.getId()));
-    }
-
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public ResponseEntity<BillingAccountViewModel> saveBillingAccount(@RequestBody BillingAccountViewModel billingAccount) {
         if (billingAccount != null) {
-            System.out.println(billingAccount);
             return ResponseEntity.ok(billingAccountDataService.saveBillingAccount(billingAccount));
         }
         return null;

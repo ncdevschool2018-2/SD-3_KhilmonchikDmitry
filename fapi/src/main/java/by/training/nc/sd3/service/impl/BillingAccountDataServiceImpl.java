@@ -38,10 +38,6 @@ public class BillingAccountDataServiceImpl implements BillingAccountDataService 
         return billingAccounts == null ? Collections.emptyList() : Arrays.asList(billingAccounts);
     }
 
-    public boolean checkPasswordById(String password, Long id) {
-        return false;
-    }
-
     public BillingAccountViewModel saveBillingAccount(BillingAccountViewModel account) {
         RestTemplate restTemplate = new RestTemplate();
         BillingAccountViewModel billingAccount = restTemplate.postForObject(backendServerUrl + "/api/billing-accounts/save",

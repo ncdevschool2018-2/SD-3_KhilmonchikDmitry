@@ -6,11 +6,11 @@ import java.util.List;
 
 public interface SubscriptionUnitDataService {
 
-    public List<SubscriptionUnitViewModel> getSubscriptionUnitsByUserId(Long id);
+    List<SubscriptionUnitViewModel> getSubscriptionUnitsByUserId(Long id);
 
-    public void delete(Long id);
+    void delete(Long id);
 
-    public SubscriptionUnitViewModel save(SubscriptionUnitViewModel subscriptionUnitViewModel);
+    SubscriptionUnitViewModel save(SubscriptionUnitViewModel subscriptionUnitViewModel);
 
-    public SubscriptionUnitViewModel changeStatus(SubscriptionUnitViewModel subscriptionUnitViewModel);
+    SubscriptionUnitViewModel changeStatus(SubscriptionUnitViewModel subscriptionUnitViewModel);
 }

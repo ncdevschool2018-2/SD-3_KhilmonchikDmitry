@@ -23,10 +23,6 @@ export class BillingAccountService {
       '&password=' + billingAccount.password);
   }
 
-  public checkBillingAccountPassword(billingAccount: BillingAccount) {
-    return this.http.post<BillingAccount>('/api/ba/checkpasswordbyid', billingAccount);
-  }
-
   public addMoney(billingAccount: BillingAccount) {
     return this.http.post<BillingAccount>('/api/ba/addMoney', billingAccount);
   }
