@@ -34,13 +34,9 @@ public class SubscriptionUnitDataServiceImpl implements SubscriptionUnitDataServ
     @Override
     public SubscriptionUnitViewModel save(SubscriptionUnitViewModel subscriptionUnitViewModel) {
         RestTemplate restTemplate = new RestTemplate();
-        try {
-            SubscriptionUnitViewModel subscriptionUnit = restTemplate.postForObject(backendServerUrl + "/api/subscription-units/post",
-                    subscriptionUnitViewModel, SubscriptionUnitViewModel.class);
-            return subscriptionUnit;
-        } catch (NullPointerException e) {
-        }
-        return null;
+        SubscriptionUnitViewModel subscriptionUnit = restTemplate.postForObject(backendServerUrl + "/api/subscription-units/post",
+                subscriptionUnitViewModel, SubscriptionUnitViewModel.class);
+        return subscriptionUnit;
     }
 
     @Override
