@@ -39,7 +39,6 @@ public class SubscriptionUnitDataServiceImpl implements SubscriptionUnitDataServ
                     subscriptionUnitViewModel, SubscriptionUnitViewModel.class);
             return subscriptionUnit;
         } catch (NullPointerException e) {
-            System.out.println(e.getMessage());
         }
         return null;
     }

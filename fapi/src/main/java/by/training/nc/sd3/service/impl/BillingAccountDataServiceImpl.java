@@ -57,7 +57,6 @@ public class BillingAccountDataServiceImpl implements BillingAccountDataService 
 
     @Override
     public BillingAccountViewModel addMoney(BillingAccountViewModel billingAccountViewModel) {
-        System.out.println(billingAccountViewModel);
         RestTemplate restTemplate = new RestTemplate();
         BillingAccountViewModel billingAccount = restTemplate.postForObject(backendServerUrl + "/api/billing-accounts/add-money",
                 billingAccountViewModel, BillingAccountViewModel.class);
