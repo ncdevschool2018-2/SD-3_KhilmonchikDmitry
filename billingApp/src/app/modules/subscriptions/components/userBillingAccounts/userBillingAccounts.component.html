@@ -1,4 +1,4 @@
-<div *ngIf="user !== undefined && !user.isBanned">
+<div *ngIf="user !== undefined && !user.isBanned && user !==null">
   <h2>Billing account</h2>
   <select #billingAccountSelect id="billingAccountSelect" class="form-control">
     <option *ngFor="let billingAccount of billingAccounts">{{billingAccount.name}}</option>
