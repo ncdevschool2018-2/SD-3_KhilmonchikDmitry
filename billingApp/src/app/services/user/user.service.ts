@@ -11,32 +11,32 @@ export class UserService {
   }
 
   getAllUsers(): Observable<any> {
-    return this.http.post('http://localhost:8080/api/ua/getall', null);
+    return this.http.post('/api/ua/getall', null);
   }
 
   getUser(login: string, password: string): Observable<any> {
-    return this.http.post('http://localhost:8080/api/ua/getbydata?login=' + login, password);
+    return this.http.post('/api/ua/getbydata?login=' + login, password);
   }
 
   getUserById(id: number): Observable<User> {
     let params = new HttpParams().set('id', id.toString());
-    return this.http.get<User>('http://localhost:8080/api/ua/getbyid', {params: params});
+    return this.http.get<User>('/api/ua/getbyid', {params: params});
   }
 
   createUser(user: User, activeBillingAccountId: number) {
-    return this.http.post<User>('http://localhost:8080/api/ua/save?activeBillingAccountId='+activeBillingAccountId, user);
+    return this.http.post<User>('/api/ua/save?activeBillingAccountId='+activeBillingAccountId, user);
   }
 
   ban(user: User) {
-    return this.http.post<User>('http://localhost:8080/api/ua/ban', user);
+    return this.http.post<User>('/api/ua/ban', user);
   }
 
   unBan(user: User) {
-    return this.http.post<User>('http://localhost:8080/api/ua/unban', user);
+    return this.http.post<User>('/api/ua/unban', user);
   }
 
   changeActiveBillingAccount(user: User, billingAccountId: number) {
-    return this.http.post<User>('http://localhost:8080/api/ua/changeBillingAccount?billingAccountId=' + billingAccountId, user);
+    return this.http.post<User>('/api/ua/changeBillingAccount?billingAccountId=' + billingAccountId, user);
   }
 
 }

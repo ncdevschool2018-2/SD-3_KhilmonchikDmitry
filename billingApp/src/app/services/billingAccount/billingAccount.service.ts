@@ -11,32 +11,32 @@ export class BillingAccountService {
 
   public getBillingAccountsByOwnerId(id: number): Observable<BillingAccount[]> {
     let params = new HttpParams().set('id', id.toString());
-    return this.http.get<BillingAccount[]>('http://localhost:8080/api/ba/getbyownerid', {params: params});
+    return this.http.get<BillingAccount[]>('/api/ba/getbyownerid', {params: params});
   }
 
   public createBillingAccount(billingAccount: BillingAccount) {
-    return this.http.post<BillingAccount>('http://localhost:8080/api/ba/save', billingAccount);
+    return this.http.post<BillingAccount>('/api/ba/save', billingAccount);
   }
 
   public deleteBillingAccount(billingAccount: BillingAccount) {
-    return this.http.delete('http://localhost:8080/api/ba/delete/' + billingAccount.id + '?id=' + billingAccount.id +
+    return this.http.delete('/api/ba/delete/' + billingAccount.id + '?id=' + billingAccount.id +
       '&password=' + billingAccount.password);
   }
 
   public checkBillingAccountPassword(billingAccount: BillingAccount) {
-    return this.http.post<BillingAccount>('http://localhost:8080/api/ba/checkpasswordbyid', billingAccount);
+    return this.http.post<BillingAccount>('/api/ba/checkpasswordbyid', billingAccount);
   }
 
   public addMoney(billingAccount: BillingAccount) {
-    return this.http.post<BillingAccount>('http://localhost:8080/api/ba/addMoney', billingAccount);
+    return this.http.post<BillingAccount>('/api/ba/addMoney', billingAccount);
   }
 
   public ban(billingAccount: BillingAccount) {
-    return this.http.post<BillingAccount>('http://localhost:8080/api/ba/ban', billingAccount);
+    return this.http.post<BillingAccount>('/api/ba/ban', billingAccount);
   }
 
   public unBan(billingAccount: BillingAccount) {
-    return this.http.post<BillingAccount>('http://localhost:8080/api/ba/unban', billingAccount);
+    return this.http.post<BillingAccount>('/api/ba/unban', billingAccount);
   }
 
 }

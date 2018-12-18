@@ -27,8 +27,7 @@ public class SubscriptionUnitDataServiceImpl implements SubscriptionUnitDataServ
     @Override
     public void delete(Long id) {
         RestTemplate restTemplate = new RestTemplate();
-        restTemplate.delete(backendServerUrl + "/api/subscription-units/delete/{id}?id={id}",
-                id, id);
+        restTemplate.delete(backendServerUrl + "/api/subscription-units/delete/{id}?id={id}", id, id);
     }
 
     @Override

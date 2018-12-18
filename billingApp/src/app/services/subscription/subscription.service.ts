@@ -11,34 +11,34 @@ export class SubscriptionService {
   }
 
   getSubscriptions(): Observable<Subscription[]> {
-    return this.http.get<Subscription[]>('http://localhost:8080/api/subs/get');
+    return this.http.get<Subscription[]>('/api/subs/get');
   }
 
   getSubscriptionById(id: number): Observable<Subscription> {
     let params = new HttpParams().set('id', id.toString());
-    return this.http.get<Subscription>('http://localhost:8080/api/subs/getbyid', {params: params});
+    return this.http.get<Subscription>('/api/subs/getbyid', {params: params});
   }
 
   getSubscriptionByName(name: string): Observable<Subscription> {
     let params = new HttpParams().set('name', name);
-    return this.http.get<Subscription>('http://localhost:8080/api/subs/getbyname', {params: params});
+    return this.http.get<Subscription>('/api/subs/getbyname', {params: params});
   }
 
   getSubscriptionByCategory(category: string): Observable<Subscription[]> {
     let params = new HttpParams().set('category', category);
-    return this.http.get<Subscription[]>('http://localhost:8080/api/subs/getbycategory', {params: params});
+    return this.http.get<Subscription[]>('/api/subs/getbycategory', {params: params});
   }
 
   saveSubscription(subscription: Subscription): Observable<Subscription> {
-    return this.http.post<Subscription>('http://localhost:8080/api/subs/save', subscription);
+    return this.http.post<Subscription>('/api/subs/save', subscription);
   }
 
   banSubscription(id: number): Observable<Subscription> {
-    return this.http.post<Subscription>('http://localhost:8080/api/subs/ban?id=' + id, id);
+    return this.http.post<Subscription>('/api/subs/ban?id=' + id, id);
   }
 
   unBanSubscription(id: number): Observable<Subscription> {
-    return this.http.post<Subscription>('http://localhost:8080/api/subs/unban?id=' + id, id);
+    return this.http.post<Subscription>('/api/subs/unban?id=' + id, id);
   }
 
 }
