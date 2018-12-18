@@ -17,12 +17,12 @@ public class UserAccountDataController {
     @Autowired
     private UserAccountDataService userAccountDataService;
 
-    @RequestMapping(value = "/getbyid", method = RequestMethod.GET)
+    @RequestMapping(value = "/get-by-id", method = RequestMethod.GET)
     public ResponseEntity<UserAccountViewModel> getUserAccountById(@RequestParam Long id) {
         return ResponseEntity.ok(userAccountDataService.getUserAccountById(id));
     }
 
-    @PostMapping(value = "/getall")
+    @PostMapping(value = "/get-all")
     public ResponseEntity<UserAccountViewModel[]> getAll() {
         return ResponseEntity.ok(userAccountDataService.getAll());
     }
@@ -32,7 +32,7 @@ public class UserAccountDataController {
         return userAccountViewModel;
     }
 
-    @RequestMapping(value = "/getbydata", method = RequestMethod.POST)
+    @RequestMapping(value = "/get-by-data", method = RequestMethod.POST)
     public ResponseEntity<UserAccountViewModel> getUserAccountByData(@RequestParam String login, @RequestBody String password) {
         return ResponseEntity.ok(userAccountDataService.getUserAccountByData(login, password));
     }
@@ -56,7 +56,7 @@ public class UserAccountDataController {
         return ResponseEntity.ok(userAccountDataService.unBan(userAccountViewModel));
     }
 
-    @PostMapping(value = "changeBillingAccount")
+    @PostMapping(value = "change-BillingAccount")
     public ResponseEntity<UserAccountViewModel> changeActiveBillingAccount(@RequestBody UserAccountViewModel userAccountViewModel,
                                                                            @RequestParam Long billingAccountId) {
         return ResponseEntity.ok(userAccountDataService.changeActiveBillingAccount(userAccountViewModel, billingAccountId));

@@ -26,27 +26,27 @@ public class SubscriptionController {
         return subscriptionService.getSubscriptionById(id);
     }
 
-    @RequestMapping(value = "by-category", method = RequestMethod.GET)
+    @RequestMapping(value = "/by-category", method = RequestMethod.GET)
     public Iterable<Subscription> getSubscriptionsByCategory(@RequestParam Long category) {
         return subscriptionService.getSubscriptionsByCategory(category);
     }
 
-    @RequestMapping(value = "by-name", method = RequestMethod.GET)
+    @RequestMapping(value = "/by-name", method = RequestMethod.GET)
     public Subscription getSubscriptionsByName(@RequestParam String name) {
         return subscriptionService.getSubscriptionsByName(name);
     }
 
-    @PostMapping(value = "save")
+    @PostMapping(value = "/save")
     public Subscription save(@RequestBody Subscription subscription) {
         return subscriptionService.save(subscription);
     }
 
-    @PostMapping(value = "ban")
+    @PostMapping(value = "/ban")
     public Subscription ban(@RequestBody Long id) {
         return subscriptionService.ban(id);
     }
 
-    @PostMapping(value = "unban")
+    @PostMapping(value = "/unban")
     public Subscription unBan(@RequestBody Long id) {
         return subscriptionService.unBan(id);
     }

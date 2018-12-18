@@ -37,17 +37,17 @@ public class UserAccountController {
         return userAccountService.save(userAccount);
     }
 
-    @PostMapping(value = "ban")
+    @PostMapping(value = "/ban")
     public UserAccount ban(@RequestBody UserAccount userAccount) {
         return this.userAccountService.ban(userAccount);
     }
 
-    @PostMapping(value = "unBan")
+    @PostMapping(value = "/unBan")
     public UserAccount unBan(@RequestBody UserAccount userAccount) {
         return this.userAccountService.unBan(userAccount);
     }
 
-    @PostMapping(value = "change-billing-account")
+    @PostMapping(value = "/change-billing-account")
     public UserAccount changeBillingAccount(@RequestBody UserAccount userAccount,
                                             @RequestParam Long billingAccountId) {
         return this.userAccountService.changeActiveBillingAccount(userAccount, billingAccountId);

@@ -12,7 +12,7 @@ export class SubscriptionUnitService {
 
   public getSubscriptionUnitsById(id: number): Observable<SubscriptionUnit[]> {
     let params = new HttpParams().set('userId', id.toString());
-    return this.http.get<SubscriptionUnit[]>('/api/subsunits/getbyuserid', {params: params});
+    return this.http.get<SubscriptionUnit[]>('/api/subsunits/get-by-userid', {params: params});
   }
 
   public saveSubscriptionUnit(subscriptionUnit: SubscriptionUnit) {
@@ -24,7 +24,7 @@ export class SubscriptionUnitService {
   }
 
   public changeStatusSubscriptionUnit(subscriptionUnit: SubscriptionUnit) {
-    return this.http.post<SubscriptionUnit>('/api/subsunits/changestatus', subscriptionUnit);
+    return this.http.post<SubscriptionUnit>('/api/subsunits/change-status', subscriptionUnit);
   }
 
 }

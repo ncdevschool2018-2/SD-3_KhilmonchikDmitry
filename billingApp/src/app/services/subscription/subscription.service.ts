@@ -16,17 +16,17 @@ export class SubscriptionService {
 
   getSubscriptionById(id: number): Observable<Subscription> {
     let params = new HttpParams().set('id', id.toString());
-    return this.http.get<Subscription>('/api/subs/getbyid', {params: params});
+    return this.http.get<Subscription>('/api/subs/get-by-id', {params: params});
   }
 
   getSubscriptionByName(name: string): Observable<Subscription> {
     let params = new HttpParams().set('name', name);
-    return this.http.get<Subscription>('/api/subs/getbyname', {params: params});
+    return this.http.get<Subscription>('/api/subs/get-by-name', {params: params});
   }
 
   getSubscriptionByCategory(category: string): Observable<Subscription[]> {
     let params = new HttpParams().set('category', category);
-    return this.http.get<Subscription[]>('/api/subs/getbycategory', {params: params});
+    return this.http.get<Subscription[]>('/api/subs/get-by-category', {params: params});
   }
 
   saveSubscription(subscription: Subscription): Observable<Subscription> {

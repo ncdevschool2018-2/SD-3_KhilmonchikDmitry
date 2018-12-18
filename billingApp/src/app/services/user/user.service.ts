@@ -15,12 +15,12 @@ export class UserService {
   }
 
   getUser(login: string, password: string): Observable<any> {
-    return this.http.post('/api/ua/getbydata?login=' + login, password);
+    return this.http.post('/api/ua/get-by-data?login=' + login, password);
   }
 
   getUserById(id: number): Observable<User> {
     let params = new HttpParams().set('id', id.toString());
-    return this.http.get<User>('/api/ua/getbyid', {params: params});
+    return this.http.get<User>('/api/ua/get-by-id', {params: params});
   }
 
   createUser(user: User, activeBillingAccountId: number) {
@@ -36,7 +36,7 @@ export class UserService {
   }
 
   changeActiveBillingAccount(user: User, billingAccountId: number) {
-    return this.http.post<User>('/api/ua/changeBillingAccount?billingAccountId=' + billingAccountId, user);
+    return this.http.post<User>('/api/ua/change-BillingAccount?billingAccountId=' + billingAccountId, user);
   }
 
 }

@@ -11,7 +11,7 @@ export class BillingAccountService {
 
   public getBillingAccountsByOwnerId(id: number): Observable<BillingAccount[]> {
     let params = new HttpParams().set('id', id.toString());
-    return this.http.get<BillingAccount[]>('/api/ba/getbyownerid', {params: params});
+    return this.http.get<BillingAccount[]>('/api/ba/get-by-ownerid', {params: params});
   }
 
   public createBillingAccount(billingAccount: BillingAccount) {
@@ -24,7 +24,7 @@ export class BillingAccountService {
   }
 
   public addMoney(billingAccount: BillingAccount) {
-    return this.http.post<BillingAccount>('/api/ba/addMoney', billingAccount);
+    return this.http.post<BillingAccount>('/api/ba/add-money', billingAccount);
   }
 
   public ban(billingAccount: BillingAccount) {

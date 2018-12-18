@@ -16,7 +16,7 @@ public class SubscriptionUnitDataController {
     @Autowired
     private SubscriptionUnitDataService subscriptionUnitDataService;
 
-    @RequestMapping(value = "/getbyuserid", method = RequestMethod.GET)
+    @RequestMapping(value = "/get-by-userid", method = RequestMethod.GET)
     public ResponseEntity<List<SubscriptionUnitViewModel>> getSubscriptionUnitsByUserId(@RequestParam("userId") Long id) {
         return ResponseEntity.ok(subscriptionUnitDataService.getSubscriptionUnitsByUserId(id));
     }
@@ -31,7 +31,7 @@ public class SubscriptionUnitDataController {
         return ResponseEntity.ok(subscriptionUnitDataService.save(subscriptionUnitViewModel));
     }
 
-    @PostMapping(value = "/changestatus")
+    @PostMapping(value = "/change-status")
     public ResponseEntity<SubscriptionUnitViewModel> changeStatus(@RequestBody SubscriptionUnitViewModel subscriptionUnitViewModel) {
         return ResponseEntity.ok(subscriptionUnitDataService.changeStatus(subscriptionUnitViewModel));
     }

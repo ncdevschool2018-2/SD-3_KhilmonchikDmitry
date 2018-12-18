@@ -46,12 +46,12 @@ public class BillingAccountController {
         return this.billingAccountService.addMoney(billingAccount);
     }
 
-    @PostMapping(value = "ban")
+    @PostMapping(value = "/ban")
     public BillingAccount ban(@RequestBody BillingAccount billingAccount) {
         return this.billingAccountService.ban(billingAccount);
     }
 
-    @PostMapping(value = "unban")
+    @PostMapping(value = "/unban")
     public BillingAccount unBan(@RequestBody BillingAccount billingAccount) {
         return this.billingAccountService.unBan(billingAccount);
     }

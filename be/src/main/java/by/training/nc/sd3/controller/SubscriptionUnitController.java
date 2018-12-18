@@ -32,7 +32,7 @@ public class SubscriptionUnitController {
         return subscriptionUnitService.getSubscriptionUnits();
     }
 
-    @RequestMapping(value = "post", method = RequestMethod.POST)
+    @RequestMapping(value = "/post", method = RequestMethod.POST)
     public SubscriptionUnit save(@RequestBody SubscriptionUnit subscriptionUnit) {
         Optional<UserAccount> userAccountOpt = userAccountService.getUserAccountById(subscriptionUnit.getUserId());
         if (userAccountOpt.isPresent()) {
@@ -44,17 +44,17 @@ public class SubscriptionUnitController {
         return subscriptionUnitService.save(subscriptionUnit);
     }
 
-    @DeleteMapping(value = "delete/{id}")
+    @DeleteMapping(value = "/delete/{id}")
     public void delete(@PathVariable Long id) {
         subscriptionUnitService.delete(id);
     }
 
-    @RequestMapping(value = "get-by-user-id", method = RequestMethod.GET)
+    @RequestMapping(value = "/get-by-user-id", method = RequestMethod.GET)
     public Iterable<SubscriptionUnit> getByUserAccountId(@RequestParam("userId") Long id) {
         return subscriptionUnitService.getByUserId(id);
     }
 
-    @PostMapping(value = "change-status")
+    @PostMapping(value = "/change-status")
     public SubscriptionUnit changeStatus(@RequestBody SubscriptionUnit subscriptionUnit) {
         return subscriptionUnitService.changeStatus(subscriptionUnit);
     }
