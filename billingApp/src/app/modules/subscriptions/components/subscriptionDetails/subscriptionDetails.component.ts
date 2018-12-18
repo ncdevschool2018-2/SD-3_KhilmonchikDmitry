@@ -18,6 +18,7 @@ import {User} from "../../../../shared/User";
 export class SubscriptionDetailsComponent implements OnInit {
   subscription: Subscription;
   isSubscribed: boolean;
+  notEnoughMoney: boolean;
   id;
   user: User;
   subscriptionId: any;
@@ -29,6 +30,7 @@ export class SubscriptionDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.notEnoughMoney = false;
     this.refreshData();
   }
 
@@ -36,11 +38,11 @@ export class SubscriptionDetailsComponent implements OnInit {
     this.getSubscription();
     this.isSubscribed = false;
     this.id = this.userIdService.getID()[0];
-    if(this.id > -1) {
+    if (this.id > -1) {
       this.subscriptionUnitService.getSubscriptionUnitsById(this.id).subscribe(
         subscriptionUnits => {
-          for(let i = 0; i < subscriptionUnits.length; i++) {
-            if(subscriptionUnits[i].subscription.name === this.subscription.name)
+          for (let i = 0; i < subscriptionUnits.length; i++) {
+            if (subscriptionUnits[i].subscription.name === this.subscription.name)
               this.isSubscribed = true;
           }
         }
@@ -75,27 +77,31 @@ export class SubscriptionDetailsComponent implements OnInit {
 
   periodDecision(selectDOMElement) {
     let days: number;
-    if(selectDOMElement.selectedIndex === 0)
+    if (selectDOMElement.selectedIndex === 0)
       days = 30;
-    else if(selectDOMElement.selectedIndex === 1)
+    else if (selectDOMElement.selectedIndex === 1)
       days = 90;
-    else if(selectDOMElement.selectedIndex === 2)
+    else if (selectDOMElement.selectedIndex === 2)
       days = 365;
     this.subscribe(days)
   }
 
   subscribe(days: number) {
-    if(!this.user.isBanned) {
+    if (!this.user.isBanned) {
       let subscriptionUnit = new SubscriptionUnit(null, this.id, this.subscription, days, true, true);
       this.subscriptionUnitService.saveSubscriptionUnit(subscriptionUnit).subscribe(
-        subscriptionUnit =>
-          this.isSubscribed = true
-      );
+        subscriptionUnit => {
+          if (subscriptionUnit !== null) {
+            this.isSubscribed = true;
+          } else {
+            this.notEnoughMoney = true;
+          }
+        });
     }
   }
 
   unsubscribe() {
-    if(!this.user.isBanned) {
+    if (!this.user.isBanned) {
       this.subscriptionUnitService.getSubscriptionUnitsById(this.id).subscribe(
         subscriptionUnits => {
           for (let i = 0; i < subscriptionUnits.length; i++) {

@@ -47,9 +47,10 @@ export class HeaderComponent implements OnInit {
 
   getAllSubscriptions() {
     this.http.getSubscriptions().subscribe(
-      subscriptions =>
-        this.subscriptionShareService.setSubscriptions(subscriptions)
-    )
+      subscriptions => {
+        this.subscriptionShareService.setSubscriptions(subscriptions);
+      }
+    );
   }
 
   search(name: string): Subscription {

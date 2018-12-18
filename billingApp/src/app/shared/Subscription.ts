@@ -2,20 +2,20 @@ export class Subscription {
   public id: number;
   public name: String;
   public description: String;
-  public category: number
+  public category: number;
   public perMonth: number;
   public perThreeMonths: number;
   public perYear: number;
   public isBanned: boolean;
 
   constructor(id: number, name: String, description: String, category: number,
-              perMonth: number, perThreeMonth: number, perYear: number, isBanned: boolean) {
+              perMonth: number, perThreeMonths: number, perYear: number, isBanned: boolean) {
     this.id = id;
     this.name = name;
     this.description = description;
     this.category = category;
     this.perMonth = perMonth;
-    this.perThreeMonths = perThreeMonth;
+    this.perThreeMonths = perThreeMonths;
     this.perYear = perYear;
     this.isBanned = isBanned;
   }

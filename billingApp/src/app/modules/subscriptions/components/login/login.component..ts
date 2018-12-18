@@ -14,21 +14,22 @@ export class LoginComponent {
 
   public usersList: User[];
   private user: User;
+  wrongData: boolean;
 
   constructor(private http: UserService,
               private userIDService: UserIDService,
               private router: Router) {
+    this.wrongData = false;
   }
 
   signIn(login: string, password: string): void {
     this.http.getUser(login, password).subscribe(
       userRet => {
-        console.log(userRet);
         if(userRet !== null) {
           this.user = userRet;
           this.userIDService.setID(userRet.id);
         } else {
-
+          this.wrongData = true;
         }
       });
   }

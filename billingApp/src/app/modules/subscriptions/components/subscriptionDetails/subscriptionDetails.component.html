@@ -22,7 +22,7 @@
             </tr>
             <tr>
               <td>3 months</td>
-              <td>{{subscription.perThreeMonth + "$"}}</td>
+              <td>{{subscription.perThreeMonths + "$"}}</td>
             </tr>
             <tr>
               <td>1 year</td>
@@ -57,6 +57,7 @@
                     (click)="unBan()">Unban
             </button>
           </div>
+          <p *ngIf="notEnoughMoney" class="text-danger">Not enough money.</p>
         </li>
       </ul>
     </div>

@@ -6,7 +6,7 @@ public class SubscriptionViewModel {
     private String description;
     private int category;
     private int perMonth;
-    private int perThreeMonth;
+    private int perThreeMonths;
     private int perYear;
     private boolean isBanned;
 
@@ -19,7 +19,7 @@ public class SubscriptionViewModel {
         this.description = description;
         this.category = category;
         this.perMonth = perMonth;
-        this.perThreeMonth = perThreeMonth;
+        this.perThreeMonths = perThreeMonths;
         this.perYear = perYear;
         this.isBanned = isBanned;
     }
@@ -60,12 +60,12 @@ public class SubscriptionViewModel {
         this.perMonth = perMonth;
     }
 
-    public int getPerThreeMonth() {
-        return perThreeMonth;
+    public int getPerThreeMonths() {
+        return perThreeMonths;
     }
 
-    public void setPerThreeMonth(int perThreeMonth) {
-        this.perThreeMonth = perThreeMonth;
+    public void setPerThreeMonths(int perThreeMonth) {
+        this.perThreeMonths = perThreeMonth;
     }
 
     public int getPerYear() {
@@ -96,7 +96,7 @@ public class SubscriptionViewModel {
                 ", description='" + description + '\'' +
                 ", category=" + category +
                 ", perMonth=" + perMonth +
-                ", perThreeMonth=" + perThreeMonth +
+                ", perThreeMonth=" + perThreeMonths +
                 ", perYear=" + perYear +
                 '}';
     }
