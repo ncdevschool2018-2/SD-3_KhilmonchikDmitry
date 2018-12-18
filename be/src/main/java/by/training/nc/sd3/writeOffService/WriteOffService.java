@@ -1,10 +1,8 @@
 package by.training.nc.sd3.writeOffService;
 
 import by.training.nc.sd3.entity.BillingAccount;
-import by.training.nc.sd3.entity.Subscription;
 import by.training.nc.sd3.entity.SubscriptionUnit;
 import by.training.nc.sd3.service.BillingAccountService;
-import by.training.nc.sd3.service.SubscriptionService;
 import by.training.nc.sd3.service.SubscriptionUnitService;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
@@ -17,31 +15,32 @@ public class WriteOffService {
 
     private SubscriptionUnitService subscriptionUnitService;
     private BillingAccountService billingAccountService;
-    private SubscriptionService subscriptionService;
 
     public WriteOffService(SubscriptionUnitService subscriptionUnitService,
-                           BillingAccountService billingAccountService,
-                           SubscriptionService subscriptionService) {
+                           BillingAccountService billingAccountService) {
         this.subscriptionUnitService = subscriptionUnitService;
         this.billingAccountService = billingAccountService;
-        this.subscriptionService = subscriptionService;
     }
 
     private void pay(SubscriptionUnit subscriptionUnit) {
-        Optional<BillingAccount> billingAccountOptional = billingAccountService.getById(subscriptionUnit.getBillingAccount().getId());
-        if (billingAccountOptional.isPresent()) {
-            BillingAccount billingAccount = billingAccountOptional.get();
-            int fee = subscriptionUnit.getSubscription().getPerMonth();
-            if (billingAccount.getMoney() - fee > 0) {
-                billingAccount.setMoney(billingAccount.getMoney() - fee);
-                subscriptionUnit.setWillBeRenewed(true);
-                subscriptionUnit.setDaysLeft(30);
+        if (subscriptionUnit.getBillingAccount() != null) {
+            Optional<BillingAccount> billingAccountOptional = billingAccountService.getById(subscriptionUnit.getBillingAccount().getId());
+            if (billingAccountOptional.isPresent()) {
+                BillingAccount billingAccount = billingAccountOptional.get();
+                int fee = subscriptionUnit.getSubscription().getPerMonth();
+                if (billingAccount.getMoney() - fee > 0) {
+                    billingAccount.setMoney(billingAccount.getMoney() - fee);
+                    subscriptionUnit.setWillBeRenewed(true);
+                    subscriptionUnit.setDaysLeft(30);
+                } else {
+                    subscriptionUnit.setWillBeRenewed(false);
+                }
+                this.billingAccountService.save(billingAccount);
             } else {
                 subscriptionUnit.setWillBeRenewed(false);
             }
-            this.billingAccountService.save(billingAccount);
         } else {
-            subscriptionUnit.setStatus(false);
+            subscriptionUnit.setWillBeRenewed(false);
         }
     }
 

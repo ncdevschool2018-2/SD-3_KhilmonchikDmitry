@@ -11,7 +11,7 @@ export class UserService {
   }
 
   getAllUsers(): Observable<any> {
-    return this.http.post('/api/ua/getall', null);
+    return this.http.post('/api/ua/get-all', null);
   }
 
   getUser(login: string, password: string): Observable<any> {

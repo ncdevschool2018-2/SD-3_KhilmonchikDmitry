@@ -28,6 +28,7 @@ export class LoginComponent {
         if(userRet !== null) {
           this.user = userRet;
           this.userIDService.setID(userRet.id);
+          this.router.navigate(['/subscriptions']);
         } else {
           this.wrongData = true;
         }

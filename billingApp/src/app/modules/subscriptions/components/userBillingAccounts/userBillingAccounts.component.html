@@ -3,11 +3,14 @@
   <select #billingAccountSelect id="billingAccountSelect" class="form-control">
     <option *ngFor="let billingAccount of billingAccounts">{{billingAccount.name}}</option>
   </select>
-  <h2>Money left</h2>
-  <input *ngIf="billingAccounts" #moneyField class="form-control" type="text"
-         placeholder="{{billingAccounts[billingAccountSelect.selectedIndex].money}}" readonly>
+  <div *ngIf="billingAccounts && billingAccounts.length !== 0">
+    <h2>Money left</h2>
+    <input #moneyField class="form-control" type="text"
+           placeholder="{{billingAccounts[billingAccountSelect.selectedIndex].money}}" readonly>
+  </div>
   <p></p>
-  <button *ngIf="!user.isAdmin" type="button" class="btn btn-outline-success" routerLink="/manageBillingAccount">Manage
+  <button *ngIf="!user.isAdmin && billingAccounts.length !== 0" type="button" class="btn btn-outline-success"
+          routerLink="/manageBillingAccount">Manage
     billing account
   </button>
   <button *ngIf="user.isAdmin && !billingAccounts[billingAccountSelect.selectedIndex].isBanned" type="button"

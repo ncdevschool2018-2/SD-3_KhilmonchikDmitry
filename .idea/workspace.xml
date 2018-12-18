@@ -2,18 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9f598fc7-b33d-4934-a527-6a84586ba27a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/BillingAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/BillingAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/SubscriptionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/SubscriptionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/UserAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/UserAccountController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billingApp/src/app/services/billingAccount/billingAccount.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/billingApp/src/app/services/billingAccount/billingAccount.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billingApp/src/app/services/subscription/subscription.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/billingApp/src/app/services/subscription/subscription.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/billingApp/src/app/services/subscriptionUnit/subscriptionUnit.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/billingApp/src/app/services/subscriptionUnit/subscriptionUnit.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/writeOffService/WriteOffService.java" beforeDir="false" afterPath="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/writeOffService/WriteOffService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/be/target/classes/by/training/nc/sd3/writeOffService/WriteOffService.class" beforeDir="false" afterPath="$PROJECT_DIR$/be/target/classes/by/training/nc/sd3/writeOffService/WriteOffService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/login/login.component..ts" beforeDir="false" afterPath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/login/login.component..ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/manageBillingAccount/manageBillingAccount.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/manageBillingAccount/manageBillingAccount.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/manageBillingAccount/manageBillingAccount.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/manageBillingAccount/manageBillingAccount.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userBillingAccounts/userBillingAccounts.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userBillingAccounts/userBillingAccounts.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/billingApp/src/app/services/user/user.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/billingApp/src/app/services/user/user.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/BillingAccountDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/BillingAccountDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/SubscriptionDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/SubscriptionDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitDataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/UserAccountDataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/UserAccountDataController.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/be/target/" />
@@ -71,33 +69,33 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="DATABASE/2b6f548d-6392-4086-a1ff-5c2f6bbccd02" value="1" />
-          <entry key="billing_account" value="33" />
-          <entry key="class" value="33" />
-          <entry key="css" value="7" />
-          <entry key="html" value="157" />
-          <entry key="java" value="495" />
+          <entry key="billing_account" value="34" />
+          <entry key="class" value="36" />
+          <entry key="css" value="8" />
+          <entry key="html" value="162" />
+          <entry key="java" value="502" />
           <entry key="json" value="6" />
           <entry key="properties" value="2" />
-          <entry key="sql" value="7" />
+          <entry key="sql" value="10" />
           <entry key="subscription" value="12" />
-          <entry key="subscription_unit" value="28" />
-          <entry key="ts" value="326" />
+          <entry key="subscription_unit" value="29" />
+          <entry key="ts" value="334" />
           <entry key="user_account" value="22" />
           <entry key="xml" value="10" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="CLASS" value="33" />
-          <entry key="CSS" value="7" />
-          <entry key="Database Element" value="95" />
-          <entry key="HTML" value="157" />
-          <entry key="JAVA" value="495" />
+          <entry key="CLASS" value="36" />
+          <entry key="CSS" value="8" />
+          <entry key="Database Element" value="97" />
+          <entry key="HTML" value="162" />
+          <entry key="JAVA" value="502" />
           <entry key="JSON" value="5" />
           <entry key="Properties" value="2" />
-          <entry key="SQL" value="6" />
-          <entry key="Scratch" value="1" />
-          <entry key="TypeScript" value="326" />
+          <entry key="SQL" value="7" />
+          <entry key="Scratch" value="3" />
+          <entry key="TypeScript" value="334" />
           <entry key="UML" value="1" />
           <entry key="XML" value="10" />
           <entry key="tsconfig" value="1" />
@@ -105,13 +103,13 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cell" value="48" />
+          <entry key="cell" value="49" />
           <entry key="css" value="113" />
-          <entry key="html" value="3863" />
-          <entry key="java" value="4899" />
+          <entry key="html" value="3947" />
+          <entry key="java" value="4933" />
           <entry key="properties" value="12" />
           <entry key="sql" value="11" />
-          <entry key="ts" value="8161" />
+          <entry key="ts" value="8645" />
           <entry key="txt" value="7" />
           <entry key="xml" value="69" />
         </counts>
@@ -119,14 +117,14 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="113" />
-          <entry key="HTML" value="3861" />
-          <entry key="JAVA" value="4899" />
+          <entry key="HTML" value="3945" />
+          <entry key="JAVA" value="4933" />
           <entry key="JavaScript" value="2" />
           <entry key="PLAIN_TEXT" value="7" />
           <entry key="Properties" value="12" />
           <entry key="SQL" value="11" />
-          <entry key="Scratch" value="48" />
-          <entry key="TypeScript" value="8161" />
+          <entry key="Scratch" value="49" />
+          <entry key="TypeScript" value="8645" />
           <entry key="XML" value="69" />
         </counts>
       </usages-collector>
@@ -139,11 +137,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/be/sql/query.sql">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/manageBillingAccount/manageBillingAccount.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            <state relative-caret-position="177">
+              <caret line="37" column="63" lean-forward="true" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
+              <folding>
+                <element signature="e#0#48#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/manageBillingAccount/manageBillingAccount.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="466">
+              <caret line="36" column="96" selection-start-line="36" selection-start-column="96" selection-end-line="36" selection-end-column="96" />
             </state>
           </provider>
         </entry>
@@ -191,14 +201,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/billingApp/src/app/services/user/user.service.ts">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/be/sql/query.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="17">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userBillingAccounts/userBillingAccounts.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -227,6 +243,7 @@
       <find>out</find>
       <find>check</find>
       <find>checkBillingAccountPassword</find>
+      <find>subscriptionService</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -235,7 +252,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/repository/UserAccountRepository.java" />
         <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/repository/BillingAccountRepository.java" />
         <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/BillingAccountServiceImpl.java" />
         <option value="$PROJECT_DIR$/billingApp/src/app/services/alert.service.ts" />
@@ -245,7 +261,6 @@
         <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userSubscriptions/userSubscriptions.component.html" />
         <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/UserAccountService.java" />
         <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/UserAccountServiceImpl.java" />
-        <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/manageBillingAccount/manageBillingAccount.component.ts" />
         <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/UserAccountDataService.java" />
         <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/UserAccountDataServiceImpl.java" />
         <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/SubscriptionUnitServiceImpl.java" />
@@ -253,7 +268,6 @@
         <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/SubscriptionServiceImpl.java" />
         <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/subscriptionsList/subscriptionsList.component.html" />
         <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/subscriptionsList/subscriptionsList.component.ts" />
-        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/writeOffService/WriteOffService.java" />
         <option value="$PROJECT_DIR$/be/sql/billing-accounts.sql" />
         <option value="$PROJECT_DIR$/be/sql/subscriptions.sql" />
         <option value="$PROJECT_DIR$/be/sql/subscription-units.sql" />
@@ -261,18 +275,13 @@
         <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userBillingAccounts/userBillingAccounts.component.ts" />
         <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/models/SubscriptionViewModel.java" />
         <option value="$PROJECT_DIR$/billingApp/src/app/shared/Subscription.ts" />
-        <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/header/header.component.ts" />
         <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userSubscriptions/userSubscriptions.component.ts" />
         <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/subscriptionDetails/subscriptionDetails.component.ts" />
         <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/subscriptionDetails/subscriptionDetails.component.html" />
-        <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/login/login.component.html" />
-        <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/login/login.component..ts" />
         <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/SubscriptionUnitDataServiceImpl.java" />
         <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/SubscriptionUnitDataService.java" />
         <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/BillingAccountDataServiceImpl.java" />
         <option value="$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/BillingAccountDataService.java" />
-        <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/manageBillingAccount/manageBillingAccount.component.html" />
-        <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userBillingAccounts/userBillingAccounts.component.html" />
         <option value="$PROJECT_DIR$/be/sql/query.sql" />
         <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/BillingAccountController.java" />
         <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/controller/SubscriptionController.java" />
@@ -285,7 +294,15 @@
         <option value="$PROJECT_DIR$/billingApp/src/app/services/billingAccount/billingAccount.service.ts" />
         <option value="$PROJECT_DIR$/billingApp/src/app/services/subscription/subscription.service.ts" />
         <option value="$PROJECT_DIR$/billingApp/src/app/services/subscriptionUnit/subscriptionUnit.service.ts" />
+        <option value="$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/writeOffService/WriteOffService.java" />
         <option value="$PROJECT_DIR$/billingApp/src/app/services/user/user.service.ts" />
+        <option value="$PROJECT_DIR$/billingApp/src/app/services/userID.service.ts" />
+        <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/header/header.component.ts" />
+        <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/login/login.component.html" />
+        <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/login/login.component..ts" />
+        <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userBillingAccounts/userBillingAccounts.component.html" />
+        <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/manageBillingAccount/manageBillingAccount.component.html" />
+        <option value="$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/manageBillingAccount/manageBillingAccount.component.ts" />
       </list>
     </option>
   </component>
@@ -725,7 +742,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file://C:/Users/desmond1999d/Documents/IntelliJIDEA/SD-3_HilmonchikDmitry/be/src/main/java/by/training/nc/sd3/controller/SubscriptionUnitController.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545154348116" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545163215324" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Downloads/SD-3_KhilmonchikDmitry-master" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -798,12 +815,12 @@
       <workItem from="1544132927856" duration="30240000" />
       <workItem from="1544438952327" duration="44464000" />
       <workItem from="1544738745340" duration="49992000" />
-      <workItem from="1544950511262" duration="27545000" />
+      <workItem from="1544950511262" duration="34513000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="197977000" />
+    <option name="totallyTimeSpent" value="204945000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -827,7 +844,7 @@
       <window_info active="true" content_ui="combo" id="Project" order="6" visible="true" weight="0.22068231" />
       <window_info id="Structure" order="7" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="TypeScript" order="0" weight="0.3290461" />
-      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.5842217" weight="0.19078243" />
+      <window_info anchor="bottom" id="Terminal" order="1" sideWeight="0.5842217" visible="true" weight="0.19078243" />
       <window_info anchor="bottom" id="Event Log" order="2" sideWeight="0.41577825" side_tool="true" weight="0.19078243" />
       <window_info anchor="bottom" id="Messages" order="3" weight="0.3290461" />
       <window_info anchor="bottom" id="Java Enterprise" order="4" />
@@ -840,7 +857,7 @@
       <window_info anchor="bottom" id="Cvs" order="11" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="12" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="13" weight="0.32960895" />
-      <window_info anchor="bottom" id="Database Console" order="14" visible="true" weight="0.3290461" />
+      <window_info anchor="bottom" id="Database Console" order="14" weight="0.3290461" />
       <window_info anchor="bottom" id="Run" order="15" sideWeight="0.5885906" weight="0.2636656" />
       <window_info anchor="right" id="Capture Analysis" order="0" />
       <window_info anchor="right" id="Maven Projects" order="1" weight="0.3295302" />
@@ -870,131 +887,20 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/writeOffService/WriteOffService.java</url>
-          <line>52</line>
+          <line>51</line>
           <properties />
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/writeOffService/WriteOffService.java</url>
+          <line>26</line>
+          <properties />
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/login/login.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="27" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/BillingAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/Categories.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="12" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/Subscription.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="69" lean-forward="true" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/SubscriptionUnit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/UserAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://2b6f548d-6392-4086-a1ff-5c2f6bbccd02/schema/backend/table/subscription_unit">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/subscriptionDetails/subscriptionDetails.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="578">
-          <caret line="34" column="37" selection-start-line="34" selection-start-column="37" selection-end-line="34" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/login/login.component..ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="30" column="16" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/SubscriptionServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="407">
-          <caret line="76" column="35" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/service/impl/SubscriptionUnitServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="44" column="28" selection-start-line="44" selection-start-column="28" selection-end-line="44" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/SubscriptionDataServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="14" column="24" selection-start-line="14" selection-start-column="24" selection-end-line="14" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/SubscriptionUnitDataServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="32" column="13" lean-forward="true" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/billingApp/proxy.conf.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" lean-forward="true" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/billingApp/src/app/shared/auth.guard.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/controller/AuthenticationController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/SubscriptionDataService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1109,27 +1015,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/BillingAccountDataServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-316">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userBillingAccounts/userBillingAccounts.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="11" lean-forward="true" selection-start-line="20" selection-start-column="11" selection-end-line="20" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/manageBillingAccount/manageBillingAccount.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="10" lean-forward="true" selection-start-column="10" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/billingApp/node_modules/@angular/common/common.metadata.json">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -1162,54 +1047,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://DATABASE/2b6f548d-6392-4086-a1ff-5c2f6bbccd02">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>DATABASE</ID>
-          <OriginalElement>2b6f548d-6392-4086-a1ff-5c2f6bbccd02</OriginalElement>
-          <nodes>
-            <node x="233.0" y="0.0">2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.subscription</node>
-            <node x="0.0" y="0.0">2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.user_account</node>
-            <node x="435.0" y="0.0">2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.billing_account</node>
-            <node x="229.5" y="235.0">2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.subscription_unit</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.subscription_unit" target="2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.billing_account">
-              <point x="63.0" y="-114.5" />
-              <point x="387.0" y="210.0" />
-              <point x="543.5" y="210.0" />
-              <point x="0.0" y="92.5" />
-            </edge>
-            <edge source="2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.subscription_unit" target="2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.user_account">
-              <point x="-63.0" y="-114.5" />
-              <point x="261.0" y="210.0" />
-              <point x="106.5" y="210.0" />
-              <point x="0.0" y="92.5" />
-            </edge>
-            <edge source="2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.subscription_unit" target="2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.subscription">
-              <point x="0.0" y="-114.5" />
-              <point x="0.0" y="92.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="-59.5" y="186.0" />
-          <SelectedNodes>
-            <node>2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.subscription_unit</node>
-          </SelectedNodes>
-          <Categories>
-            <Category>Key columns</Category>
-            <Category>Columns</Category>
-          </Categories>
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://2b6f548d-6392-4086-a1ff-5c2f6bbccd02/schema/backend/table/billing_account">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
@@ -1271,6 +1108,95 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.0.9.RELEASE/spring-context-5.0.9.RELEASE.jar!/org/springframework/scheduling/support/DelegatingErrorHandlingRunnable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/5.0.9.RELEASE/spring-context-5.0.9.RELEASE.jar!/org/springframework/scheduling/support/ScheduledMethodRunnable.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="38" selection-start-line="38" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_161/src.zip!/java/lang/Exception.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="101" selection-start-line="101" selection-end-line="101" />
+          <folding>
+            <element signature="e#3201#3202#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_161/src.zip!/java/lang/ReflectiveOperationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="475">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
+          <folding>
+            <element signature="e#2530#2531#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_161/src.zip!/java/lang/reflect/InvocationTargetException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://2b6f548d-6392-4086-a1ff-5c2f6bbccd02/schema/backend/table/subscription_unit">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/entity/SubscriptionUnit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="66" column="25" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
+          <folding>
+            <element signature="e#1954#1955#0" expanded="true" />
+            <element signature="e#1991#1992#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/be/src/main/java/by/training/nc/sd3/writeOffService/WriteOffService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="296">
+          <caret line="53" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/billingApp/src/app/services/user/user.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://2b6f548d-6392-4086-a1ff-5c2f6bbccd02/schema/backend/table/billing_account">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2b6f548d-6392-4086-a1ff-5c2f6bbccd02/console.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/be/sql/query.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1278,12 +1204,121 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/billingApp/src/app/services/user/user.service.ts">
+    <entry file="file://$PROJECT_DIR$/billingApp/src/app/services/userID.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="38" column="48" selection-start-line="38" selection-start-column="48" selection-end-line="38" selection-end-column="48" />
+        <state relative-caret-position="238">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/header/header.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-78">
+          <caret line="36" column="7" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/header/header.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10">
+          <caret line="8" column="11" lean-forward="true" selection-start-line="8" selection-start-column="11" selection-end-line="8" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/login/login.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="14" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://DATABASE/2b6f548d-6392-4086-a1ff-5c2f6bbccd02">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>2b6f548d-6392-4086-a1ff-5c2f6bbccd02</OriginalElement>
+          <nodes>
+            <node x="233.0" y="0.0">2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.subscription</node>
+            <node x="0.0" y="0.0">2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.user_account</node>
+            <node x="435.0" y="0.0">2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.billing_account</node>
+            <node x="229.5" y="235.0">2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.subscription_unit</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.subscription_unit" target="2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.billing_account">
+              <point x="63.0" y="-114.5" />
+              <point x="387.0" y="210.0" />
+              <point x="543.5" y="210.0" />
+              <point x="0.0" y="92.5" />
+            </edge>
+            <edge source="2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.subscription_unit" target="2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.user_account">
+              <point x="-63.0" y="-114.5" />
+              <point x="261.0" y="210.0" />
+              <point x="106.5" y="210.0" />
+              <point x="0.0" y="92.5" />
+            </edge>
+            <edge source="2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.subscription_unit" target="2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.subscription">
+              <point x="0.0" y="-114.5" />
+              <point x="0.0" y="92.5" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="1.0" x="-59.5" y="186.0" />
+          <SelectedNodes>
+            <node>2b6f548d-6392-4086-a1ff-5c2f6bbccd02.TABLE:backend.subscription_unit</node>
+          </SelectedNodes>
+          <Categories>
+            <Category>Key columns</Category>
+            <Category>Columns</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/manageBillingAccount/manageBillingAccount.component.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/login/login.component..ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="489">
+          <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/userBillingAccounts/userBillingAccounts.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/manageBillingAccount/manageBillingAccount.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="466">
+          <caret line="36" column="96" selection-start-line="36" selection-start-column="96" selection-end-line="36" selection-end-column="96" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/fapi/src/main/java/by/training/nc/sd3/service/impl/BillingAccountDataServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-187">
+          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/billingApp/src/app/modules/subscriptions/components/manageBillingAccount/manageBillingAccount.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="37" column="63" lean-forward="true" selection-start-line="37" selection-start-column="63" selection-end-line="37" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#48#0" expanded="true" />
           </folding>
         </state>
       </provider>

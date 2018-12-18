@@ -13,8 +13,8 @@
                                                        class="form-control" id="password" name="password" #password/>
       </div>
       <p class="text-danger" *ngIf="wrongData" id="error">Wrong login or password</p>
-      <button type="submit" class="btn btn-primary" (click)="signIn(username.value, password.value)"
-              routerLink=''>Sign In
+      <button type="button" class="btn btn-primary" (click)="signIn(username.value, password.value)"
+              >Sign In
       </button>
       <small> or</small>
       <button type="button" class="btn btn-primary" routerLink="/registration">Sign up</button>

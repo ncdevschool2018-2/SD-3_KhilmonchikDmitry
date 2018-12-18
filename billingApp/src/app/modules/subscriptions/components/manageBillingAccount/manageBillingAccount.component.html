@@ -24,7 +24,7 @@
     <div class="form-group">
       <label for="CreditCardNumber">Credit card number</label>
       <input #creditCardNumber maxlength="40" type="password" class="form-control" id="CreditCardNumber">
-      <small id="CreditCardNumberHelp" class="form-text text-muted">We'll never steal your money (probably).</small>
+      <small id="CreditCardNumberHelp" class="form-text text-muted">We'll never steal your money.</small>
     </div>
     <div class="form-group">
       <label for="BillingAccountSum">Enter the sum of money</label>
@@ -33,9 +33,10 @@
         card.
       </small>
     </div>
-    <button *ngIf="!billingAccounts[selectedBillingAccount.selectedIndex].isBanned" type="submit"
+    <p *ngIf="wrongData" class="text-danger">Wrong data input.</p>
+    <button *ngIf="!billingAccounts[selectedBillingAccount.selectedIndex].isBanned" type="button"
       (click)="addMoney(selectedBillingAccount.value, password.value, creditCardNumber.value, sumOfMoney.value);"
-      class="btn btn-outline-primary" [routerLink]="'../user/' + id">Submit
+      class="btn btn-outline-primary">Submit
     </button>
     <p class="text-danger" *ngIf="billingAccounts[selectedBillingAccount.selectedIndex].isBanned">Banned</p>
   </div>
