@@ -35,7 +35,7 @@ public class SubscriptionUnitController {
     @RequestMapping(value = "/post", method = RequestMethod.POST)
     public SubscriptionUnit save(@RequestBody SubscriptionUnit subscriptionUnit) {
         Optional<UserAccount> userAccountOpt = userAccountService.getUserAccountById(subscriptionUnit.getUserId());
-        if (userAccountOpt.isPresent()) {
+        if (userAccountOpt.isPresent() && userAccountOpt.get().getActiveBillingAccountId() != null) {
             Optional<BillingAccount> billingAccountOpt = billingAccountService.getById(userAccountOpt.get().getActiveBillingAccountId());
             if (billingAccountOpt.isPresent()) {
                 subscriptionUnit.setBillingAccount(billingAccountOpt.get());

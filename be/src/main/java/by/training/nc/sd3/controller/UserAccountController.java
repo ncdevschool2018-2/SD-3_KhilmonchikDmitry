@@ -52,4 +52,9 @@ public class UserAccountController {
                                             @RequestParam Long billingAccountId) {
         return this.userAccountService.changeActiveBillingAccount(userAccount, billingAccountId);
     }
+
+    @GetMapping(value = "/subscription-unit/quantity")
+    public Integer subcriptionsQuantity(@RequestParam Long id) {
+        return this.userAccountService.getSubscriptionsQuantity(id);
+    }
 }

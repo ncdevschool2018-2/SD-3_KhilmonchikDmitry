@@ -58,4 +58,11 @@ public class UserAccountDataServiceImpl implements UserAccountDataService {
         return restTemplate.postForObject(backendServerUrl + "/api/user-accounts/change-billing-account?billingAccountId=" + billingAccountId,
                 userAccountViewModel, UserAccountViewModel.class);
     }
+
+    @Override
+    public Integer subscriptionsQuantity(Long id) {
+        RestTemplate restTemplate = new RestTemplate();
+        return restTemplate.getForObject(backendServerUrl + "/api/user-accounts//subscription-unit/quantity?id={id}",
+                Integer.class, id);
+    }
 }

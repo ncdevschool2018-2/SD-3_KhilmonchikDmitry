@@ -12,15 +12,16 @@
             (click)="changeActiveBillingAccount(billingAccounts[selectedBillingAccount.selectedIndex])"
             class="btn btn-outline-success" [routerLink]="'../user/' + id">Set active
     </button>
-    <div class="form-group">
-      <label for="BillingAccountPassword">Billing account password</label>
-      <input #password maxlength="40" type="password" class="form-control" id="BillingAccountPassword">
-    </div>
+    <p>   </p>
     <button *ngIf="!billingAccounts[selectedBillingAccount.selectedIndex].isBanned" type="button"
             (click)="deleteBillingAccount(billingAccounts[selectedBillingAccount.selectedIndex].id,
        billingAccounts[selectedBillingAccount.selectedIndex].password);" class="btn btn-outline-danger"
             [routerLink]="'../user/' + id">Delete billing account
     </button>
+    <div class="form-group">
+      <label for="BillingAccountPassword">Billing account password</label>
+      <input #password maxlength="40" type="password" class="form-control" id="BillingAccountPassword">
+    </div>
     <div class="form-group">
       <label for="CreditCardNumber">Credit card number</label>
       <input #creditCardNumber maxlength="40" type="password" class="form-control" id="CreditCardNumber">

@@ -46,7 +46,7 @@
                       (click)="unsubscribe()"
                       routerLink="../profileDetails">Unsubscribe
               </button>
-              <p *ngIf="user.isBanned && !user.isAdmin" class="text-danger">Opsie, it seems your account is banned.</p>
+              <p *ngIf="user.isBanned && !user.isAdmin" class="text-danger">It seems your account is banned.</p>
             </div>
             <p *ngIf="!user.isAdmin && subscription.isBanned" class="text-danger">Service is temporarily
               unavailable.</p>
@@ -57,7 +57,7 @@
                     (click)="unBan()">Unban
             </button>
           </div>
-          <p *ngIf="notEnoughMoney" class="text-danger">Not enough money.</p>
+          <p *ngIf="notEnoughMoney" class="text-danger">Failed, please check your billing account settings.</p>
         </li>
       </ul>
     </div>

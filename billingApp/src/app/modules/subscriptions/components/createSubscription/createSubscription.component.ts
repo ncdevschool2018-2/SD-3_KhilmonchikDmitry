@@ -27,9 +27,7 @@ export class CreateSubscriptionComponent {
                      feePerThreeMonths: string, feePerYear: string) {
     let subscription: Subscription = new Subscription(null, name, description, Number(category), Number(feePerYear),
       Number(feePerThreeMonths), Number(feePerYear), false);
-    this.subscriptionService.saveSubscription(subscription).subscribe(
-      subscription => console.log(subscription)
-    );
+    this.subscriptionService.saveSubscription(subscription).subscribe();
     this.subscriptionService.getSubscriptions().subscribe(
       subscriptions => {
         this.subscriptionsShareService.setSubscriptions(subscriptions);

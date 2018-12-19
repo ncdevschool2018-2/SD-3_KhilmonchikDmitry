@@ -39,31 +39,33 @@ public class SubscriptionUnitServiceImpl implements SubscriptionUnitService {
         subscriptionUnit.setWriteOffDate(new Date());
         if (userAccountOptional.isPresent()) {
             UserAccount user = userAccountOptional.get();
-            Optional<BillingAccount> billingAccountOptional =
-                    this.billingAccountRepository.findById(user.getActiveBillingAccountId());
-            if (billingAccountOptional.isPresent()) {
-                BillingAccount billingAccount = billingAccountOptional.get();
-
-                if (subscriptionUnit.getDaysLeft() == 30) {
-                    if (billingAccount.getMoney() >= subscriptionUnit.getSubscription().getPerMonth()) {
-                        billingAccount.setMoney(billingAccount.getMoney() - subscriptionUnit.getSubscription().getPerMonth());
-                        this.billingAccountRepository.save(billingAccount);
-                        return this.subscriptionUnitRepository.save(subscriptionUnit);
-                    }
-                } else if (subscriptionUnit.getDaysLeft() == 90) {
-                    if (billingAccount.getMoney() >= subscriptionUnit.getSubscription().getPerThreeMonths()) {
-                        billingAccount.setMoney(billingAccount.getMoney() - subscriptionUnit.getSubscription().getPerThreeMonths());
-                        this.billingAccountRepository.save(billingAccount);
-                        return this.subscriptionUnitRepository.save(subscriptionUnit);
-                    }
-                } else if (subscriptionUnit.getDaysLeft() == 365) {
-                    if (billingAccount.getMoney() >= subscriptionUnit.getSubscription().getPerYear()) {
-                        billingAccount.setMoney(billingAccount.getMoney() - subscriptionUnit.getSubscription().getPerYear());
-                        this.billingAccountRepository.save(billingAccount);
-                        return this.subscriptionUnitRepository.save(subscriptionUnit);
+            if (user.getActiveBillingAccountId() != null) {
+                Optional<BillingAccount> billingAccountOptional =
+                        this.billingAccountRepository.findById(user.getActiveBillingAccountId());
+                if (billingAccountOptional.isPresent()) {
+                    BillingAccount billingAccount = billingAccountOptional.get();
+                    if (!billingAccount.getIsBanned()) {
+                        if (subscriptionUnit.getDaysLeft() == 30) {
+                            if (billingAccount.getMoney() >= subscriptionUnit.getSubscription().getPerMonth()) {
+                                billingAccount.setMoney(billingAccount.getMoney() - subscriptionUnit.getSubscription().getPerMonth());
+                                this.billingAccountRepository.save(billingAccount);
+                                return this.subscriptionUnitRepository.save(subscriptionUnit);
+                            }
+                        } else if (subscriptionUnit.getDaysLeft() == 90) {
+                            if (billingAccount.getMoney() >= subscriptionUnit.getSubscription().getPerThreeMonths()) {
+                                billingAccount.setMoney(billingAccount.getMoney() - subscriptionUnit.getSubscription().getPerThreeMonths());
+                                this.billingAccountRepository.save(billingAccount);
+                                return this.subscriptionUnitRepository.save(subscriptionUnit);
+                            }
+                        } else if (subscriptionUnit.getDaysLeft() == 365) {
+                            if (billingAccount.getMoney() >= subscriptionUnit.getSubscription().getPerYear()) {
+                                billingAccount.setMoney(billingAccount.getMoney() - subscriptionUnit.getSubscription().getPerYear());
+                                this.billingAccountRepository.save(billingAccount);
+                                return this.subscriptionUnitRepository.save(subscriptionUnit);
+                            }
+                        }
                     }
                 }
-
             }
         }
         return null;
@@ -97,8 +99,13 @@ public class SubscriptionUnitServiceImpl implements SubscriptionUnitService {
 
     @Override
     public SubscriptionUnit changeStatus(SubscriptionUnit subscriptionUnit) {
-        subscriptionUnit.setStatus(!subscriptionUnit.isStatus());
-        return this.subscriptionUnitRepository.save(subscriptionUnit);
+        Optional<SubscriptionUnit> subscriptionUnitOptional = this.subscriptionUnitRepository.findById(subscriptionUnit.getId());
+        if(subscriptionUnitOptional.isPresent()) {
+            SubscriptionUnit subscriptionUnitDB = subscriptionUnitOptional.get();
+            subscriptionUnitDB.setStatus(!subscriptionUnitDB.isStatus());
+            return this.subscriptionUnitRepository.save(subscriptionUnitDB);
+        }
+        return null;
     }
 
     @Override

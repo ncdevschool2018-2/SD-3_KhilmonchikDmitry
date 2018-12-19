@@ -8,6 +8,7 @@
       <tr>
         <th scope="col">#</th>
         <th scope="col">Login</th>
+        <th scope="col">Quantity</th>
         <th scope="col">Action</th>
       </tr>
       </thead>
@@ -15,6 +16,7 @@
       <tr *ngFor="let user of users | paginate: { itemsPerPage: 5, currentPage: page }; index as i">
         <th scope="row">{{i}}</th>
         <td><a [routerLink]="'/user/' + user.id">{{user.name}}</a></td>
+        <td>{{quantities[i]}}</td>
         <td>
           <button *ngIf="!user.isBanned" type="button" (click)="ban(user)" class="btn btn-danger">Ban</button>
           <button *ngIf="user.isBanned" type="button" class="btn btn-success" (click)="unBan(user)">Unban</button>

@@ -39,4 +39,8 @@ export class UserService {
     return this.http.post<User>('/api/ua/change-BillingAccount?billingAccountId=' + billingAccountId, user);
   }
 
+  getSubscriptionsQuantity(id: number) {
+    return this.http.get<number>('/api/ua/subscription-unit/quantity?id=' + id);
+  }
+
 }

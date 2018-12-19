@@ -11,4 +11,5 @@ public interface UserAccountDataService {
     UserAccountViewModel[] getAll();
     UserAccountViewModel changeActiveBillingAccount(UserAccountViewModel userAccountViewModel,
                                                     Long billingAccountId);
+    Integer subscriptionsQuantity(Long id);
 }

@@ -93,6 +93,7 @@ export class SubscriptionDetailsComponent implements OnInit {
         subscriptionUnit => {
           if (subscriptionUnit !== null) {
             this.isSubscribed = true;
+            this.notEnoughMoney = false;
           } else {
             this.notEnoughMoney = true;
           }

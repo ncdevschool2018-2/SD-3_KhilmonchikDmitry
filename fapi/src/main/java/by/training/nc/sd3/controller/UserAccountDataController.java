@@ -61,4 +61,9 @@ public class UserAccountDataController {
                                                                            @RequestParam Long billingAccountId) {
         return ResponseEntity.ok(userAccountDataService.changeActiveBillingAccount(userAccountViewModel, billingAccountId));
     }
+
+    @GetMapping(value = "/subscription-unit/quantity")
+    public ResponseEntity<Integer> getSubscriptionsQuantity(@RequestParam Long id) {
+        return ResponseEntity.ok(userAccountDataService.subscriptionsQuantity(id));
+    }
 }

@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Subscription} from '../../../../shared/Subscription';
 import {SubscriptionsShareService} from "../../../../services/subscriptionsShare.service";
 import {UserIDService} from "../../../../services/userID.service";
-import {User} from "../../../../shared/User";
 import {UserService} from "../../../../services/user/user.service";
 
 @Component({

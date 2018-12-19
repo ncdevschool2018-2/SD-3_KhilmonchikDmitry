@@ -40,9 +40,10 @@
         <input type="password" maxlength="40" #billingAccountPasswordRepeat class="form-control" id="NewBillingAccountPasswordRepeat"
                placeholder="Repeat billing account password">
       </div>
+      <p class="text-danger" *ngIf="wrongData">Wrong data input</p>
       <button type="button" (click)="createAccount(login.value, password.value, passwordRepeated.value, email.value,
        creditCardNumber.value, billingAccountName.value, billingAccountPassword.value,
-       billingAccountPasswordRepeat.value)" routerLink="" class="btn btn-primary">
+       billingAccountPasswordRepeat.value)" class="btn btn-primary">
         Check In
       </button>
     </form>

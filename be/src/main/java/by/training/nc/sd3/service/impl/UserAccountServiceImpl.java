@@ -3,6 +3,7 @@ package by.training.nc.sd3.service.impl;
 import by.training.nc.sd3.entity.BillingAccount;
 import by.training.nc.sd3.entity.UserAccount;
 import by.training.nc.sd3.repository.BillingAccountRepository;
+import by.training.nc.sd3.repository.SubscriptionUnitRepository;
 import by.training.nc.sd3.repository.UserAccountRepository;
 import by.training.nc.sd3.service.UserAccountService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +16,15 @@ public class UserAccountServiceImpl implements UserAccountService {
 
     private UserAccountRepository userAccountRepository;
     private BillingAccountRepository billingAccountRepository;
+    private SubscriptionUnitRepository subscriptionUnitRepository;
 
     @Autowired
     public UserAccountServiceImpl(UserAccountRepository userAccountRepository,
-                                  BillingAccountRepository billingAccountRepository) {
+                                  BillingAccountRepository billingAccountRepository,
+                                  SubscriptionUnitRepository subscriptionUnitRepository) {
         this.userAccountRepository = userAccountRepository;
         this.billingAccountRepository = billingAccountRepository;
+        this.subscriptionUnitRepository = subscriptionUnitRepository;
     }
 
     public Optional<UserAccount> getUserAccount(String name, String password) {
@@ -64,6 +68,11 @@ public class UserAccountServiceImpl implements UserAccountService {
     public UserAccount changeActiveBillingAccount(UserAccount userAccount, Long billingAccountId) {
         userAccount.setActiveBillingAccountId(billingAccountId);
         return this.userAccountRepository.save(userAccount);
+    }
+
+    @Override
+    public Integer getSubscriptionsQuantity(Long id) {
+        return this.subscriptionUnitRepository.countByUserId(id);
     }
 
 }

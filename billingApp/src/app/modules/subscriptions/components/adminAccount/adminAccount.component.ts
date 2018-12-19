@@ -11,9 +11,11 @@ import {UserIDService} from "../../../../services/userID.service";
 
 export class AdminAccountComponent implements OnInit {
   users: User[];
+  quantities: number[];
   interval: any;
 
   constructor(private userService: UserService, private userIdService: UserIDService) {
+    this.quantities = new Array<number>();
   }
 
   ngOnInit() {
@@ -31,13 +33,23 @@ export class AdminAccountComponent implements OnInit {
   }
 
   ban(user: User) {
-    if(!user.isBanned)
-    this.userService.ban(user).subscribe();
+    if (!user.isBanned)
+      this.userService.ban(user).subscribe();
   }
 
   refreshData() {
     this.userService.getAllUsers().subscribe(users => {
       this.users = users;
+      this.getUserSubscriptionCount()
     });
+  }
+
+  getUserSubscriptionCount() {
+    for (let i = 0; i < this.users.length; i++) {
+      this.userService.getSubscriptionsQuantity(this.users[i].id).subscribe(
+        quantity => {
+          this.quantities[i] = quantity.valueOf();
+        });
+    }
   }
 }

@@ -3,7 +3,6 @@ import {SubscriptionUnitService} from "../../../../services/subscriptionUnit/sub
 import {UserIDService} from "../../../../services/userID.service";
 import {SubscriptionUnit} from "../../../../shared/SubscriptionUnit";
 import {UserService} from "../../../../services/user/user.service";
-import {SubscriptionService} from "../../../../services/subscription/subscription.service";
 import {ActivatedRoute} from "@angular/router";
 import {User} from "../../../../shared/User";
 
