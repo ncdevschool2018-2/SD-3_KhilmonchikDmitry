@@ -50,12 +50,12 @@
             </div>
             <p *ngIf="!user.isAdmin && subscription.isBanned" class="text-danger">Service is temporarily
               unavailable.</p>
-            <button *ngIf="user.isAdmin && !subscription.isBanned" type="submit" class="btn btn-danger"
-                    (click)="ban()">Ban
-            </button>
-            <button *ngIf="user.isAdmin && subscription.isBanned" type="submit" class="btn btn-success"
-                    (click)="unBan()">Unban
-            </button>
+            <!--<button *ngIf="user.isAdmin && !subscription.isBanned" type="submit" class="btn btn-danger"-->
+                    <!--(click)="ban()">Ban-->
+            <!--</button>-->
+            <!--<button *ngIf="user.isAdmin && subscription.isBanned" type="submit" class="btn btn-success"-->
+                    <!--(click)="unBan()">Unban-->
+            <!--</button>-->
           </div>
           <p *ngIf="notEnoughMoney" class="text-danger">Failed, please check your billing account settings.</p>
         </li>

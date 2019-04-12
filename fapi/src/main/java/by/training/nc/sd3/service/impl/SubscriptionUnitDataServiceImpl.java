@@ -33,17 +33,15 @@ public class SubscriptionUnitDataServiceImpl implements SubscriptionUnitDataServ
     @Override
     public SubscriptionUnitViewModel save(SubscriptionUnitViewModel subscriptionUnitViewModel) {
         RestTemplate restTemplate = new RestTemplate();
-        SubscriptionUnitViewModel subscriptionUnit = restTemplate.postForObject(backendServerUrl + "/api/subscription-units/post",
+        return restTemplate.postForObject(backendServerUrl + "/api/subscription-units/post",
                 subscriptionUnitViewModel, SubscriptionUnitViewModel.class);
-        return subscriptionUnit;
     }
 
     @Override
     public SubscriptionUnitViewModel changeStatus(SubscriptionUnitViewModel subscriptionUnitViewModel) {
         RestTemplate restTemplate = new RestTemplate();
-        SubscriptionUnitViewModel subscriptionUnit = restTemplate.postForObject(backendServerUrl + "/api/subscription-units/change-status",
+        return restTemplate.postForObject(backendServerUrl + "/api/subscription-units/change-status",
                 subscriptionUnitViewModel, SubscriptionUnitViewModel.class);
-        return subscriptionUnit;
     }
 
 }
