@@ -1,4 +1,4 @@
-<div *ngIf="(user !== undefined || id < 0) && subscription !==undefined">
+<div *ngIf="(user !== undefined || id < 0) && productOffering !==undefined">
   <div class="row">
 
     <div class="col"></div>
@@ -6,8 +6,8 @@
     <div class="col-10">
       <ul class="list-group">
         <li class="list-group-item">
-          <h1>{{subscription.name}}</h1>
-          <p class="lead">{{subscription.description}}</p>
+          <h1>{{productOffering.name}}</h1>
+          <p class="lead">{{productOffering.description}}</p>
           <table class="table">
             <thead>
             <tr>
@@ -18,15 +18,15 @@
             <tbody>
             <tr>
               <td>Month</td>
-              <td>{{subscription.perMonth + "$"}}</td>
+              <td>{{productOffering.cost + "$"}}</td>
             </tr>
             <tr>
               <td>3 months</td>
-              <td>{{subscription.perThreeMonths + "$"}}</td>
+              <td>{{productOffering.perThreeMonths + "$"}}</td>
             </tr>
             <tr>
               <td>1 year</td>
-              <td>{{subscription.perYear + "$"}}</td>
+              <td>{{productOffering.perYear + "$"}}</td>
             </tr>
             </tbody>
           </table>
@@ -37,25 +37,25 @@
           </select>
           <p></p>
           <div *ngIf="id > -1">
-            <div *ngIf="!subscription.isBanned">
-              <button *ngIf="!user.isAdmin && !isSubscribed && !user.isBanned" type="submit" class="btn btn-success"
+            <div *ngIf="!productOffering.isBanned">
+              <button *ngIf="!user.isAdmin && !isSubscribed && !user.isBanned" type="submit" class="btn btn-outline-success my-2 my-sm-0"
                       (click)="periodDecision(periodSelect)"
                       routerLink="../profileDetails">Subscribe
               </button>
-              <button *ngIf="!user.isAdmin && isSubscribed && !user.isBanned" type="submit" class="btn btn-danger"
+              <button *ngIf="!user.isAdmin && isSubscribed && !user.isBanned" type="submit" class="btn btn-outline-danger my-2 my-sm-0"
                       (click)="unsubscribe()"
                       routerLink="../profileDetails">Unsubscribe
               </button>
               <p *ngIf="user.isBanned && !user.isAdmin" class="text-danger">It seems your account is banned.</p>
             </div>
-            <p *ngIf="!user.isAdmin && subscription.isBanned" class="text-danger">Service is temporarily
+            <p *ngIf="!user.isAdmin && productOffering.isBanned" class="text-danger">Service is temporarily
               unavailable.</p>
-            <!--<button *ngIf="user.isAdmin && !subscription.isBanned" type="submit" class="btn btn-danger"-->
-                    <!--(click)="ban()">Ban-->
-            <!--</button>-->
-            <!--<button *ngIf="user.isAdmin && subscription.isBanned" type="submit" class="btn btn-success"-->
-                    <!--(click)="unBan()">Unban-->
-            <!--</button>-->
+            <button *ngIf="user.isAdmin && !productOffering.isBanned" type="submit" class="btn btn-outline-danger my-2 my-sm-0"
+                    (click)="ban()">Ban
+            </button>
+            <button *ngIf="user.isAdmin && productOffering.isBanned" type="submit" class="btn btn-outline-success my-2 my-sm-0"
+                    (click)="unBan()">Unban
+            </button>
           </div>
           <p *ngIf="notEnoughMoney" class="text-danger">Failed, please check your billing account settings.</p>
         </li>

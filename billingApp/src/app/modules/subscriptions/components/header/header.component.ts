@@ -1,9 +1,11 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {UserIDService} from '../../../../services/userID.service';
 import {SubscriptionService} from "../../../../services/subscription/subscription.service";
 import {Subscription} from "../../../../shared/Subscription";
 import {SubscriptionsShareService} from "../../../../services/subscriptionsShare.service";
 import {UserService} from "../../../../services/user/user.service";
+import {el} from "@angular/platform-browser/testing/src/browser_util";
+
 
 @Component({
   selector: 'header',
@@ -18,7 +20,6 @@ export class HeaderComponent implements OnInit {
   subscriptions: Subscription[];
   subscription: Subscription;
   isAdmin: boolean = false;
-  interval;
 
   constructor(private http: SubscriptionService, public userIDService: UserIDService,
               private subscriptionShareService: SubscriptionsShareService,

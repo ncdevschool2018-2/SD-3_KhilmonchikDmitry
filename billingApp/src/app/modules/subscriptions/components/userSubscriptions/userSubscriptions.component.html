@@ -10,20 +10,20 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let subscription of subscriptionUnits">
-      <td>{{subscription.subscription.name}}</td>
-      <td>{{subscription.daysLeft}}</td>
-      <td>{{subscription.willBeRenewed}}</td>
+    <tr *ngFor="let productOffering of subscriptionUnits">
+      <td>{{productOffering.productOffering.name}}</td>
+      <td>{{productOffering.daysLeft}}</td>
+      <td>{{productOffering.willBeRenewed}}</td>
       <td>
-        <button *ngIf="!user.isAdmin && subscription.status" type="button" class="btn btn-outline-danger"
-                (click)="unsubscribe(subscription)">Unsubscribe
+        <button *ngIf="!user.isAdmin && productOffering.status" type="button" class="btn btn-outline-danger"
+                (click)="unsubscribe(productOffering)">Unsubscribe
         </button>
-        <p class="text-danger" *ngIf="!subscription.status && !user.isAdmin">Banned</p>
-        <button *ngIf="user.isAdmin && subscription.status" type="button" class="btn btn-outline-danger"
-                (click)="changeStatus(subscription)">Ban
+        <p class="text-danger" *ngIf="!productOffering.status && !user.isAdmin">Banned</p>
+        <button *ngIf="user.isAdmin && productOffering.status" type="button" class="btn btn-outline-danger"
+                (click)="changeStatus(productOffering)">Ban
         </button>
-        <button *ngIf="user.isAdmin && !subscription.status" type="button" class="btn btn-success"
-                (click)="changeStatus(subscription)">Unban
+        <button *ngIf="user.isAdmin && !productOffering.status" type="button" class="btn btn-success"
+                (click)="changeStatus(productOffering)">Unban
         </button>
       </td>
     </tr>

@@ -4,31 +4,27 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "subscription")
-public class Subscription {
+@Table(name = "product_offering")
+public class ProductOffering {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String description;
     private int category;
-    private int perMonth;
-    private int perThreeMonths;
-    private int perYear;
+    private int cost;
     private boolean isBanned;
 
-    public Subscription() {
+    public ProductOffering() {
     }
 
-    public Subscription(String name, String description,
-                        int category, int perMonth, int perThreeMonths,
-                        int perYear, boolean isBanned) {
+    public ProductOffering(String name, String description,
+                           int category, int perMonth, int perThreeMonths,
+                           int perYear, boolean isBanned) {
         this.name = name;
         this.description = description;
         this.category = category;
-        this.perMonth = perMonth;
-        this.perThreeMonths = perThreeMonths;
-        this.perYear = perYear;
+        this.cost = perMonth;
         this.isBanned = isBanned;
     }
 
@@ -64,28 +60,12 @@ public class Subscription {
         this.category = Categories.valueOf(category).ordinal();
     }
 
-    public int getPerMonth() {
-        return perMonth;
+    public int getCost() {
+        return cost;
     }
 
-    public void setPerMonth(int perMonth) {
-        this.perMonth = perMonth;
-    }
-
-    public int getPerThreeMonths() {
-        return perThreeMonths;
-    }
-
-    public void setPerThreeMonths(int perThreeMonths) {
-        this.perThreeMonths = perThreeMonths;
-    }
-
-    public int getPerYear() {
-        return perYear;
-    }
-
-    public void setPerYear(int perYear) {
-        this.perYear = perYear;
+    public void setCost(int cost) {
+        this.cost = cost;
     }
 
     public boolean getIsBanned() {
@@ -100,11 +80,9 @@ public class Subscription {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Subscription that = (Subscription) o;
+        ProductOffering that = (ProductOffering) o;
         return id == that.id &&
-                perMonth == that.perMonth &&
-                perThreeMonths == that.perThreeMonths &&
-                perYear == that.perYear &&
+                cost == that.cost &&
                 Objects.equals(name, that.name) &&
                 Objects.equals(description, that.description) &&
                 Objects.equals(category, that.category);
@@ -113,19 +91,17 @@ public class Subscription {
     @Override
     public int hashCode() {
 
-        return Objects.hash(id, name, description, category, perMonth, perThreeMonths, perYear);
+        return Objects.hash(id, name, description, category, cost);
     }
 
     @Override
     public String toString() {
-        return "Subscription{" +
+        return "ProductOffering{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", description='" + description + '\'' +
                 ", category=" + category + '\'' +
-                ", perMonth=" + perMonth + '\'' +
-                ", perThreeMonths=" + perThreeMonths + '\'' +
-                ", perYear=" + perYear + '\'' +
+                ", cost=" + cost + '\'' +
                 '}';
     }
 }

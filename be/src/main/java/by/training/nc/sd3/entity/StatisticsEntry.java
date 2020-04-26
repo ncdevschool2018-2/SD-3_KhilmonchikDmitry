@@ -4,7 +4,6 @@ import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.Date;
 
 @Entity
 @Table(name = "payments")
@@ -16,7 +15,7 @@ public class StatisticsEntry {
     private Long billingAccountId;
     @ManyToOne
     @JoinColumn(name = "serviceId")
-    private Subscription serviceId;
+    private ProductOffering serviceId;
     private Long sum;
     @CreatedDate
     private LocalDateTime date;
@@ -24,9 +23,9 @@ public class StatisticsEntry {
     public StatisticsEntry() {
     }
 
-    public StatisticsEntry(Long billingAccountId, Subscription subscription, Long sum, LocalDateTime date) {
+    public StatisticsEntry(Long billingAccountId, ProductOffering productOffering, Long sum, LocalDateTime date) {
         this.billingAccountId = billingAccountId;
-        this.serviceId = subscription;
+        this.serviceId = productOffering;
         this.sum = sum;
         this.date = date;
     }
@@ -47,12 +46,12 @@ public class StatisticsEntry {
         this.billingAccountId = billingAccountId;
     }
 
-    public Subscription getServiceId() {
+    public ProductOffering getServiceId() {
         return serviceId;
     }
 
-    public void setServiceId(Subscription subscription) {
-        this.serviceId = subscription;
+    public void setServiceId(ProductOffering productOffering) {
+        this.serviceId = productOffering;
     }
 
     public Long getSum() {

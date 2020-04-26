@@ -1,10 +1,10 @@
 package by.training.nc.sd3.service.impl;
 
 import by.training.nc.sd3.entity.BillingAccount;
-import by.training.nc.sd3.entity.SubscriptionUnit;
+import by.training.nc.sd3.entity.ProductInstance;
 import by.training.nc.sd3.repository.BillingAccountRepository;
 import by.training.nc.sd3.service.BillingAccountService;
-import by.training.nc.sd3.service.SubscriptionUnitService;
+import by.training.nc.sd3.service.ProductInstanceService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -15,12 +15,12 @@ import java.util.Optional;
 public class BillingAccountServiceImpl implements BillingAccountService {
 
     private BillingAccountRepository repository;
-    private SubscriptionUnitService subscriptionUnitService;
+    private ProductInstanceService productInstanceService;
 
     @Autowired
-    public BillingAccountServiceImpl(BillingAccountRepository repository, SubscriptionUnitService subscriptionUnitService) {
+    public BillingAccountServiceImpl(BillingAccountRepository repository, ProductInstanceService productInstanceService) {
         this.repository = repository;
-        this.subscriptionUnitService = subscriptionUnitService;
+        this.productInstanceService = productInstanceService;
     }
 
     @Override
@@ -49,11 +49,10 @@ public class BillingAccountServiceImpl implements BillingAccountService {
         if(billingAccountOptional.isPresent()) {
             if(billingAccountOptional.get().getPassword().equals(password)) {
                 this.repository.delete(billingAccountOptional.get());
-                Iterable<SubscriptionUnit> subscriptionUnits = this.subscriptionUnitService.getByBillingAccountId(id);
+                Iterable<ProductInstance> subscriptionUnits = this.productInstanceService.getByBillingAccountId(id);
                 subscriptionUnits.forEach(
                         subscriptionUnit -> {
-                            subscriptionUnit.setWillBeRenewed(false);
-                            this.subscriptionUnitService.save(subscriptionUnit);
+                            this.productInstanceService.save(subscriptionUnit);
                         }
                 );
             }

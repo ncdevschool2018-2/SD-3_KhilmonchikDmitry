@@ -19,22 +19,22 @@
       <li class="nav-item">
         <a class="nav-link"  (click)="filter('streaming')" routerLink="/subscriptions">Streaming</a>
       </li>
-      <!--<li *ngIf="isAdmin" class="nav-item">-->
-        <!--<a class="nav-link" routerLink="/createSubscription">Create</a>-->
-      <!--</li>-->
+      <li *ngIf="isAdmin" class="nav-item">
+        <a class="nav-link" routerLink="/createSubscription">Create</a>
+      </li>
     </ul>
     <form class="form-inline justify-content-center">
       <input #searchRequest class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button type="button" routerLink="/subscriptions" (click)="search(searchRequest.value)"
+      <button type="button" routerLink="/subscriptions" (click)="search(searchRequest.value); searchRequest.value=''"
               class="btn btn-outline-success my-2 my-sm-0">Search
       </button>
     </form>
   </div>
     <img src="../../../../../assets/icons/account.png" class="nav-icon"
-         [routerLink]="loggedUserID >= 0 ? (isAdmin ? '' : '/user/'+userIDService.getID()[0]) : ''">
-    <button *ngIf="userIDService.getID() < 0" type="button" class="btn btn-primary" routerLink="/login">Sign in
+         [routerLink]="loggedUserID >= 0 ? (isAdmin ? '/adminAccount' : '/user/'+userIDService.getID()[0]) : ''">
+    <button *ngIf="userIDService.getID() < 0" type="button" class="btn btn-outline-success my-2 my-sm-0" routerLink="/login">Sign in
     </button>
-    <button *ngIf="userIDService.getID() >= 0" type="button" class="btn btn-primary" routerLink="" (click)="logOut()">
+    <button *ngIf="userIDService.getID() >= 0" type="button" class="btn btn-outline-success my-2 my-sm-0" routerLink="" (click)="logOut()">
       Sign out
     </button>
 </nav>

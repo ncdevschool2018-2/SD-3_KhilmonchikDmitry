@@ -13,11 +13,11 @@
                                                        class="form-control" id="password" name="password" #password/>
       </div>
       <p class="text-danger" *ngIf="wrongData" id="error">Wrong login or password</p>
-      <button type="button" class="btn btn-primary" (click)="signIn(username.value, password.value)"
-              >Sign In
+      <button type="button" class="btn btn-outline-success my-2 my-sm-0" (click)="signIn(username.value, password.value)">
+        Sign In
       </button>
-      <small> or</small>
-      <button type="button" class="btn btn-primary" routerLink="/registration">Sign up</button>
+      <small> or </small>
+      <button type="button" class="btn btn-outline-success my-2 my-sm-0" routerLink="/registration">Sign up</button>
     </form>
   </div>
 </div>

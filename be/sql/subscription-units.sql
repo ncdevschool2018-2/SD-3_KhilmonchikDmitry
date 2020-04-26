@@ -14,6 +14,6 @@ CREATE TABLE `subscription_unit` (
   KEY `billingAccountId_idx` (`billingAccountId`),
   KEY `userAccountId_idx` (`userId`),
   CONSTRAINT `billingAccountId` FOREIGN KEY (`billingAccountId`) REFERENCES `billing_account` (`id`) ON DELETE SET NULL ON UPDATE SET NULL,
-  CONSTRAINT `subscriptionId` FOREIGN KEY (`subscriptionId`) REFERENCES `subscription` (`id`),
+  CONSTRAINT `subscriptionId` FOREIGN KEY (`subscriptionId`) REFERENCES `productOffering` (`id`),
   CONSTRAINT `userAccountId` FOREIGN KEY (`userId`) REFERENCES `user_account` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

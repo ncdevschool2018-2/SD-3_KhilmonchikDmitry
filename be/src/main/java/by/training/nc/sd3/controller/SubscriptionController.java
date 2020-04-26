@@ -1,7 +1,7 @@
 package by.training.nc.sd3.controller;
 
-import by.training.nc.sd3.entity.Subscription;
-import by.training.nc.sd3.service.SubscriptionService;
+import by.training.nc.sd3.entity.ProductOffering;
+import by.training.nc.sd3.service.ProductOfferingService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -10,44 +10,44 @@ import java.util.Optional;
 @RequestMapping("api/subscriptions")
 public class SubscriptionController {
 
-    private SubscriptionService subscriptionService;
+    private ProductOfferingService productOfferingService;
 
-    public SubscriptionController(SubscriptionService subscriptionService) {
-        this.subscriptionService = subscriptionService;
+    public SubscriptionController(ProductOfferingService productOfferingService) {
+        this.productOfferingService = productOfferingService;
     }
 
     @RequestMapping(value = "")
-    public Iterable<Subscription> getAllSubscriptions() {
-        return subscriptionService.getSubscriptions();
+    public Iterable<ProductOffering> getAllSubscriptions() {
+        return productOfferingService.getSubscriptions();
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Optional<Subscription> getSubscriptionById(@PathVariable(name = "id") Long id) {
-        return subscriptionService.getSubscriptionById(id);
+    public Optional<ProductOffering> getSubscriptionById(@PathVariable(name = "id") Long id) {
+        return productOfferingService.getSubscriptionById(id);
     }
 
     @RequestMapping(value = "/by-category", method = RequestMethod.GET)
-    public Iterable<Subscription> getSubscriptionsByCategory(@RequestParam Long category) {
-        return subscriptionService.getSubscriptionsByCategory(category);
+    public Iterable<ProductOffering> getSubscriptionsByCategory(@RequestParam Long category) {
+        return productOfferingService.getSubscriptionsByCategory(category);
     }
 
     @RequestMapping(value = "/by-name", method = RequestMethod.GET)
-    public Subscription getSubscriptionsByName(@RequestParam String name) {
-        return subscriptionService.getSubscriptionsByName(name);
+    public ProductOffering getSubscriptionsByName(@RequestParam String name) {
+        return productOfferingService.getSubscriptionsByName(name);
     }
 
     @PostMapping(value = "/save")
-    public Subscription save(@RequestBody Subscription subscription) {
-        return subscriptionService.save(subscription);
+    public ProductOffering save(@RequestBody ProductOffering productOffering) {
+        return productOfferingService.save(productOffering);
     }
 
     @PostMapping(value = "/ban")
-    public Subscription ban(@RequestBody Long id) {
-        return subscriptionService.ban(id);
+    public ProductOffering ban(@RequestBody Long id) {
+        return productOfferingService.ban(id);
     }
 
     @PostMapping(value = "/unban")
-    public Subscription unBan(@RequestBody Long id) {
-        return subscriptionService.unBan(id);
+    public ProductOffering unBan(@RequestBody Long id) {
+        return productOfferingService.unBan(id);
     }
 }

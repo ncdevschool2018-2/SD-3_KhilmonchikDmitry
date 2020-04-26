@@ -4,9 +4,9 @@
     <div class="col">
       <ul class="list-group">
         <li class="list-group-item"
-            *ngFor="let subscription of subscriptions | paginate: { itemsPerPage: 4, currentPage: page }">
-          <h2><a class="nav-link" routerLink="/details/{{subscription.id}}">{{subscription.name}}</a></h2>
-          <p class="lead">{{subscription.description}}</p>
+            *ngFor="let productOffering of subscriptions | paginate: { itemsPerPage: 4, currentPage: page }">
+          <h2><a class="nav-link" routerLink="/details/{{productOffering.id}}">{{productOffering.name}}</a></h2>
+          <p class="lead">{{productOffering.description}}</p>
         </li>
       </ul>
     </div>
